@@ -4,13 +4,13 @@ void meow(int n);
 
 int main(void)
 {
-    for (int i = 0; i < n; i++)
-    {
-        meow(3);
-    }
-    
+    meow(5);
+}
+
 void meow(int n)
 {
-    printf("meow\n");
-}
+    for (int i = 0; i < n; i++)
+    {
+        printf("meow\n");
+    }
 }

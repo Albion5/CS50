@@ -6,5 +6,6 @@ int main(void)
     int x = get_int("x: ");
     int y = get_int("y: ");
     int sum = x + y;
-    printf("The sum equals: %i\n", sum);
+    printf("Equals: %i\n", sum);
+    printf("%i\n", x + y);
 }

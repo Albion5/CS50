@@ -7,5 +7,8 @@ void meow(void)
 
 int main(void)
 {
-
+    for (i = 0; i < 3; i++)
+    {
+        meow();
+    }
 }

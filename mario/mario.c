@@ -10,9 +10,17 @@ int main(void)
     }
     while (n < 1);
 
+    // For each row
     for (int i = 0; i < n; i++)
     {
-        printf("?");
+        // For each column
+        for (int j = 0; j < n; j++)
+        {
+            // Print a brick
+            printf("#");
+        }
+        printf("\n");
+
     }
     printf("\n");
 }

@@ -4,10 +4,10 @@
 int main(void)
 {
     // Promt user for x
-    float x = get_user("x: ");
+    float x = get_float("x: ");
 
     // Promt user for y
-    float y = get_user("y: ");
+    float y = get_float("y: ");
 
     // Divide x by y
     float z = x / y;

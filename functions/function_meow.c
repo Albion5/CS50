@@ -1,10 +1,6 @@
 #include <stdio.h>
 
-
-void meow(int n)
-{
-    printf("meow\n");
-}
+void meow(int n);
 
 int main(void)
 {
@@ -12,4 +8,9 @@ int main(void)
     {
         meow(3);
     }
+    
+void meow(int n)
+{
+    printf("meow\n");
+}
 }

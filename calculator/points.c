@@ -8,7 +8,7 @@ int main(void)
     {
         printf("You lost fewer points than me.\n");
     }
-    else if (points < 2)
+    else if (points > 2)
     {
         printf("You lost more points than me.\n");
     }

@@ -4,13 +4,13 @@
 int main(void)
 {
     // Promt user for x and y
-    int x = get_int("x: ");
-    int y = get_int("y: ");
+    long x = get_long("x: ");
+    long y = get_long("y: ");
 
     // Perform addition using sum variable
-    int sum = x + y;
-    printf("Equals: %i\n", sum);
+    long sum = x + y;
+    printf("Equals: %li\n", sum);
 
     // Perform addition
-    printf("%i\n", x + y);
+    printf("%li\n", x + y);
 }

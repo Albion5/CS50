@@ -3,8 +3,8 @@
 
 int main(void)
 {
-    int x = get_int();
-    int y = get_int();
+    int x = get_int("your number: ");
+    int y = get_int("your number2: ");
     if (x < y)
     {
         printf("x is less than y\n");

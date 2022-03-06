@@ -2,7 +2,7 @@
 
 void meow(void)
 {
-
+    printf("meow\n");
 }
 
 int main(void)

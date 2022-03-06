@@ -13,6 +13,6 @@ int main(void)
     float z = x / y;
 
     // Print out the result
-    printf("%.2f\n", z);
+    printf("%.50f\n", z);
 
 }

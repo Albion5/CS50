@@ -7,10 +7,10 @@ int main(void)
     int x = get_int("x: ");
     int y = get_int("y: ");
 
-    // Perform addition and assign the result to a sum variable
+    // Perform addition using sum variable
     int sum = x + y;
     printf("Equals: %i\n", sum);
 
-    // Perform addition and then print the result
+    // Perform addition
     printf("%i\n", x + y);
 }

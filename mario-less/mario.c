@@ -33,7 +33,7 @@ void build(int size)
             // Print spaces
             printf(" ");
         }
-        // The amount of hashes for each column equals i
+        // The number of hashes for each column equals i
         for (int k = 0; k < i; k++)
         {
             // Print hashes

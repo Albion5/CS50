@@ -24,9 +24,9 @@ void build(int size)
     // For each row
     for (int i = 1; i < size + 1; i++)
     {
-        int dots = size - i;
-        // Dots for each column
-        for (int j = 0; j < dots; j++)
+        int spaces = size - i;
+        // Spaces for each column
+        for (int j = 0; j < spaces; j++)
         {
             printf("*");
         }

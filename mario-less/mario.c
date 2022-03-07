@@ -20,7 +20,7 @@ int main(void)
 
 void build(int size)
 {
-    for (int i = 0; i < size; i++)
+    for (int i = 1; i < size + 1; i++)
     {
         int dots = size - i;
 

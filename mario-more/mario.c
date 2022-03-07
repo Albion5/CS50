@@ -39,6 +39,14 @@ void build(int size)
             // Print hashes
             printf("#");
         }
+        printf("  ");
+        
+         for (int k = 0; k < i; k++)
+        {
+            // Print hashes
+            printf("#");
+        }
+
         // Go to the next line
         printf("\n");
     }

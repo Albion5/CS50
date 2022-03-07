@@ -24,7 +24,7 @@ void build(int size)
     int spaces;
     for (int i = 0; i < size; i++)
     {
-        spaces = size - 1;
+        spaces = size - i;
         blocks = size - spaces;
         for (int j = 0; j < spaces; j++)
         {

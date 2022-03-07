@@ -22,14 +22,14 @@ void build(int size)
 {
     for (int i = 0; i < size; i++)
     {
-        int spaces = size - i;
-        int blocks = size - spaces;
+        int dots = size - i;
+        int bricks = size - dots;
 
-        for (int j = 0; j < spaces; j++)
+        for (int j = 0; j < dots; j++)
         {
             printf(" ");
         }
-        for (int k = 0; k < blocks; k++)
+        for (int k = 0; k < bricks; k++)
         {
             printf("#");
         }

@@ -26,10 +26,12 @@ void build(int size)
     {
         spaces = size - 1;
         blocks = size - spaces;
-        for (int j = size; j > size; j--)
+        for (int j = 0; j < spaces; j++)
         {
-
             printf(" ");
+        }
+        for (int k = 0; k < blocks; k++)
+        {
             printf("#");
         }
         printf("\n");

@@ -27,8 +27,7 @@ void build(int size)
             printf(" ");
             printf("#");
         }
-
-
+        printf("\n");
     }
-    printf("\n");
+
 }

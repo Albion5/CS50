@@ -15,12 +15,12 @@ int main(void)
     }
     while ((height < 1) || (height > 8));
 
-    // Call the funtion to build the pyramid of a certain height
+    // Call the funtion to build two pyramids of a certain height
     build(height);
 
 }
 
-// Builds the pyramid of a certain height
+// Builds two pyramids of a certain height
 void build(int size)
 {
     // For each row

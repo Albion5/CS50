@@ -1,7 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
 
-// Builds the pyramid of a certain height
 void build(int size);
 
 int main(void)
@@ -19,6 +18,7 @@ int main(void)
 
 }
 
+// Builds the pyramid of a certain height
 void build(int size)
 {
     // For each row

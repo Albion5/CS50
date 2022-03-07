@@ -28,7 +28,7 @@ void build(int size)
         // Dots for each column
         for (int j = 0; j < dots; j++)
         {
-            printf(" ");
+            printf("*");
         }
         // Hashes for each column
         for (int k = 0; k < i; k++)

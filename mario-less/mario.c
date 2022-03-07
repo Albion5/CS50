@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
+// Builds the pyramid of a certain height
 void build(int size);
 
 int main(void)
@@ -18,24 +19,27 @@ int main(void)
 
 }
 
-// Builds the pyramid of a certain height
 void build(int size)
 {
     // For each row
     for (int i = 1; i < size + 1; i++)
     {
+        // Calculate the number of spaces on each row
         int spaces = size - i;
+
         // Spaces for each column
         for (int j = 0; j < spaces; j++)
         {
-            // Print 
+            // Print spaces
             printf(" ");
         }
-        // Hashes for each column
+        // The amount of hashes for each column equals i
         for (int k = 0; k < i; k++)
         {
+            // Print hashes
             printf("#");
         }
+        // Go to the next line
         printf("\n");
     }
 

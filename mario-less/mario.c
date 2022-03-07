@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-void build(int size);
+void build(int rows);
 
 int main(void)
 {
@@ -18,12 +18,12 @@ int main(void)
 
 }
 
-void build(int size)
+void build(int rows)
 {
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < rows; i++)
     {
-        int dots = size - i;
-        int bricks = size - dots;
+        int dots = rows - i;
+        int bricks = rows - dots;
 
         for (int j = 0; j < dots; j++)
         {

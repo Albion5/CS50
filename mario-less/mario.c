@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-string build(int size);
+void build(int size);
 
 int main(void)
 {
@@ -14,15 +14,20 @@ int main(void)
     }
     while ((height < 1) || (height > 8));
 
-    string pyramid = build(height);
-    printf("%s\n", pyramid);
+    build(height);
 
 }
 
-string build(int size)
+void build(int size)
 {
     for (int i = 0; i < size; i++)
     {
-        return "#";
+        for (int j = 0; j < size; j++)
+        {
+            printf(" ");
+        }
+
+        printf("#");
     }
+    printf("\n");
 }

@@ -20,10 +20,15 @@ int main(void)
 
 void build(int size)
 {
+    int blocks;
+    int spaces;
     for (int i = 0; i < size; i++)
     {
+        spaces = size - 1;
+        blocks = size - spaces;
         for (int j = size; j > size; j--)
         {
+
             printf(" ");
             printf("#");
         }

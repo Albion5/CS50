@@ -14,7 +14,7 @@ int main(void)
         height = get_int("Height: ");
     }
     while ((height < 1) || (height > 8));
-    
+
     // Call the funtion to build the pyramid of a certain height
     build(height);
 
@@ -47,7 +47,7 @@ void build(int size)
         printf("  ");
 
         // Hashes for the second pyramid
-         for (int k = 0; k < i; k++)
+        for (int k = 0; k < i; k++)
         {
             // Print hashes
             printf("#");

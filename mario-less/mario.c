@@ -3,7 +3,9 @@
 
 int main(void)
 {
+    // Initialize the height variable
     int height;
+    // Promt the user to enter the height of the pyramid
     do
     {
         height = get_int("Height: ");

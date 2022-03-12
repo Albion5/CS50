@@ -100,6 +100,7 @@ int check_validity(int checksum)
     }
 }
 
+// Returns the card
 string get_card(long number, int length)
 {
     int power = length - 2;

@@ -39,6 +39,7 @@ int get_length(long number)
     {
         last_digit = number % 10;
         sum = sum + 1;
+        // Delete the last digit from the number
         number = (number - last_digit) / 10;
     }
     return sum;

@@ -50,7 +50,7 @@ int get_length(long number)
     return sum;
 }
 
-// Calculate the checksum of digits in a card number
+// Calculates the checksum of digits in a card number
 int get_checksum(long number, int length)
 {
     int sum1 = 0;

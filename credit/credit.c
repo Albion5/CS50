@@ -138,7 +138,7 @@ string get_card(long number, int length)
     // Check if it's a different valid card
     else
     {
-        return "INVALID";
+        return "INVALID1";
     }
 
 }

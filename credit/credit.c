@@ -105,26 +105,31 @@ string get_card(long number, int length)
 {
     int power = length - 2;
     long denominator = 1;
+
     for (int i = 0; i < power; i++)
     {
         denominator *= 10;
     }
-
+    // Delete all of the digits exept the first two
     int start_digits = number / denominator;
     printf("%i\n", start_digits);
+    // Check if it's MASTERCARD
     if (start_digits > 50 && start_digits <= 55)
     {
         return "MASTERCARD";
     }
+    // Check if it's AMEX
     else if (start_digits == 34 || start_digits == 37)
     {
         return "AMEX";
     }
+    // Check if it's VISA
     else if (start_digits >=40 && start_digits <= 49)
     {
         return "VISA";
     }
     else
+    // Check if it's a different valid card
     {
         return "INVALID";
     }

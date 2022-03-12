@@ -119,7 +119,7 @@ string get_card(long number, int length)
     {
         return "AMEX";
     }
-    else if (start_digits == 40)
+    else if (start_digits >=40 && start_digits <= 49)
     {
         return "VISA";
     }

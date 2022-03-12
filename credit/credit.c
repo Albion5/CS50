@@ -103,7 +103,7 @@ int check_validity(int checksum)
 string get_card(long number, int length)
 {
     int power = length - 2;
-    int denominator = 1;
+    long denominator = 1;
     for (int i = 0; i < power; i++)
     {
         denominator *= 10;

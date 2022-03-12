@@ -37,9 +37,9 @@ int get_length(long number)
     int last_digit;
     while (number > 10)
     {
-    last_digit = number % 10;
-    sum = sum + 1;
-    number = (number - last_digit) / 10;
+        last_digit = number % 10;
+        sum = sum + 1;
+        number = (number - last_digit) / 10;
     }
     return sum;
 }
@@ -124,12 +124,12 @@ string get_card(long number, int length)
         return "AMEX";
     }
     // Check if it's VISA
-    else if (start_digits >=40 && start_digits <= 49)
+    else if (start_digits >= 40 && start_digits <= 49)
     {
         return "VISA";
     }
-    else
     // Check if it's a different valid card
+    else
     {
         return "INVALID";
     }

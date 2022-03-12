@@ -15,7 +15,7 @@ int main(void)
     // Calculate the length of a card number
     int digits = get_length(card_number);
 
-    // Calculate the checksum of the digits if their amount is 13, 15 or 16
+    // Check validity and a type of the card if it's length is 13, 15 or 16 digits
     if (digits == 13 || digits == 15 || digits == 16)
     {
         int checksum = get_checksum(card_number, digits);

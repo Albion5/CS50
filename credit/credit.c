@@ -115,8 +115,9 @@ string get_card(long number, int length)
     {
         return "MASTERCARD";
     }
+    if else ()
     //return "AMEX"
-    if (start_digits == 40)
+    if else (start_digits == 40)
     {
         return "VISA";
     }

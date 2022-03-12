@@ -111,9 +111,11 @@ string get_card(long number, int length)
 
     int start_digits = number / denominator;
     printf("%i\n", start_digits);
-
+    if (start_digits > 50 && start_digits <= 55)
+    {
+        return "MASTERCARD";
+    }
     //return "AMEX"
-    //return "MASTERCARD"
     if (start_digits == 40)
     {
         return "VISA";

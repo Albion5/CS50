@@ -22,10 +22,13 @@ int main(void)
         int validity = check_validity(checksum);
         if (validity == 1)
         {
+            // Check the type of a valid card
             card = get_card(card_number, digits);
         }
 
     }
+
+    // Print the card
     printf("%s\n", card);
 
 }
@@ -42,6 +45,7 @@ int get_length(long number)
         // Delete the last digit from the number
         number = (number - last_digit) / 10;
     }
+    // Return the number of digits in a card number
     return sum;
 }
 
@@ -111,9 +115,10 @@ string get_card(long number, int length)
     {
         denominator *= 10;
     }
+
     // Delete all of the digits exept the first two
     int start_digits = number / denominator;
-    printf("%i\n", start_digits);
+
     // Check if it's MASTERCARD
     if (start_digits > 50 && start_digits <= 55)
     {

@@ -102,8 +102,12 @@ int check_validity(int checksum)
 
 string get_card(long number, int length)
 {
-    printf("%li\n", number);
-    printf("%i\n", length);
+    int power = length - 2;
+    for (int i = 0; i < power; i++)
+    {
+        
+    }
+
     int start_digits = number / 10^(length-2);
     printf("%i\n", start_digits);
 

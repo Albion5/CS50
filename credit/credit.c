@@ -117,7 +117,7 @@ string get_card(long number, int length)
         denominator *= 10;
     }
 
-    // Delete all of the digits exept the first two
+    // Delete all of the digits except the first two
     int start_digits = number / denominator;
 
     // Check if it's MASTERCARD

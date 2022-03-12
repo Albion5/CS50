@@ -103,12 +103,13 @@ int check_validity(int checksum)
 string get_card(long number, int length)
 {
     int power = length - 2;
+    int denominator = 1;
     for (int i = 0; i < power; i++)
     {
-        
+        denominator *= 10;
     }
 
-    int start_digits = number / 10^(length-2);
+    int start_digits = number / denominator;
     printf("%i\n", start_digits);
 
     //return "AMEX"

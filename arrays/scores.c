@@ -12,5 +12,5 @@ int main(void)
         scores[i] = get_int("Score: ");
         sum += scores[i];
     }
-    printf("Average: %f\n", sum / n);
+    printf("Average: %.2f\n", sum / (n * 1.0));
 }

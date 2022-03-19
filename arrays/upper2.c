@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <cs50.h>
+#include <ctype.h>
 #include <string.h>
 
 int main(void)
@@ -8,9 +9,7 @@ int main(void)
     printf("After: ");
     for (int i = 0, n = strlen(s); i < n; i++)
     {
-        // Capital letter = lower + 32
-        // 'a' = 97, 'z' = 122; 'A' = 'a' + 32, 'Z' = 'z' + 32
-        if (s[i] >= 'a' && s[i] <= 'z')
+        if (islower(s[i]))
         {
             printf("%c", s[i] - 32);
         }

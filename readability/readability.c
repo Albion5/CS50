@@ -18,6 +18,7 @@ int main(void)
     int grade_level = test_text(letters, words, sentences);
 
     printf("Letters: %i, Words: %i, Sentences: %i\n", letters, words, sentences);
+    printf("Grade level: %i\n", grade_level);
 }
 
 int count_letters(string text)
@@ -70,9 +71,10 @@ int count_sentences(string text)
 
 int test_text(int l, int w, int s)
 {
-    int av_letters = round(l / (w * 1.0) * 100);
+    int av_letters = l / (w * 1.0) * 100;
     printf("%i\n", av_letters);
-    int av_sentences = round(s / (w * 1.0) * 100);
+    int av_sentences = s / (w * 1.0) * 100;
     printf("%i\n", av_sentences);
-    return 1;
+    int index = round(0.0588 * av_letters - 0.296 * av_sentences - 15.8);
+    return index;
 }

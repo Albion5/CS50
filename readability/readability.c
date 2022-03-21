@@ -104,7 +104,8 @@ int test_text(string text)
     float av_letters = count_average(letters, words);
 
     float av_sentences = count_average(sentences, words);
-
+    
+    //
     int index = round(0.0588 * av_letters - 0.296 * av_sentences - 15.8);
 
     return index;

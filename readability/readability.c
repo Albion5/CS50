@@ -89,7 +89,7 @@ int count_sentences(string text)
 // Counts the average number of a per 100 b
 float count_average(int a, int b)
 {
-    return a / (b * 1.0) * 100
+    return a / (b * 1.0) * 100;
 }
 
 // Counts the index of a text
@@ -98,7 +98,7 @@ int test_text(string text)
     int letters = count_letters(text);
 
     int words = count_words(text);
-    
+
     int sentences = count_sentences(text);
 
     float av_letters = count_average(letters, words);

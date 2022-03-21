@@ -92,7 +92,7 @@ float count_average(int a, int b)
     return a / (b * 1.0) * 100
 }
 
-// Counts the 
+// Counts the index of a text
 int test_text(string text)
 {
     int letters = count_letters(text);

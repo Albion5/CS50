@@ -27,15 +27,21 @@ int main(void)
 int compute_score(string word)
 {
     int score = 0;
+    char current;
+    char char_value = 0;
+
     // TODO: Compute and return score for string
     for (int i = 0, n = strlen(word); i < n; i++)
     {
-        char current = word[i];
+        current = tolower(word[i]);
+        char_value = 0;
 
         if isalpha(current)
         {
-            
+            char_value = POINTS[current - 97];
         }
+
+        score = score + char_value;
     }
 
 }

@@ -18,7 +18,18 @@ int main(void)
     int grade_level = test_text(letters, words, sentences);
 
     //printf("Letters: %i, Words: %i, Sentences: %i\n", letters, words, sentences);
-    printf("Grade level: %i\n", grade_level);
+    if (grade_level < 1)
+    {
+        printf("Before Grade 1");
+    }
+    else if (grade_level >= 16)
+    {
+        printf("Grade 16+");
+    }
+    else
+    {
+        printf("Grade level: %i\n", grade_level);
+    }
 }
 
 int count_letters(string text)

@@ -70,7 +70,9 @@ int count_sentences(string text)
 
 int test_text(int l, int w, int s)
 {
-    int average_l = round(l / (w * 1.0) * 100);
-    printf("%i\n", average_l);
+    int av_letters = round(l / (w * 1.0) * 100);
+    printf("%i\n", av_letters);
+    int av_sentences = round(s / (w * 1.0) * 100);
+    printf("%i\n", av_sentences);
     return 1;
 }

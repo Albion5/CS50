@@ -17,14 +17,17 @@ int main(void)
     int grade_level = test_text(user_text);
 
     // Print the result of testing depending on the interval to which it belongs
+    // If the result is too low
     if (grade_level < 1)
     {
         printf("Before Grade 1\n");
     }
+    // If the result is too high
     else if (grade_level >= 16)
     {
         printf("Grade 16+\n");
     }
+    // If the result is ьувшгь
     else
     {
         printf("Grade %i\n", grade_level);

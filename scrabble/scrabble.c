@@ -23,13 +23,13 @@ int main(void)
     // TODO: Print the winner
     int winner = get_winner(score1, score2);
 
-    if (not winner)
+    if (!winner)
     {
         printf("Tie!\n");
     }
     else
     {
-        printf("Player%i wins\n", winner);
+        printf("Player%i wins!\n", winner);
     }
 }
 

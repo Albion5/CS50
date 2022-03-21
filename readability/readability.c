@@ -16,6 +16,7 @@ int main(void)
     // Run readability test and save the result in a variable grade_level
     int grade_level = test_text(user_text);
 
+    // Print the result of testing depending on the interval to which it belongs
     if (grade_level < 1)
     {
         printf("Before Grade 1\n");

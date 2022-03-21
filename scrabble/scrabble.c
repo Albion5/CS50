@@ -29,7 +29,7 @@ int main(void)
     }
     else
     {
-        printf("Player%i wins!\n", winner);
+        printf("Player %i wins!\n", winner);
     }
 }
 
@@ -52,7 +52,7 @@ int compute_score(string word)
 
         score = score + char_value;
     }
-    printf("%i\n", score);
+    //printf("%i\n", score);
     return score;
 }
 

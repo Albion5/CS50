@@ -8,7 +8,7 @@ int main(void)
 {
     string user_text = get_string("Text: ");
     int letters = count_letters(user_text);
-
+    printf("%i\n", letters);
 }
 
 int count_letters(string text)
@@ -19,7 +19,7 @@ int count_letters(string text)
         char current = text[i];
         if  (current >= 'a' && current <= 'z' | current >= 'A' && current <= 'Z')
         {
-            sum ++;
+            sum++;
         }
 
     }

@@ -6,16 +6,13 @@
 int count_letters(string text);
 int count_words(string text);
 int count_sentences(string text);
-int test_text(int l, int w, int s);
+int test_text(string text);
 
 int main(void)
 {
     string user_text = get_string("Text: ");
 
-    int letters = count_letters(user_text);
-    int words = count_words(user_text);
-    int sentences = count_sentences(user_text);
-    int grade_level = test_text(letters, words, sentences);
+    int grade_level = test_text(user_text);
 
     if (grade_level < 1)
     {
@@ -79,11 +76,15 @@ int count_sentences(string text)
     return sum;
 }
 
-int test_text(int l, int w, int s)
+int test_text(string text)
 {
-    float av_letters = l / (w * 1.0) * 100;
+    int letters = count_letters(text);
+    int words = count_words(text);
+    int sentences = count_sentences(text);
 
-    float av_sentences = s / (w * 1.0) * 100;
+    float av_letters = letters / (words * 1.0) * 100;
+
+    float av_sentences = sentences / (words * 1.0) * 100;
 
     int index = round(0.0588 * av_letters - 0.296 * av_sentences - 15.8);
 

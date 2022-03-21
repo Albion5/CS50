@@ -13,7 +13,7 @@ int main(void)
     // Ask user to enter a text
     string user_text = get_string("Text: ");
 
-    // Check the grade level of the text and save the result in a variable grade_level
+    // Run readability test and save the result in a variable grade_level
     int grade_level = test_text(user_text);
 
     if (grade_level < 1)

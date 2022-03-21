@@ -95,12 +95,14 @@ float count_average(int a, int b)
 // Counts the index of a text
 int test_text(string text)
 {
+    // First count the number of letters, words and sentences in a string
     int letters = count_letters(text);
 
     int words = count_words(text);
 
     int sentences = count_sentences(text);
 
+    // Then
     float av_letters = count_average(letters, words);
 
     float av_sentences = count_average(sentences, words);

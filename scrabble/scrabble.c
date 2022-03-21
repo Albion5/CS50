@@ -52,7 +52,6 @@ int compute_score(string word)
 
         score = score + char_value;
     }
-    printf("%i\n", score);
     return score;
 }
 

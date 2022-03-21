@@ -6,6 +6,7 @@
 int count_letters(string text);
 int count_words(string text);
 int count_sentences(string text);
+float count_average(int a, int b);
 int test_text(string text);
 
 int main(void)
@@ -91,7 +92,7 @@ float count_average(int a, int b)
     return a / (b * 1.0) * 100
 }
 
-
+// Counts the 
 int test_text(string text)
 {
     int letters = count_letters(text);

@@ -8,7 +8,6 @@
 int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
 
 int compute_score(string word);
-//int get_winner(string w1, string w2)
 
 int main(void)
 {
@@ -21,7 +20,7 @@ int main(void)
     int score2 = compute_score(word2);
 
     // TODO: Print the winner
-    //string winner = get_winner(word1, word2)
+    if score 1 > score 2
 }
 
 int compute_score(string word)
@@ -45,5 +44,4 @@ int compute_score(string word)
     }
     printf("%i\n", score);
     return score;
-
 }

@@ -17,9 +17,11 @@ int count_letters(string text)
     for (int i = 0, n = strlen(text); i < n; i++)
     {
         char current = text[i];
+        printf("%c\n", current);
         if  (current >= 'a' && current <= 'z' | current >= 'A' && current <= 'Z')
         {
-            sum++;
+            sum = sum + 1;
+            printf("%i\n", sum);
         }
 
     }

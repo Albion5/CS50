@@ -96,7 +96,9 @@ float count_average(int a, int b)
 int test_text(string text)
 {
     int letters = count_letters(text);
+
     int words = count_words(text);
+    
     int sentences = count_sentences(text);
 
     float av_letters = count_average(letters, words);

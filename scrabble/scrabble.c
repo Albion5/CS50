@@ -20,9 +20,10 @@ int main(void)
     int score1 = compute_score(word1);
     int score2 = compute_score(word2);
 
-    // TODO: Print the winner
+    // Check which player is the winner 
     int winner = get_winner(score1, score2);
 
+    // Print the winner
     if (!winner)
     {
         printf("Tie!\n");
@@ -39,7 +40,7 @@ int compute_score(string word)
     char current;
     int char_value = 0;
 
-    // TODO: Compute and return score for string
+    // Compute and return score for string
     for (int i = 0, n = strlen(word); i < n; i++)
     {
         current = tolower(word[i]);

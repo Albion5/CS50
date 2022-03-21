@@ -20,15 +20,15 @@ int main(void)
     //printf("Letters: %i, Words: %i, Sentences: %i\n", letters, words, sentences);
     if (grade_level < 1)
     {
-        printf("Before Grade 1");
+        printf("Before Grade 1\n");
     }
     else if (grade_level >= 16)
     {
-        printf("Grade 16+");
+        printf("Grade 16+\n");
     }
     else
     {
-        printf("Grade level: %i\n", grade_level);
+        printf("Grade %i\n", grade_level);
     }
 }
 

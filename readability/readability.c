@@ -69,6 +69,7 @@ int count_sentences(string text)
 
 int test_text(int l, int w, int s)
 {
-    float average_l = 
-
+    float average_l = l / (w * 1.0) * 100;
+    printf("%f\n", average_l);
+    return 1;
 }

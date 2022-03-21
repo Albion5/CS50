@@ -18,17 +18,17 @@ int main(void)
     int grade_level = test_text(user_text);
 
     // Print the result of testing depending on the interval to which it belongs
-    // The result is very low
+    // If the result is very low
     if (grade_level < 1)
     {
         printf("Before Grade 1\n");
     }
-    // The result is very high
+    // If the result is very high
     else if (grade_level >= 16)
     {
         printf("Grade 16+\n");
     }
-    // The resul is ok
+    // If the resul is ok
     else
     {
         printf("Grade %i\n", grade_level);
@@ -49,7 +49,7 @@ int count_letters(string text)
             sum = sum + 1;
         }
     }
-    
+
     return sum;
 }
 

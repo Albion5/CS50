@@ -66,3 +66,10 @@ int count_sentences(string text)
     }
     return sum;
 }
+
+int test_text(int l, int w, int s)
+{
+    average_l
+    int index;
+
+}

@@ -46,7 +46,7 @@ int count_words(string text)
         }
 
     }
-    return sum;
+    return sum + 1;
 }
 
 int count_sentences(string text)

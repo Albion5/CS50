@@ -49,7 +49,6 @@ int compute_score(string word)
             char_value = POINTS[current - 97];
             score += char_value;
         }
-
     }
 
     return score;

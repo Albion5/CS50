@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 int count_letters(string text);
 int count_words(string text);
@@ -69,7 +70,7 @@ int count_sentences(string text)
 
 int test_text(int l, int w, int s)
 {
-    float average_l = l / (w * 1.0) * 100;
-    printf("%f\n", average_l);
+    int average_l = round(l / (w * 1.0) * 100);
+    printf("%i\n", average_l);
     return 1;
 }

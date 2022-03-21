@@ -5,6 +5,7 @@
 int count_letters(string text);
 int count_words(string text);
 int count_sentences(string text);
+int test_text(int l, int w, int s);
 
 int main(void)
 {
@@ -13,6 +14,7 @@ int main(void)
     int letters = count_letters(user_text);
     int words = count_words(user_text);
     int sentences = count_sentences(user_text);
+    int grade_level = test_text(letters, words, sentences);
 
     printf("Letters: %i, Words: %i, Sentences: %i\n", letters, words, sentences);
 }

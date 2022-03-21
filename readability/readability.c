@@ -18,7 +18,7 @@ int count_letters(string text)
     {
         char current = text[i];
         printf("%c\n", current);
-        if  (current >= 'a' && current <= 'z' | current >= 'A' && current <= 'Z')
+        if  ((current >= 'a' && current <= 'z') | (current >= 'A' && current <= 'Z'))
         {
             sum = sum + 1;
             printf("%i\n", sum);

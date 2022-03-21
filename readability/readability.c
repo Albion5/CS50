@@ -10,7 +10,7 @@ int test_text(string text);
 
 int main(void)
 {
-    // 
+    // Promt user for text
     string user_text = get_string("Text: ");
 
     int grade_level = test_text(user_text);

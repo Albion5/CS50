@@ -69,7 +69,6 @@ int count_sentences(string text)
 
 int test_text(int l, int w, int s)
 {
-    average_l
-    int index;
+    float average_l = 
 
 }

@@ -44,7 +44,7 @@ int count_letters(string text)
     {
         char current = text[i];
 
-        if  ((current >= 'a' && current <= 'z') | (current >= 'A' && current <= 'Z'))
+        if ((current >= 'a' && current <= 'z') | (current >= 'A' && current <= 'Z'))
         {
             sum = sum + 1;
         }
@@ -62,11 +62,10 @@ int count_words(string text)
     {
         char current = text[i];
 
-        if  (current == ' ')
+        if (current == ' ')
         {
             sum = sum + 1;
         }
-
     }
 
     return sum + 1;
@@ -81,11 +80,10 @@ int count_sentences(string text)
     {
         char current = text[i];
 
-        if  (current == '.' | current == '?' | current == '!')
+        if (current == '.' | current == '?' | current == '!')
         {
             sum = sum + 1;
         }
-
     }
 
     return sum;

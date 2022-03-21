@@ -82,9 +82,9 @@ int count_sentences(string text)
 
 int test_text(int l, int w, int s)
 {
-    int av_letters = l / (w * 1.0) * 100;
+    float av_letters = l / (w * 1.0) * 100;
 
-    int av_sentences = s / (w * 1.0) * 100;
+    float av_sentences = s / (w * 1.0) * 100;
 
     int index = round(0.0588 * av_letters - 0.296 * av_sentences - 15.8);
 

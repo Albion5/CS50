@@ -17,7 +17,6 @@ int main(void)
     int sentences = count_sentences(user_text);
     int grade_level = test_text(letters, words, sentences);
 
-    //printf("Letters: %i, Words: %i, Sentences: %i\n", letters, words, sentences);
     if (grade_level < 1)
     {
         printf("Before Grade 1\n");

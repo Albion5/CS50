@@ -43,14 +43,13 @@ int compute_score(string word)
     for (int i = 0, n = strlen(word); i < n; i++)
     {
         current = tolower(word[i]);
-        char_value = 0;
 
         if isalpha(current)
         {
             char_value = POINTS[current - 97];
+            score += char_value;
         }
 
-        score += char_value;
     }
 
     return score;

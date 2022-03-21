@@ -17,23 +17,24 @@ int main(void)
     int grade_level = test_text(user_text);
 
     // Print the result of testing depending on the interval to which it belongs
-    // If the result is too low
+    // The result is very low
     if (grade_level < 1)
     {
         printf("Before Grade 1\n");
     }
-    // If the result is too high
+    // The result is very high
     else if (grade_level >= 16)
     {
         printf("Grade 16+\n");
     }
-    // If the result is ьувшгь
+    // The resul is ok
     else
     {
         printf("Grade %i\n", grade_level);
     }
 }
 
+// Counts the number of letters in a string
 int count_letters(string text)
 {
     int sum = 0;
@@ -50,6 +51,7 @@ int count_letters(string text)
     return sum;
 }
 
+// Counts the number of words in a string
 int count_words(string text)
 {
     int sum = 0;
@@ -66,6 +68,7 @@ int count_words(string text)
     return sum + 1;
 }
 
+// Counts the number of sentences in a string
 int count_sentences(string text)
 {
     int sum = 0;

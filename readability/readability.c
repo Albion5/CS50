@@ -39,6 +39,7 @@ int main(void)
 int count_letters(string text)
 {
     int sum = 0;
+
     for (int i = 0, n = strlen(text); i < n; i++)
     {
         char current = text[i];
@@ -47,8 +48,8 @@ int count_letters(string text)
         {
             sum = sum + 1;
         }
-
     }
+    
     return sum;
 }
 
@@ -56,6 +57,7 @@ int count_letters(string text)
 int count_words(string text)
 {
     int sum = 0;
+
     for (int i = 0, n = strlen(text); i < n; i++)
     {
         char current = text[i];
@@ -66,6 +68,7 @@ int count_words(string text)
         }
 
     }
+
     return sum + 1;
 }
 
@@ -73,6 +76,7 @@ int count_words(string text)
 int count_sentences(string text)
 {
     int sum = 0;
+
     for (int i = 0, n = strlen(text); i < n; i++)
     {
         char current = text[i];
@@ -83,6 +87,7 @@ int count_sentences(string text)
         }
 
     }
+
     return sum;
 }
 
@@ -102,12 +107,13 @@ int test_text(string text)
 
     int sentences = count_sentences(text);
 
-    // Then
+    // Then count the average number of letters per 100 words
     float av_letters = count_average(letters, words);
 
+    // Then count the average number of sentences per 100 words
     float av_sentences = count_average(sentences, words);
 
-    // Count The Coleman-Liau index of a text
+    // Finally count The Coleman-Liau index of a text
     int index = round(0.0588 * av_letters - 0.296 * av_sentences - 15.8);
 
     return index;

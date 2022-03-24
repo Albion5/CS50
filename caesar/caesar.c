@@ -6,7 +6,7 @@ string decrypt(string text, int key);
 
 int main(int argc, string argv[])
 {
-    if (argc != 2 | !check_key(argv))
+    if (argc != 2) | !check_key(argv[1]))
     {
         printf("Usage: ./caesar key\n");
         return 1;

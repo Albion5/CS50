@@ -89,6 +89,7 @@ char rotate(char letter, int shift)
             conv_letter -= 26;
         }
     }
+    printf("%i\n", conv_letter);
 
     return conv_letter;
 }

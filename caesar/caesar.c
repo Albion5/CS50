@@ -71,7 +71,6 @@ void decipher(string text, int key)
 char rotate(char letter, int shift)
 {
     char conv_letter;
-
     conv_letter = letter + shift;
 
     if (islower(letter))
@@ -88,6 +87,7 @@ char rotate(char letter, int shift)
             conv_letter -= 'A';
         }
     }
+    printf("%c\n", conv_letter);
 
     return conv_letter;
 }

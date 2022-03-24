@@ -10,12 +10,13 @@ char rotate(char letter, int shift);
 
 int main(int argc, string argv[])
 {
-    //
+    // Check the amount of command-line arguments
     if (argc != 2)
     {
         printf("Usage: ./caesar key\n");
         return 1;
     }
+    // Check th
     if (!check_key(argv[1]))
     {
         printf("Usage: ./caesar key\n");

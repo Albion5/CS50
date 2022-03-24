@@ -28,7 +28,7 @@ int main(int argc, string argv[])
     int key = atoi(argv[1]) % 26;
 
     // Promt the user for a sting of plaintext
-    string plaintext = get_string("plaintext: ");
+    string plaintext = get_string("plaintext:  ");
 
     // Print out the encrypted message
     printf("ciphertext: ");
@@ -91,7 +91,7 @@ char rotate(char letter, int shift)
     {
         conv_letter -= 26;
     }
-    
+
     // Return converted letter as char
     return conv_letter;
 }

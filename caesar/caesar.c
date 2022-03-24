@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlip.h>
 
 int check_key(string k);
 string decrypt(string text, int key);
@@ -14,8 +15,8 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    int key = argv[1];
-    
+    int key = atoi(argv[1]);
+
     string plaintext = get_string("plaintext: ");
 
 

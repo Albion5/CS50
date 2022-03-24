@@ -74,6 +74,7 @@ char rotate(char letter, int shift)
 {
     char conv_letter;
     conv_letter = letter + shift;
+    printf("%i\n", conv_letter);
 
     if (islower(letter))
     {

@@ -6,15 +6,16 @@ string decrypt(string text, int key);
 
 int main(int argc, string argv[])
 {
-    string plaintext = get_string("plaintext: ");
-    printf("%i\n",argc);
-    if (argc != 2)
+    if (argc != 2 | !check_key(argc))
     {
         printf("Usage: ./caesar key\n");
         return 1;
     }
 
-    string ciphertext = decrypt(plaintext, argc);
+    string plaintext = get_string("plaintext: ");
+
+
+    //string ciphertext = decrypt(plaintext, argc);
 
     printf("ciphertext: ");
 }
@@ -22,13 +23,16 @@ int main(int argc, string argv[])
 int check_key(string k)
 {
     char current;
-    int digits = 0;
+
     for (int i = 0, len = strlen(string); i < len; i++)
     {
         current = string[i];
-        if is_digit(current)
+
+        if !is_digit(current)
         {
-            digits 
+            return 0;
         }
     }
+
+    return 1;
 }

@@ -23,8 +23,8 @@ int main(int argc, string argv[])
         return 1;
     }
 
+    // Convert key to an integer
     int key = atoi(argv[1]) % 26;
-    //printf("%i\n", key);
 
     string plaintext = get_string("plaintext: ");
 

@@ -50,6 +50,7 @@ int check_key(string k)
     return 1;
 }
 
+// Prints every rotated letter in a string
 void decipher(string text, int key)
 {
 
@@ -68,6 +69,7 @@ void decipher(string text, int key)
     printf("\n");
 }
 
+//  Rotates a letter to a certain number of positions
 char rotate(char letter, int shift)
 {
     int conv_letter;

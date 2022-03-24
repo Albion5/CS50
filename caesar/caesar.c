@@ -20,7 +20,7 @@ int main(int argc, string argv[])
 
     string plaintext = get_string("plaintext: ");
 
-
+    decipher(plaintext, key);
     //string ciphertext = decipher(plaintext, argc);
 
     printf("ciphertext: \n");
@@ -47,6 +47,7 @@ string decipher(string text, int key)
 {
     for (i int = 0, len = strlen(text); i < len; i++)
     {
-        current()
+        char current = string[i];
+        printf("%c", current);
     }
 }

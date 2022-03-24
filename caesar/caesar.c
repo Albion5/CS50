@@ -32,12 +32,12 @@ int main(int argc, string argv[])
 
     printf("ciphertext: ");
 
-    // Print out the message with rotated letters
+    // Print out the encrypted message
     decipher(plaintext, key);
 
 }
 
-//
+// Checks if the string contains only digits
 int check_key(string k)
 {
     char current;

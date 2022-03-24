@@ -87,9 +87,20 @@ char rotate(char letter, int shift)
     int conv_letter = letter + shift;
 
     // If the character after the shift is not alphabetical make the substraction
-    if (!isalpha(conv_letter))
+
+    if (islower(letter))
     {
-        conv_letter -= 26;
+        if (conv_letter > 'z')
+        {
+            conv_letter -= 26;
+        }
+    }
+    else
+    {
+        if (conv_letter > 'Z')
+        {
+            conv_letter -= 26;
+        }
     }
 
     // Return converted letter as char

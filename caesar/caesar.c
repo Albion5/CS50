@@ -15,7 +15,8 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    int key = atoi(argv[1]);
+    int key = atoi(argv[1]) % 26;
+    printf("%i\n", key);
 
     string plaintext = get_string("plaintext: ");
 
@@ -44,5 +45,8 @@ int check_key(string k)
 
 string decipher(string text, int key)
 {
-
+    for (i int = 0, len = strlen(text); i < len; i++)
+    {
+        current()
+    }
 }

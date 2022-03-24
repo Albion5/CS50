@@ -60,6 +60,7 @@ void decipher(string text, int key)
 
         if (isalpha(current))
         {
+            printf("%i", key);
             current = rotate(current, key);
         }
 

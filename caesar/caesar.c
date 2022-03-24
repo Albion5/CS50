@@ -30,9 +30,8 @@ int main(int argc, string argv[])
     // Promt the user for a sting of plaintext
     string plaintext = get_string("plaintext: ");
 
-    printf("ciphertext: ");
-
     // Print out the encrypted message
+    printf("ciphertext: ");
     decipher(plaintext, key);
 
     printf("\n");

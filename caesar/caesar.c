@@ -10,6 +10,7 @@ char rotate(char letter, int shift);
 
 int main(int argc, string argv[])
 {
+    //
     if (argc != 2)
     {
         printf("Usage: ./caesar key\n");

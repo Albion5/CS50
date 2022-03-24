@@ -45,6 +45,8 @@ int check_key(string k)
 
 void decipher(string text, int key)
 {
+    string message = text;
+
     for (int i = 0, len = strlen(text); i < len; i++)
     {
         char current = text[i];
@@ -54,5 +56,12 @@ void decipher(string text, int key)
         {
 
         }
+
+        message += current;
     }
+}
+
+char rotate(char letter, int shift)
+{
+    
 }

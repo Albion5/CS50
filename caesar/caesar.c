@@ -1,7 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
-decrypt(string text, int key);
+int check_key(string k);
+string decrypt(string text, int key);
 
 int main(int argc, string argv[])
 {

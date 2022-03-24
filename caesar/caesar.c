@@ -28,8 +28,6 @@ int main(int argc, string argv[])
 
     printf("ciphertext: ");
     decipher(plaintext, key);
-    int jo = 'n' + 13 - 26;
-    printf("%i", jo);
 
 }
 
@@ -79,14 +77,14 @@ char rotate(char letter, int shift)
     {
         if (conv_letter > 'z')
         {
-            conv_letter -= 'a';
+            conv_letter -= 26;
         }
     }
     else
     {
         if (conv_letter > 'Z')
         {
-            conv_letter -= 'A';
+            conv_letter -= 26;
         }
     }
 

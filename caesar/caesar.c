@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 int check_key(string k);
-string decipher(string text, int key);
+void decipher(string text, int key);
 
 int main(int argc, string argv[])
 {
@@ -43,11 +43,11 @@ int check_key(string k)
     return 1;
 }
 
-string decipher(string text, int key)
+void decipher(string text, int key)
 {
-    for (i int = 0, len = strlen(text); i < len; i++)
+    for (int i = 0, len = strlen(text); i < len; i++)
     {
-        char current = string[i];
-        printf("%c", current);
+        char current = text[i];
+        printf("%c\n", current);
     }
 }

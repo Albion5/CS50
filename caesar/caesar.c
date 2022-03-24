@@ -6,6 +6,7 @@
 
 int check_key(string k);
 void decipher(string text, int key);
+char rotate(char letter, int shift);
 
 int main(int argc, string argv[])
 {
@@ -52,13 +53,14 @@ void decipher(string text, int key)
         char current = text[i];
         printf("%c\n", current);
 
-        if isletter(current)
+        if (isalpha(current))
         {
             current = rotate(current, key);
         }
 
         message += current;
     }
+    printf("%s\n", message);
 }
 
 char rotate(char letter, int shift)
@@ -73,4 +75,6 @@ char rotate(char letter, int shift)
     {
         conv_letter = letter - 'A';
     }
+
+    return conv_letter;
 }

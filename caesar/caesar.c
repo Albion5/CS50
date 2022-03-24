@@ -78,24 +78,28 @@ void decipher(string text, int key)
 //  Rotates a letter to a certain number of positions
 char rotate(char letter, int shift)
 {
-    int conv_letter;
-    conv_letter = letter + shift;
+    // Save the new char in an int, because the result may be > 127
+    int conv_letter = letter + shift;
 
-    if (islower(letter))
+    // If the character after the shift is not alphabetical make the substraction
+    if (!isalpha(conv_letter))
     {
-        //
-        if (conv_letter > 'z')
-        {
-            conv_letter -= 26;
-        }
+        conv_letter -= 26;
     }
-    else
-    {
-        if (conv_letter > 'Z')
-        {
-            conv_letter -= 26;
-        }
-    }
+    //if (islower(letter))
+    //{
+        //if (conv_letter > 'z')
+        //{
+            //conv_letter -= 26;
+        //}
+    //}
+    //else
+    //{
+        //if (conv_letter > 'Z')
+        //{
+            //conv_letter -= 26;
+        //}
+    //}
 
     return conv_letter;
 }

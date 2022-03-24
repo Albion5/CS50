@@ -54,7 +54,7 @@ void decipher(string text, int key)
 
         if isletter(current)
         {
-
+            current = rotate(current, key);
         }
 
         message += current;

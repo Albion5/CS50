@@ -28,6 +28,8 @@ int main(int argc, string argv[])
 
     printf("ciphertext: ");
     decipher(plaintext, key);
+    int jo = 'n' + 19 - 26;
+    printf("%i\n", jo);
 
 }
 

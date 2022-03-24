@@ -35,6 +35,9 @@ int main(int argc, string argv[])
     // Print out the encrypted message
     decipher(plaintext, key);
 
+    printf("\n");
+    return 0;
+
 }
 
 // Checks if the string contains only digits
@@ -71,7 +74,6 @@ void decipher(string text, int key)
         printf("%c", current);
     }
 
-    printf("\n");
 }
 
 //  Rotates a letter to a certain number of positions
@@ -82,7 +84,7 @@ char rotate(char letter, int shift)
 
     if (islower(letter))
     {
-        // 
+        //
         if (conv_letter > 'z')
         {
             conv_letter -= 26;

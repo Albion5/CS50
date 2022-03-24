@@ -16,6 +16,7 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
     }
+
     // Check that your key contains digits
     if (!check_key(argv[1]))
     {
@@ -26,6 +27,7 @@ int main(int argc, string argv[])
     // Convert key to an integer
     int key = atoi(argv[1]) % 26;
 
+    // Promt the user for a
     string plaintext = get_string("plaintext: ");
 
     printf("ciphertext: ");

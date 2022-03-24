@@ -16,7 +16,7 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
     }
-    // Check th
+    // Check that your key contains digits
     if (!check_key(argv[1]))
     {
         printf("Usage: ./caesar key\n");

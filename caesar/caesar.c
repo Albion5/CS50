@@ -1,14 +1,18 @@
 #include <cs50.h>
 #include <stdio.h>
 
+decrypt(string text, int key);
+
 int main(int argc, string argv[])
 {
-    string plaintext = get_string("plaintext: \n");
+    string plaintext = get_string("plaintext: ");
     printf("%i\n",argc);
     if (argc < 2)
     {
-        printf("Usage: ./caesar key");
+        printf("Usage: ./caesar key\n");
     }
 
-    printf("ciphertext: \n");
+    string ciphertext = decrypt(plaintext, argc);
+
+    printf("ciphertext: ");
 }

@@ -7,7 +7,7 @@ int main(int argc, string argv[])
 {
     string plaintext = get_string("plaintext: ");
     printf("%i\n",argc);
-    if (argc < 2)
+    if (argc != 2)
     {
         printf("Usage: ./caesar key\n");
     }

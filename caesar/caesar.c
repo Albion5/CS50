@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#include <stdlip.h>
+#include <stdlib.h>
 
 int check_key(string k);
 string decrypt(string text, int key);

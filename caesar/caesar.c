@@ -42,4 +42,7 @@ int check_key(string k)
     return 1;
 }
 
-string decipher
+string decipher(string text, int key)
+{
+
+}

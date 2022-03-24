@@ -49,14 +49,14 @@ int check_key(string k)
     {
         current = k[i];
 
-        // Check if current char is a digit
+        // Check if current char doesn't contain a digit
         if (!isdigit(current))
         {
-            // Return 0 if current char doesn't contain a digit
             return 0;
         }
     }
 
+    // Return 1 if all the characters in a string contain digits
     return 1;
 }
 

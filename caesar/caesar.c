@@ -50,7 +50,7 @@ string decipher(string text, int key)
     for (int i = 0, len = strlen(text); i < len; i++)
     {
         char current = text[i];
-        printf("%c\n", current);
+        //printf("%c\n", current);
 
         if (isalpha(current))
         {
@@ -76,6 +76,6 @@ char rotate(char letter, int shift)
     {
         conv_letter = letter + shift;
     }
-    printf("%c", conv_letter);
+    printf("%c\n", conv_letter);
     return conv_letter;
 }

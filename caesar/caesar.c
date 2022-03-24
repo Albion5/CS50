@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 int check_key(string k);
-string decipher(string text, int key);
+void decipher(string text, int key);
 char rotate(char letter, int shift);
 
 int main(int argc, string argv[])
@@ -21,9 +21,9 @@ int main(int argc, string argv[])
 
     string plaintext = get_string("plaintext: ");
 
-    string ciphertext = decipher(plaintext, key);
+    printf("ciphertext: ");
+    decipher(plaintext, key);
 
-    printf("ciphertext: %s\n", ciphertext);
 }
 
 int check_key(string k)
@@ -43,9 +43,8 @@ int check_key(string k)
     return 1;
 }
 
-string decipher(string text, int key)
+void decipher(string text, int key)
 {
-    string message = "ready";
 
     for (int i = 0, len = strlen(text); i < len; i++)
     {
@@ -58,9 +57,10 @@ string decipher(string text, int key)
         }
 
         //message[i] = current;
+        printf("%c", current);
     }
-
-    return message;
+    
+    printf("\n");
 }
 
 char rotate(char letter, int shift)
@@ -76,6 +76,6 @@ char rotate(char letter, int shift)
     {
         conv_letter = letter + shift;
     }
-    printf("%c\n", conv_letter);
+
     return conv_letter;
 }

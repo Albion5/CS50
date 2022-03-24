@@ -18,3 +18,17 @@ int main(int argc, string argv[])
 
     printf("ciphertext: ");
 }
+
+int check_key(string k)
+{
+    char current;
+    int digits = 0;
+    for (int i = 0, len = strlen(string); i < len; i++)
+    {
+        current = string[i];
+        if is_digit(current)
+        {
+            digits 
+        }
+    }
+}

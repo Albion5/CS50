@@ -69,12 +69,12 @@ char rotate(char letter, int shift)
 
     if (islower(letter))
     {
-        conv_letter = letter - 'a';
+        conv_letter = letter + shift;
 
     }
     else
     {
-        conv_letter = letter - 'A';
+        conv_letter = letter + shift;
     }
 
     return conv_letter;

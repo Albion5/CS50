@@ -10,7 +10,12 @@ char rotate(char letter, int shift);
 
 int main(int argc, string argv[])
 {
-    if ((argc != 2) | (!check_key(argv[1])))
+    if (argc != 2)
+    {
+        printf("Usage: ./caesar key\n");
+        return 1;
+    }
+    if (!check_key(argv[1]))
     {
         printf("Usage: ./caesar key\n");
         return 1;
@@ -59,7 +64,7 @@ void decipher(string text, int key)
         //message[i] = current;
         printf("%c", current);
     }
-    
+
     printf("\n");
 }
 

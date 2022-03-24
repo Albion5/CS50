@@ -57,7 +57,7 @@ string decipher(string text, int key)
             current = rotate(current, key);
         }
 
-        message += current;
+        message[i] = current;
     }
 
     return message;

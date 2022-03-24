@@ -66,12 +66,13 @@ void decipher(string text, int key)
 char rotate(char letter, int shift)
 {
     char conv_letter;
+
     if (islower(letter))
     {
         conv_letter = letter - 'a';
 
     }
-    else if (isupper(letter))
+    else
     {
         conv_letter = letter - 'A';
     }

@@ -45,7 +45,7 @@ int check_key(string k)
 
 string decipher(string text, int key)
 {
-    string message[strlen(text)-1];
+    string message[strlen(text) - 1];
 
     for (int i = 0, len = strlen(text); i < len; i++)
     {

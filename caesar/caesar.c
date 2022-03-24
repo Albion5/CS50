@@ -101,5 +101,6 @@ char rotate(char letter, int shift)
         //}
     //}
 
+    // Converted letter from int converts to char
     return conv_letter;
 }

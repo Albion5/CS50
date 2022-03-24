@@ -60,12 +60,10 @@ void decipher(string text, int key)
 
         if (isalpha(current))
         {
-            printf("%i", key);
             current = rotate(current, key);
         }
 
         //message[i] = current;
-        printf("%c", current);
     }
 
     printf("\n");

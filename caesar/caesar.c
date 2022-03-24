@@ -45,7 +45,7 @@ int check_key(string k)
 
 string decipher(string text, int key)
 {
-    string message[strlen(text) - 1];
+    string message = "ready";
 
     for (int i = 0, len = strlen(text); i < len; i++)
     {
@@ -57,7 +57,7 @@ string decipher(string text, int key)
             current = rotate(current, key);
         }
 
-        message[i] = current;
+        //message[i] = current;
     }
 
     return message;

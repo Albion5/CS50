@@ -24,7 +24,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    // Convert key to an integer
+    // Convert argv[1] from a string to an int
     int key = atoi(argv[1]) % 26;
 
     // Promt the user for a sting of plaintext
@@ -35,7 +35,7 @@ int main(int argc, string argv[])
 
 }
 
-// 
+//
 int check_key(string k)
 {
     char current;

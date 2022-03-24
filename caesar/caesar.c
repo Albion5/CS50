@@ -17,7 +17,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    // Check that your key contains digits
+    // Check that the key contains digits
     if (!check_key(argv[1]))
     {
         printf("Usage: ./caesar key\n");
@@ -32,11 +32,10 @@ int main(int argc, string argv[])
 
     printf("ciphertext: ");
     decipher(plaintext, key);
-    //int jo = 'n' + 19;
-    //printf("%i\n", jo);
 
 }
 
+// 
 int check_key(string k)
 {
     char current;

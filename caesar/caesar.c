@@ -14,6 +14,8 @@ int main(int argc, string argv[])
         return 1;
     }
 
+    int key = argv[1];
+    
     string plaintext = get_string("plaintext: ");
 
 

@@ -46,7 +46,7 @@ int check_key(string k)
 
 void decipher(string text, int key)
 {
-    string message;
+    string message = "";
 
     for (int i = 0, len = strlen(text); i < len; i++)
     {

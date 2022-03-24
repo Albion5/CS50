@@ -28,7 +28,7 @@ int main(int argc, string argv[])
 
     printf("ciphertext: ");
     decipher(plaintext, key);
-    int jo = ';
+    int jo = 'z' - 'n' + 13;
     printf("%i", jo);
 
 }

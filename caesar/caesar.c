@@ -22,7 +22,7 @@ int main(int argc, string argv[])
     }
 
     int key = atoi(argv[1]) % 26;
-    printf("%i\n", key);
+    //printf("%i\n", key);
 
     string plaintext = get_string("plaintext: ");
 

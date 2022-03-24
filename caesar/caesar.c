@@ -1,12 +1,14 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
 int check_key(string k);
 string decrypt(string text, int key);
 
 int main(int argc, string argv[])
 {
-    if (argc != 2) | !check_key(argv[1]))
+    if ((argc != 2) | (!check_key(argv[1])))
     {
         printf("Usage: ./caesar key\n");
         return 1;
@@ -17,18 +19,18 @@ int main(int argc, string argv[])
 
     //string ciphertext = decrypt(plaintext, argc);
 
-    printf("ciphertext: ");
+    printf("ciphertext: \n");
 }
 
 int check_key(string k)
 {
     char current;
 
-    for (int i = 0, len = strlen(string); i < len; i++)
+    for (int i = 0, len = strlen(k); i < len; i++)
     {
-        current = string[i];
+        current = k[i];
 
-        if !is_digit(current)
+        if (!isdigit(current))
         {
             return 0;
         }

@@ -17,7 +17,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    // Check that the key contains digits
+    // Check that every character in argv[1] is a digit
     if (!check_key(argv[1]))
     {
         printf("Usage: ./caesar key\n");
@@ -31,6 +31,8 @@ int main(int argc, string argv[])
     string plaintext = get_string("plaintext: ");
 
     printf("ciphertext: ");
+
+    // Print out the message with rotated letters
     decipher(plaintext, key);
 
 }

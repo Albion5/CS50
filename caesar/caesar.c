@@ -76,6 +76,6 @@ char rotate(char letter, int shift)
     {
         conv_letter = letter + shift;
     }
-
+    printf("%c", conv_letter);
     return conv_letter;
 }

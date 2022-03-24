@@ -49,5 +49,10 @@ void decipher(string text, int key)
     {
         char current = text[i];
         printf("%c\n", current);
+
+        if isletter(current)
+        {
+
+        }
     }
 }

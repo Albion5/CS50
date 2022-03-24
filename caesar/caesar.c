@@ -27,7 +27,7 @@ int main(int argc, string argv[])
     // Convert key to an integer
     int key = atoi(argv[1]) % 26;
 
-    // Promt the user for a
+    // Promt the user for a sting of plaintext
     string plaintext = get_string("plaintext: ");
 
     printf("ciphertext: ");

@@ -86,7 +86,7 @@ char rotate(char letter, int shift)
     // Save the new char in an int, because the result may be > 127
     int conv_letter = letter + shift;
 
-    // If the character after the shift is not alphabetical make the substraction
+    // If the character after the shift is not alphabetical or changes the case make the substraction
     if (islower(letter))
     {
         if (conv_letter > 'z')

@@ -44,12 +44,15 @@ int check_key(string k)
 {
     char current;
 
+    // For each char in a string
     for (int i = 0, len = strlen(k); i < len; i++)
     {
         current = k[i];
 
+        // Check if current char is a digit
         if (!isdigit(current))
         {
+            // Return 0 if current char doesn't contain a digit
             return 0;
         }
     }
@@ -60,19 +63,21 @@ int check_key(string k)
 // Prints every rotated letter in a string
 void decipher(string text, int key)
 {
-
+    // For each char in a string
     for (int i = 0, len = strlen(text); i < len; i++)
     {
         char current = text[i];
 
+        // Check if current char is alphabetical
         if (isalpha(current))
         {
+            // Rotate current char using a key
             current = rotate(current, key);
-
         }
+
+        // Print current char after rotation
         printf("%c", current);
     }
-
 }
 
 //  Rotates a letter to a certain number of positions
@@ -101,6 +106,6 @@ char rotate(char letter, int shift)
         //}
     //}
 
-    // Converted letter from int converts to char
+    // Return converted letter as char
     return conv_letter;
 }

@@ -56,14 +56,12 @@ void decipher(string text, int key)
     for (int i = 0, len = strlen(text); i < len; i++)
     {
         char current = text[i];
-        //printf("%c\n", current);
 
         if (isalpha(current))
         {
             current = rotate(current, key);
+            printf("%c", current);
         }
-
-        //message[i] = current;
     }
 
     printf("\n");
@@ -73,7 +71,6 @@ char rotate(char letter, int shift)
 {
     int conv_letter;
     conv_letter = letter + shift;
-    printf("%i\n", conv_letter);
 
     if (islower(letter))
     {
@@ -89,7 +86,6 @@ char rotate(char letter, int shift)
             conv_letter -= 26;
         }
     }
-    printf("%i\n", conv_letter);
 
     return conv_letter;
 }

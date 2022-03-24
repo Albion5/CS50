@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 int check_key(string k);
-string decrypt(string text, int key);
+string decipher(string text, int key);
 
 int main(int argc, string argv[])
 {
@@ -20,7 +20,7 @@ int main(int argc, string argv[])
     string plaintext = get_string("plaintext: ");
 
 
-    //string ciphertext = decrypt(plaintext, argc);
+    //string ciphertext = decipher(plaintext, argc);
 
     printf("ciphertext: \n");
 }
@@ -41,3 +41,5 @@ int check_key(string k)
 
     return 1;
 }
+
+string decipher

@@ -52,6 +52,7 @@ bool check_key(string letters)
         alphabet[i] = '?';
     }
 
+    int position = 0;
     //int sum = 0;
     for (int i = 0; i < len; i++)
     {
@@ -60,7 +61,13 @@ bool check_key(string letters)
         {
             return false;
         }
+        position = toupper(current) - 'A';
+        if (ahpabet[position] != '?')
+        {
+            return false;
+        }
 
+        alphabet[position] = current;
         //sum = sum + toupper(current) - 'A';
     }
 

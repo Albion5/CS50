@@ -4,6 +4,8 @@
 #include <ctype.h>
 
 bool check_key(string letters);
+void encrypt(string text, string key);
+char substitute(char letter, string key);
 
 int main(int argc, string argv[])
 {

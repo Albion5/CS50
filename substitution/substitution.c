@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 bool check_key(string letters);
-bool check_duplicates(char letter, string letters);
+//bool check_duplicates(char letter, string letters);
 void encrypt(string text, string key);
 char substitute(char letter, string key);
 
@@ -45,6 +45,13 @@ bool check_key(string letters)
         return false;
     }
 
+    string alphabet[26];
+
+    for (int i = 0; i < 26; i ++)
+    {
+        alphabet[i] = '?';
+    }
+
     //int sum = 0;
     for (int i = 0; i < len; i++)
     {
@@ -53,7 +60,6 @@ bool check_key(string letters)
         {
             return false;
         }
-        if 
 
         //sum = sum + toupper(current) - 'A';
     }
@@ -69,10 +75,10 @@ bool check_key(string letters)
     return true;
 }
 
-bool check_duplicates(char letter, string letters)
-{
+//bool check_duplicates(char letter, string letters)
+//{
 
-}
+//}
 
 void encrypt(string text, string key)
 {

@@ -11,12 +11,14 @@ int main(int argc, string argv[])
     if (argc != 2)
     {
         printf("Usage: ./substitution key\n");
+        return 1;
     }
 
     // Check the key string
     if (!check_key(argv[1]))
     {
         printf("Key must contain 26 characters.\n");
+        return 1;
     }
 
     // Promt the user for a string of plain text
@@ -30,7 +32,7 @@ bool check_key(string letters)
 
     if (len != 26)
     {
-        return False;
+        return false;
     }
 
     for (int i = 0; i < len; i++)
@@ -38,9 +40,9 @@ bool check_key(string letters)
         char current = letters[i];
         if (!isalpha(current))
         {
-            return False;
+            return false;
         }
     }
 
-    return True;
+    return true;
 }

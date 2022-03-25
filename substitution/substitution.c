@@ -22,6 +22,7 @@ int main(int argc, string argv[])
     }
 
     // Promt the user for a string of plain text
+    string plaintext = get_string("plaintext: ");
 
     // Print the encrypted message
 }

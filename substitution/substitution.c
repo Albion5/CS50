@@ -73,4 +73,9 @@ char substitute(char letter, string key)
 {
     //
     char subst_letter;
+    int i
+    if (islower(letter))
+    {
+
+    }
 }

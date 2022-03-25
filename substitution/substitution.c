@@ -49,13 +49,13 @@ bool check_key(string letters)
 
     // Then check that each character in a key is alphabetical and appears only once
     char alphabet[26];
+    int position = 0;
 
     for (int i = 0; i < 26; i ++)
     {
         alphabet[i] = '?';
     }
 
-    int position = 0;
     for (int i = 0; i < len; i++)
     {
         char current = letters[i];
@@ -64,7 +64,7 @@ bool check_key(string letters)
             return false;
         }
         position = toupper(current) - 'A';
-        
+
         if (alphabet[position] != '?')
         {
             return false;

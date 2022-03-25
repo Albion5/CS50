@@ -52,7 +52,15 @@ bool check_key(string letters)
         {
             return false;
         }
-        sum += current
+
+        sum = sum + toupper(current) - 'A';
+    }
+
+    printf("%i\n", sum);
+
+    if (sum != 325)
+    {
+        return false;
     }
 
     return true;

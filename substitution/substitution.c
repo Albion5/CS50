@@ -58,7 +58,7 @@ void encrypt(string text, string key)
     for (int i = 0, len = strlen(text); i < len; i++)
     {
         char current = text[i];
-        
+
         if (isalpha(current))
         {
             current = substitute(current, key);
@@ -72,4 +72,5 @@ void encrypt(string text, string key)
 char substitute(char letter, string key)
 {
     //
+    char subst_letter;
 }

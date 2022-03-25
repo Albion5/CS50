@@ -27,6 +27,8 @@ int main(int argc, string argv[])
     string plaintext = get_string("plaintext: ");
 
     // Print the encrypted message
+    encrypt(plaintext, argv[1]);
+
 }
 
 bool check_key(string letters)
@@ -48,4 +50,14 @@ bool check_key(string letters)
     }
 
     return true;
+}
+
+void encrypt(string text, string key)
+{
+    //
+}
+
+char substitute(char letter, string key)
+{
+    //
 }

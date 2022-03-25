@@ -27,7 +27,11 @@ int main(int argc, string argv[])
     string plaintext = get_string("plaintext: ");
 
     // Print the encrypted message
+    printf("ciphertext: ");
     encrypt(plaintext, argv[1]);
+    printf("\n");
+
+    return 0;
 
 }
 
@@ -80,11 +84,11 @@ char substitute(char letter, string key)
         position = letter - 'a';
         subst_letter = tolower(key[position]);
     }
-    else if (isupper(letter))
+    else
     {
         position = letter - 'A';
         subst_letter = toupper(key[position]);
     }
-    
+
     return subst_letter;
 }

@@ -55,6 +55,18 @@ bool check_key(string letters)
 void encrypt(string text, string key)
 {
     //
+    for (int i = 0, len = strlen(text); i < len; i++)
+    {
+        char current = text[i];
+        
+        if (isalpha(current))
+        {
+            current = substitute(current, key);
+        }
+
+        printf("%c", current);
+    }
+
 }
 
 char substitute(char letter, string key)

@@ -72,16 +72,19 @@ void encrypt(string text, string key)
 char substitute(char letter, string key)
 {
     //
+    char subst_letter;
     int position = 0;
+
     if (islower(letter))
     {
         position = letter - 'a';
+        subst_letter = tolower(key[position]);
     }
     else if (isupper(letter))
     {
         position = letter - 'A';
+        subst_letter = toupper(key[position]);
     }
-
-    char subst_letter = key[position];
+    
     return subst_letter;
 }

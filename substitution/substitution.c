@@ -44,6 +44,7 @@ bool check_key(string letters)
         return false;
     }
 
+    int sum = 0;
     for (int i = 0; i < len; i++)
     {
         char current = letters[i];

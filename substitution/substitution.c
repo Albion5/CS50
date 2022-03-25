@@ -52,6 +52,7 @@ bool check_key(string letters)
         {
             return false;
         }
+        sum += current
     }
 
     return true;

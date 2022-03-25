@@ -48,9 +48,12 @@ bool check_key(string letters)
     }
 
     // Then check that each character in a key is alphabetical and appears only once
+
+    // Create a list for letters of an alphabet
     char alphabet[26];
     int position = 0;
 
+    // Put each item of a list with '?'
     for (int i = 0; i < 26; i ++)
     {
         alphabet[i] = '?';

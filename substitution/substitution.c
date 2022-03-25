@@ -56,7 +56,6 @@ bool check_key(string letters)
     }
 
     int position = 0;
-    //int sum = 0;
     for (int i = 0; i < len; i++)
     {
         char current = letters[i];
@@ -65,22 +64,13 @@ bool check_key(string letters)
             return false;
         }
         position = toupper(current) - 'A';
+        
         if (alphabet[position] != '?')
         {
             return false;
         }
 
         alphabet[position] = current;
-        //sum = sum + toupper(current) - 'A';
-    }
-
-    //printf("%i\n", sum);
-
-    //if (sum != 325)
-    //{
-        //return false;
-    //}
-
 
     return true;
 }

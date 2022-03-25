@@ -36,8 +36,10 @@ int main(int argc, string argv[])
 
 }
 
+// Check that the key is valid
 bool check_key(string letters)
 {
+    // First check that the key is 26 characters long
     int len = strlen(letters);
 
     if (len != 26)
@@ -45,6 +47,7 @@ bool check_key(string letters)
         return false;
     }
 
+    // Then check that each character in a key is alphabetical and appears only once
     char alphabet[26];
 
     for (int i = 0; i < 26; i ++)

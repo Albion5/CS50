@@ -45,7 +45,7 @@ bool check_key(string letters)
         return false;
     }
 
-    string alphabet[26];
+    char alphabet[26];
 
     for (int i = 0; i < 26; i ++)
     {
@@ -62,7 +62,7 @@ bool check_key(string letters)
             return false;
         }
         position = toupper(current) - 'A';
-        if (ahpabet[position] != '?')
+        if (alphabet[position] != '?')
         {
             return false;
         }

@@ -11,7 +11,7 @@ int main(void)
 
 void draw(int n)
 {
-    if (n <= 0 | n > 25)
+    if (n <= 0 | n > 26)
     {
         return;
     }

@@ -11,11 +11,20 @@ int main(void)
 
 void draw(int n)
 {
-    if (n <= 0 | n >)
+    if (n <= 0 | n > 25)
     {
         return;
     }
+
     draw(n - 1);
 
-    for ()
+    char current = 96 + n;
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("%c", current);
+    }
+
+
+    printf("\n");
 }

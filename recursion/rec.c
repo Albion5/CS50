@@ -18,11 +18,9 @@ void draw(int n)
 
     draw(n - 1);
 
-    char current = 96 + n;
-
     for (int i = 0; i < n; i++)
     {
-        printf("%c", current);
+        printf("%c", 96 + n);
     }
 
 

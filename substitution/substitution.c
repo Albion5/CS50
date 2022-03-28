@@ -49,23 +49,28 @@ bool check_key(string letters)
 
     // Then check that each character in a key is alphabetical and appears only once
 
-    // Create a list for letters of an alphabet
+    // Create an array for letters of an alphabet
     char alphabet[26];
     int position = 0;
 
-    // Put each item of a list with '?'
+    // Put on each position of an array char '?'
     for (int i = 0; i < 26; i ++)
     {
         alphabet[i] = '?';
     }
 
+    // For each char in key string
     for (int i = 0; i < len; i++)
     {
+        // Check that current char is alphabetical
         char current = letters[i];
+
         if (!isalpha(current))
         {
             return false;
         }
+
+        // Check that current char appears only once in a key
         position = toupper(current) - 'A';
 
         if (alphabet[position] != '?')
@@ -73,38 +78,39 @@ bool check_key(string letters)
             return false;
         }
 
+        // Add current char to an array depending on it's position in the alphabet
         alphabet[position] = current;
+    }
 
+    // Return true if the key is valid
     return true;
 }
 
-//bool check_duplicates(char letter, string letters)
-//{
-
-//}
-
+// Substitute each letter in a string using a key and print the result
 void encrypt(string text, string key)
 {
-    //
+    // For each char in a string
     for (int i = 0, len = strlen(text); i < len; i++)
     {
         char current = text[i];
 
+        // Substitute current char if it's alphabetical
         if (isalpha(current))
         {
             current = substitute(current, key);
         }
 
+        // Print substituted char
         printf("%c", current);
     }
-
 }
 
+// Substitute a letter using a key
 char substitute(char letter, string key)
 {
-    //
     char subst_letter;
     int position = 0;
+
 
     if (islower(letter))
     {

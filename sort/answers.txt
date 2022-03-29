@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: performs differently on the worst and the best cases. The best case takes much less time.
+
+sort2 uses: merge sort
+
+How do you know?: performs relatively the same on the worst "reversed50000.txt" and the best "sorted50000.txt" cases and takes the least time.
+
+sort3 uses: selection sort
+
+How do you know?: performs relatively the same on the worst "reversed50000.txt" and the best "sorted50000.txt" cases and takes more time.

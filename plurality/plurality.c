@@ -63,7 +63,7 @@ int main(int argc, string argv[])
     print_winner();
 }
 
-// Update the votes for a candidate given a new vote
+// Update the number of votes for a candidate given a new vote
 bool vote(string name)
 {
     //
@@ -73,6 +73,7 @@ bool vote(string name)
     {
         participant = candidates[i].name;
 
+        // Count a new vote if a person is among the candidates
         if (strcmp(name, participant) == 0)
         {
             candidates[i].votes += 1;

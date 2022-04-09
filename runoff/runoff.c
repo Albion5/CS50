@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 // Max voters and candidates
 #define MAX_VOTERS 100
@@ -129,12 +130,12 @@ bool vote(int voter, int rank, string name)
 {
     // TODO
     string cand_name;
-    for (int i; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         cand_name = candidates[i].name;
         if (strcmp(name, cand_name) == 0)
         {
-            print("Valid vote");
+            printf("Valid vote");
             return true;
         }
     }

@@ -129,7 +129,7 @@ bool vote(int voter, int rank, string name)
 {
     // TODO
     string cand_name;
-    for (int i; i < candidates; i++)
+    for (int i; i < candidate_count; i++)
     {
         cand_name = candidates[i].name;
         if (cmprstr(name, cand_name) == 0)

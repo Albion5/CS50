@@ -87,7 +87,7 @@ int main(int argc, string argv[])
         // Query for each rank
         for (int j = 0; j < candidate_count; j++)
         {
-            print("%i", preferences[MAX_VOTERS][MAX_CANDIDATES]);
+            print("%i", preferences[i][j]);
         }
 
 

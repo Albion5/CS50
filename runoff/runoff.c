@@ -154,37 +154,37 @@ bool vote(int voter, int rank, string name)
     return false;
 }
 
-// Tabulate votes for non-eliminated candidates
-void tabulate(void)
-{
-    // TODO
-    return;
-}
+// // Tabulate votes for non-eliminated candidates
+// void tabulate(void)
+// {
+//     // TODO
+//     return;
+// }
 
-// Print the winner of the election, if there is one
-bool print_winner(void)
-{
-    // TODO
-    return false;
-}
+// // Print the winner of the election, if there is one
+// bool print_winner(void)
+// {
+//     // TODO
+//     return false;
+// }
 
-// Return the minimum number of votes any remaining candidate has
-int find_min(void)
-{
-    // TODO
-    return 0;
-}
+// // Return the minimum number of votes any remaining candidate has
+// int find_min(void)
+// {
+//     // TODO
+//     return 0;
+// }
 
-// Return true if the election is tied between all candidates, false otherwise
-bool is_tie(int min)
-{
-    // TODO
-    return false;
-}
+// // Return true if the election is tied between all candidates, false otherwise
+// bool is_tie(int min)
+// {
+//     // TODO
+//     return false;
+// }
 
-// Eliminate the candidate (or candidates) in last place
-void eliminate(int min)
-{
-    // TODO
-    return;
-}
+// // Eliminate the candidate (or candidates) in last place
+// void eliminate(int min)
+// {
+//     // TODO
+//     return;
+// }

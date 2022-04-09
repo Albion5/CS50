@@ -61,6 +61,7 @@ int main(int argc, string argv[])
 
     // Display winner of election
     print_winner();
+    return 0;
 }
 
 // Update the number of votes for a candidate given a new vote
@@ -108,6 +109,4 @@ void print_winner(void)
             printf("%s\n", candidates[i].name);
         }
     }
-
-    return;
 }

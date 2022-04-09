@@ -66,9 +66,9 @@ int main(int argc, string argv[])
 // Update the number of votes for a candidate given a new vote
 bool vote(string name)
 {
-    //
     string participant;
 
+    // Compare the name with every name in a list of candidates
     for (int i = 0; i < candidate_count; i++)
     {
         participant = candidates[i].name;

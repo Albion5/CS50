@@ -93,6 +93,7 @@ void print_winner(void)
     // Find the highest score among the candidates
     for (int i = 0; i < candidate_count; i++)
     {
+        // Update the highest score
         if (candidates[i].votes > win_score)
         {
             win_score = candidates[i].votes;

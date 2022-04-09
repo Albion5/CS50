@@ -135,7 +135,7 @@ bool vote(int voter, int rank, string name)
         cand_name = candidates[i].name;
         if (strcmp(name, cand_name) == 0)
         {
-            printf("Valid vote\n");
+            printf("Valid vote.\n");
             return true;
         }
     }

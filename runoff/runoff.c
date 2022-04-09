@@ -81,13 +81,13 @@ int main(int argc, string argv[])
         }
 
     // Keep querying for votes
-    for (int i = 0; i < voter_count; i++)
+    for (int k = 0; k < voter_count; k++)
     {
 
         // Query for each rank
-        for (int j = 0; j < candidate_count; j++)
+        for (int l = 0; l < candidate_count; l++)
         {
-            print("%i", preferences[i][j]);
+            printf("%i", preferences[k][l]);
         }
 
 

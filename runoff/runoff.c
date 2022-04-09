@@ -79,6 +79,7 @@ int main(int argc, string argv[])
                 return 4;
             }
         }
+    }
 
     // Keep querying for votes
     for (int k = 0; k < voter_count; k++)
@@ -93,7 +94,7 @@ int main(int argc, string argv[])
 
         printf("\n");
     }
-}
+
     // Keep holding runoffs until winner exists
     // while (true)
     // {
@@ -134,6 +135,7 @@ int main(int argc, string argv[])
     //     }
     // }
     //return 0;
+}
 
 // Record preference if vote is valid
 bool vote(int voter, int rank, string name)

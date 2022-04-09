@@ -80,6 +80,17 @@ int main(int argc, string argv[])
             }
         }
 
+    // Keep querying for votes
+    for (int i = 0; i < voter_count; i++)
+    {
+
+        // Query for each rank
+        for (int j = 0; j < candidate_count; j++)
+        {
+            
+        }
+
+
         printf("\n");
     }
 

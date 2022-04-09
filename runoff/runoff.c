@@ -133,7 +133,7 @@ int main(int argc, string argv[])
     //         candidates[i].votes = 0;
     //     }
     // }
-    return 0;
+    //return 0;
 }
 
 // Record preference if vote is valid

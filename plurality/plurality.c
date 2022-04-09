@@ -68,18 +68,19 @@ bool vote(string name)
 {
     string participant;
 
-    // Compare the name with every name in a list of candidates
+    // Compare the given name with names in a list of candidates
     for (int i = 0; i < candidate_count; i++)
     {
         participant = candidates[i].name;
 
-        // Count a new vote if a person is among the candidates
+        // Count a new vote if there is a candidate with that name
         if (strcmp(name, participant) == 0)
         {
             candidates[i].votes += 1;
             return true;
         }
     }
+    // If there's no candidate with that name return false
     return false;
 }
 

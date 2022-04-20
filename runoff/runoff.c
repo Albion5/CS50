@@ -57,6 +57,7 @@ int main(int argc, string argv[])
     }
 
     voter_count = get_int("Number of voters: ");
+    printf("\n");
     if (voter_count > MAX_VOTERS)
     {
         printf("Maximum number of voters is %i\n", MAX_VOTERS);

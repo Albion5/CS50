@@ -209,12 +209,12 @@ bool print_winner(void)
 
     if (num_winners == 1)
     {
-        printf("The winner has been found\n");
+        printf("The winner has been found.\n");
         return true;
     }
 
 
-
+    printf("The winner has not been found yet.\n");
     return false;
 }
 

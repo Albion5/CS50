@@ -162,6 +162,7 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     // TODO
+    string cand_name;
     for (int i = 0; i < candidate_count; i++)
     {
         // Vatiable i reflects the number of a candidate in the list of candidates

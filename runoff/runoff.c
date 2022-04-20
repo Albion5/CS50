@@ -164,10 +164,12 @@ void tabulate(void)
     // TODO
     for (int i = 0; i < voter_count; i++)
     {
-        if (!preferences.eliminated)
-        {
-            printf("Plus vote: %s.\n", candidates);
-            candidates[i].votes += 1;
+        // Vatiable i reflects the number of a candidate in the list of candidates
+        for  (int j = 0; i < candidate_count; j++)
+            if (!candidates[i].eliminated)
+            {
+                printf("Plus vote: %s.\n", candidates);
+                candidates[i].votes += 1;
         }
     }
     return;

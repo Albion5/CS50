@@ -199,17 +199,20 @@ bool print_winner(void)
     }
 
     int num_winners = 0;
+    int who_won = 0;
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes == win_score)
         {
             num_winners += 1;
+            who_won = i;
         }
     }
 
     if (num_winners == 1)
     {
-        printf("The winner has been found.\n");
+
+        printf("The winner has been found. It is %s!\n", candidates[who_won].name);
         return true;
     }
 

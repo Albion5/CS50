@@ -162,19 +162,14 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     // TODO
-    string cand_name;
-    for (int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < voter_count; i++)
     {
-        // Vatiable i reflects the number of a candidate in the list of candidates
-        cand_name = candidates[i].name;
-        if (strcmp(name, cand_name) == 0)
+        if (!preferences.eliminated)
         {
-            printf("Valid vote.\n");
-            preferences[voter][i] = rank;
-            return true;
+            printf("Plus vote: %s.\n", candidates);
+            candidates[i].votes += 1;
         }
     }
-    return false;
     return;
 }
 

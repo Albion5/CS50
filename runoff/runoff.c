@@ -151,7 +151,7 @@ bool vote(int voter, int rank, string name)
         if (strcmp(name, cand_name) == 0)
         {
             printf("Valid vote.\n");
-            preferences[voter][i] = rank;
+            preferences[voter][rank] = i;
             return true;
         }
     }

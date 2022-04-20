@@ -105,7 +105,7 @@ int main(int argc, string argv[])
         // Keep querying for votes
         for (int l = 0; l < candidate_count; l++)
         {
-            printf("%s : %i", candidates[l].name, candidates[l].votes);
+            printf("%s : %i\n", candidates[l].name, candidates[l].votes);
         }
 
         printf("\n");

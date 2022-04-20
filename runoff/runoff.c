@@ -189,6 +189,17 @@ void tabulate(void)
 bool print_winner(void)
 {
     // TODO
+    int win_score = 0;
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes > win_score)
+        {
+            win_score = candidates[i].votes;
+            printf("Plus vote: %s.\n", candidates[first_pref].name);
+            candidates[first_pref].votes += 1;
+        }
+
+    }
     return false;
 }
 

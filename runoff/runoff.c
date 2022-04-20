@@ -209,7 +209,7 @@ bool print_winner(void)
 
     if (num_winners == 1)
     {
-        printf("The winner has been found");
+        printf("The winner has been found\n");
         return true;
     }
 

@@ -110,7 +110,6 @@ int main(int argc, string argv[])
 
         printf("\n");
         break;
-    }
 
     //     // Check if election has been won
     //     bool won = print_winner();
@@ -173,11 +172,11 @@ void tabulate(void)
     // TODO
     for (int i = 0; i < voter_count; i++)
     {
-        int first_pref = peferences[i][0];
+        int first_pref = preferences[i][0];
 
         if (!candidates[first_pref].eliminated)
         {
-            printf("Plus vote: %s.\n", candidates);
+            printf("Plus vote: %s.\n", candidates[first_pref].name);
             candidates[first_pref].votes += 1;
         }
 

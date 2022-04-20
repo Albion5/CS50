@@ -102,7 +102,16 @@ int main(int argc, string argv[])
     {
         // Calculate votes given remaining candidates
         tabulate();
+        // Keep querying for votes
+        for (int l = 0; l < candidate_count; l++)
+        {
+            printf("%s : %i", candidates[l].name, candidates[l].votes);
+        }
 
+
+        printf("\n");
+    }
+        break;
     //     // Check if election has been won
     //     bool won = print_winner();
     //     if (won)
@@ -164,13 +173,14 @@ void tabulate(void)
     // TODO
     for (int i = 0; i < voter_count; i++)
     {
-        // Vatiable i reflects the number of a candidate in the list of candidates
-        for  (int j = 0; i < candidate_count; j++)
-            if (!candidates[i].eliminated)
-            {
-                printf("Plus vote: %s.\n", candidates);
-                candidates[i].votes += 1;
+        int first_pref = peferences[i][0];
+
+        if (!candidates[first_pref].eliminated)
+        {
+            printf("Plus vote: %s.\n", candidates);
+            candidates[first_pref].votes += 1;
         }
+
     }
     return;
 }

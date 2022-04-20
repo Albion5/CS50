@@ -66,13 +66,15 @@ int main(int argc, string argv[])
     // Keep querying for votes
     for (int i = 0; i < voter_count; i++)
     {
-
+        // Vatiable i reflects the number of current voter
         // Query for each rank
         for (int j = 0; j < candidate_count; j++)
         {
+            // Vatiable j reflects the preference of the voter
             string name = get_string("Rank %i: ", j + 1);
 
             // Record vote, unless it's invalid
+
             if (!vote(i, j, name))
             {
                 printf("Invalid vote.\n");

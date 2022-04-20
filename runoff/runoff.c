@@ -189,20 +189,14 @@ void tabulate(void)
 bool print_winner(void)
 {
     // TODO
-    int win_score = 0;
-    for (int i = 0; i < candidate_count; i++)
-    {
-        if (candidates[i].votes > win_score)
-        {
-            win_score = candidates[i].votes;
-        }
-    }
-
+    float majority = voter_count / 2;
+    printf("%f", majority);
     int num_winners = 0;
     int who_won = 0;
+
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].votes == win_score)
+        if (candidates[i].votes > majority)
         {
             num_winners += 1;
             who_won = i;

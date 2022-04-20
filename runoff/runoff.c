@@ -189,7 +189,7 @@ void tabulate(void)
 bool print_winner(void)
 {
     // TODO
-    float majority = voter_count + 1 / 2;
+    float majority = voter_count / 2;
     printf("%f\n", majority);
     int num_winners = 0;
     int who_won = 0;

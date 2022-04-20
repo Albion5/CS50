@@ -27,7 +27,7 @@ int candidate_count;
 
 // Function prototypes
 bool vote(int voter, int rank, string name);
-// void tabulate(void);
+void tabulate(void);
 // bool print_winner(void);
 // int find_min(void);
 // bool is_tie(int min);
@@ -98,10 +98,10 @@ int main(int argc, string argv[])
     }
 
     // Keep holding runoffs until winner exists
-    // while (true)
-    // {
-    //     // Calculate votes given remaining candidates
-    //     tabulate();
+    while (true)
+    {
+        // Calculate votes given remaining candidates
+        tabulate();
 
     //     // Check if election has been won
     //     bool won = print_winner();
@@ -136,7 +136,7 @@ int main(int argc, string argv[])
     //         candidates[i].votes = 0;
     //     }
     // }
-    //return 0;
+    // return 0;
 }
 
 // Record preference if vote is valid

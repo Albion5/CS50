@@ -195,11 +195,26 @@ bool print_winner(void)
         if (candidates[i].votes > win_score)
         {
             win_score = candidates[i].votes;
-            printf("Plus vote: %s.\n", candidates[first_pref].name);
-            candidates[first_pref].votes += 1;
         }
-
     }
+
+    int num_winners = 0;
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes == win_score)
+        {
+            num_winners += 1;
+        }
+    }
+
+    if (num_winners == 1)
+    {
+        printf("The winner has been found");
+        return true;
+    }
+
+
+
     return false;
 }
 

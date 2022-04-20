@@ -108,10 +108,10 @@ int main(int argc, string argv[])
             printf("%s : %i", candidates[l].name, candidates[l].votes);
         }
 
-
         printf("\n");
-    }
         break;
+    }
+
     //     // Check if election has been won
     //     bool won = print_winner();
     //     if (won)

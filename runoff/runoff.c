@@ -200,7 +200,7 @@ void tabulate(void)
                 }
             }
         }
-        
+
         if (first < candidate_count)
         {
         printf("Plus vote: %s.\n", candidates[first_pref].name);
@@ -233,7 +233,8 @@ bool print_winner(void)
     if (num_winners == 1)
     {
 
-        printf("The winner has been found. It is %s!\n", candidates[who_won].name);
+        // printf("The winner has been found. It is %s!\n", candidates[who_won].name);
+        printf("%s\n", candidates[who_won].name);
         return true;
     }
 

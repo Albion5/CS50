@@ -147,16 +147,15 @@ int main(int argc, string argv[])
                     printf("%s has been eliminated.\n", candidates[i].name);
             }
         }
+
+        // Reset vote counts back to zero
+        for (int i = 0; i < candidate_count; i++)
+        {
+            candidates[i].votes = 0;
+        }
         break;
-
-
-    //     // Reset vote counts back to zero
-    //     for (int i = 0; i < candidate_count; i++)
-    //     {
-    //         candidates[i].votes = 0;
-    //     }
     }
-    // return 0;
+    return 0;
 }
 
 // Record preference if vote is valid

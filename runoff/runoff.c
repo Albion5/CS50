@@ -185,6 +185,11 @@ void tabulate(void)
     for (int i = 0; i < voter_count; i++)
     {
         int first_pref = preferences[i][first];
+        
+        while (candidates[first_pref].eliminated)
+        {
+            first += 1;
+        }
 
         if (!candidates[first_pref].eliminated)
         {

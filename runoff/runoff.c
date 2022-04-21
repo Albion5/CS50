@@ -30,7 +30,7 @@ bool vote(int voter, int rank, string name);
 void tabulate(void);
 bool print_winner(void);
 int find_min(void);
-// bool is_tie(int min);
+bool is_tie(int min);
 // void eliminate(int min);
 
 int main(int argc, string argv[])
@@ -233,12 +233,12 @@ int find_min(void)
     return min_votes;
 }
 
-// // Return true if the election is tied between all candidates, false otherwise
-// bool is_tie(int min)
-// {
-//     // TODO
-//     return false;
-// }
+// Return true if the election is tied between all candidates, false otherwise
+bool is_tie(int min)
+{
+    // TODO
+    return false;
+}
 
 // // Eliminate the candidate (or candidates) in last place
 // void eliminate(int min)

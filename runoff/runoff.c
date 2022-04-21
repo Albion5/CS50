@@ -220,7 +220,7 @@ bool print_winner(void)
 int find_min(void)
 {
     // TODO
-    for (int i = 0; i < voter_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         int first_pref = preferences[i][0];
 

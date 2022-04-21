@@ -181,9 +181,10 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     // TODO
+    int first = 0;
     for (int i = 0; i < voter_count; i++)
     {
-        int first_pref = preferences[i][0];
+        int first_pref = preferences[i][first];
 
         if (!candidates[first_pref].eliminated)
         {

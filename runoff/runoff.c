@@ -192,9 +192,11 @@ void tabulate(void)
             {
                 break;
             }
-            
-            first += 1;
-            first_pref = preferences[i][first];
+            else
+            {
+                first += 1;
+                first_pref = preferences[i][first];
+            }
         }
 
         printf("Plus vote: %s.\n", candidates[first_pref].name);

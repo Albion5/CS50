@@ -29,7 +29,7 @@ int candidate_count;
 bool vote(int voter, int rank, string name);
 void tabulate(void);
 bool print_winner(void);
-// int find_min(void);
+int find_min(void);
 // bool is_tie(int min);
 // void eliminate(int min);
 
@@ -119,12 +119,11 @@ int main(int argc, string argv[])
         {
             break;
         }
-        break;
 
         // Eliminate last-place candidates
         int min = find_min();
     //     bool tie = is_tie(min);
-
+        break;
     //     // If tie, everyone wins
     //     if (tie)
     //     {
@@ -217,12 +216,23 @@ bool print_winner(void)
     return false;
 }
 
-// // Return the minimum number of votes any remaining candidate has
-// int find_min(void)
-// {
-//     // TODO
-//     return 0;
-// }
+// Return the minimum number of votes any remaining candidate has
+int find_min(void)
+{
+    // TODO
+    for (int i = 0; i < voter_count; i++)
+    {
+        int first_pref = preferences[i][0];
+
+        if (!candidates[first_pref].eliminated)
+        {
+            printf("Plus vote: %s.\n", candidates[first_pref].name);
+            candidates[first_pref].votes += 1;
+        }
+
+    }
+    return 0;
+}
 
 // // Return true if the election is tied between all candidates, false otherwise
 // bool is_tie(int min)

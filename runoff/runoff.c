@@ -186,25 +186,20 @@ void tabulate(void)
     {
         int first_pref = preferences[i][first];
 
-        if (!candidates[first_pref].eliminated)
-        {
-            printf("Plus vote: %s.\n", candidates[first_pref].name);
-            candidates[first_pref].votes += 1;
-        }
-
-
         for (int j = 0; j < candidate_count; j++)
         {
-            if (candidates[first_pref].eliminated):
-                
+            if (!candidates[first_pref].eliminated)
+            {
+                break;
+            }
+            
+            first += 1;
+            first_pref = preferences[i][first];
         }
 
-        if (!candidates[first_pref].eliminated)
-        {
-            printf("Plus vote: %s.\n", candidates[first_pref].name);
-            candidates[first_pref].votes += 1;
-        }
-
+        printf("Plus vote: %s.\n", candidates[first_pref].name);
+        candidates[first_pref].votes += 1;
+        first = 0;
     }
     return;
 }

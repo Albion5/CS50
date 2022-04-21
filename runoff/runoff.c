@@ -123,7 +123,7 @@ int main(int argc, string argv[])
         // Eliminate last-place candidates
         int min = find_min();
     //     bool tie = is_tie(min);
-        printf("", )
+        printf("The min number of votes is: %i\n", min);
         break;
     //     // If tie, everyone wins
     //     if (tie)

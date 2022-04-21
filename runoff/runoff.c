@@ -121,8 +121,8 @@ int main(int argc, string argv[])
         }
         break;
 
-    //     // Eliminate last-place candidates
-    //     int min = find_min();
+        // Eliminate last-place candidates
+        int min = find_min();
     //     bool tie = is_tie(min);
 
     //     // If tie, everyone wins

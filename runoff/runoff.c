@@ -186,10 +186,9 @@ void tabulate(void)
     {
         int first_pref = preferences[i][first];
 
-        while (candidates[first_pref].eliminated)
+        for (int j = 0; j < candidate_count; j++)
         {
-            first += 1;
-            first_pref = preferences[i][first];
+            if 
         }
 
         if (!candidates[first_pref].eliminated)

@@ -137,10 +137,18 @@ int main(int argc, string argv[])
             }
             break;
         }
-        break;
 
         // Eliminate anyone with minimum number of votes
         eliminate(min);
+        for (int i = 0; i < candidate_count; i++)
+        {
+            if (candidates[i].eliminated)
+            {
+                    printf("%s has been eliminated.\n", candidates[i].name);
+            }
+        }
+        break;
+
 
     //     // Reset vote counts back to zero
     //     for (int i = 0; i < candidate_count; i++)

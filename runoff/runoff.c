@@ -122,21 +122,22 @@ int main(int argc, string argv[])
 
         // Eliminate last-place candidates
         int min = find_min();
-    //     bool tie = is_tie(min);
         printf("The min number of votes is: %i\n", min);
+
+        bool tie = is_tie(min);
+        // If tie, everyone wins
+        if (tie)
+        {
+            for (int i = 0; i < candidate_count; i++)
+            {
+                if (!candidates[i].eliminated)
+                {
+                    printf("%s\n", candidates[i].name);
+                }
+            }
+            break;
+        }
         break;
-    //     // If tie, everyone wins
-    //     if (tie)
-    //     {
-    //         for (int i = 0; i < candidate_count; i++)
-    //         {
-    //             if (!candidates[i].eliminated)
-    //             {
-    //                 printf("%s\n", candidates[i].name);
-    //             }
-    //         }
-    //         break;
-    //     }
 
     //     // Eliminate anyone with minimum number of votes
     //     eliminate(min);

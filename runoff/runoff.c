@@ -193,6 +193,7 @@ void tabulate(void)
             }
             else
             {
+                if j 
                 first += 1;
                 first_pref = preferences[i][first];
             }

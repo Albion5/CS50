@@ -31,7 +31,7 @@ void tabulate(void);
 bool print_winner(void);
 int find_min(void);
 bool is_tie(int min);
-// void eliminate(int min);
+void eliminate(int min);
 
 int main(int argc, string argv[])
 {
@@ -139,8 +139,8 @@ int main(int argc, string argv[])
         }
         break;
 
-    //     // Eliminate anyone with minimum number of votes
-    //     eliminate(min);
+        // Eliminate anyone with minimum number of votes
+        eliminate(min);
 
     //     // Reset vote counts back to zero
     //     for (int i = 0; i < candidate_count; i++)
@@ -254,7 +254,7 @@ bool is_tie(int min)
             tie_votes += 1;
         }
     }
-    
+
     if (tie_votes == rem_candidates)
     {
         return true;
@@ -263,9 +263,9 @@ bool is_tie(int min)
     return false;
 }
 
-// // Eliminate the candidate (or candidates) in last place
-// void eliminate(int min)
-// {
-//     // TODO
-//     return;
-// }
+// Eliminate the candidate (or candidates) in last place
+void eliminate(int min)
+{
+    // TODO
+    return;
+}

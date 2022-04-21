@@ -194,15 +194,19 @@ void tabulate(void)
             else
             {
                 first += 1;
-                if (j != candidate_count)
+                if (first != candidate_count)
                 {
                     first_pref = preferences[i][first];
                 }
             }
         }
-
+        
+        if (first < candidate_count)
+        {
         printf("Plus vote: %s.\n", candidates[first_pref].name);
         candidates[first_pref].votes += 1;
+        }
+
         first = 0;
     }
     return;

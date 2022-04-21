@@ -135,7 +135,6 @@ int main(int argc, string argv[])
                     printf("%s\n", candidates[i].name);
                 }
             }
-            break;
         }
 
         // Eliminate anyone with minimum number of votes

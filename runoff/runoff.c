@@ -193,7 +193,10 @@ void tabulate(void)
             }
             else
             {
-                if j == candidate_vote - 1
+                if (j == candidate_count - 1)
+                {
+                    break;
+                }
                 first += 1;
                 first_pref = preferences[i][first];
             }

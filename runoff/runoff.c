@@ -220,16 +220,13 @@ bool print_winner(void)
 int find_min(void)
 {
     // TODO
+    int min = 0;
     for (int i = 0; i < candidate_count; i++)
     {
-        int first_pref = preferences[i][0];
-
-        if (!candidates[first_pref].eliminated)
+        if ((candidates[i].votes <= min) && (!candidates.[i].eliminated))
         {
-            printf("Plus vote: %s.\n", candidates[first_pref].name);
-            candidates[first_pref].votes += 1;
+            
         }
-
     }
     return 0;
 }

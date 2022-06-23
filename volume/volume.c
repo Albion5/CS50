@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
 
     // TODO: Copy header from input file to output file
     // unint8_t stores a 8-bit unsigned integer
+    // We've created an array to store 44 bytes from the header
     uint8_t header[HEADER_SIZE];
 
     // From input to header then from header to output

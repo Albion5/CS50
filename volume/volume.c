@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
     float factor = atof(argv[3]);
 
     // TODO: Copy header from input file to output file
+    // unint8_t stores a 8-bit unsigned integer
     uint8_t header[HEADER_SIZE];
 
     // From input to header then from header to output
@@ -42,6 +43,7 @@ int main(int argc, char *argv[])
 
     // TODO: Read samples from input file and write updated data to output file
     // We've created an address where to store samples
+    // int16_t stores a 16-bit signed integer
     int16_t sample;
 
     // For each sample in the input file

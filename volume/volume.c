@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 
     // For each sample in the input file
     // Copy it to a sample variable
-    while(fread(&sample, sizeof(int16_t), 1, input))
+    while (fread(&sample, sizeof(int16_t), 1, input))
     {
         // Update volume of a sample by a given factor
         sample *= factor;

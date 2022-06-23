@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
     {
         // Update volume of a sample by a given factor
         sample *= factor;
-        // Write an updated sample from sample variable to an output file
+        // Copy an updated sample from sample variable to an output file
         fwrite(&sample, sizeof(int16_t), 1, output);
     }
     // Close files

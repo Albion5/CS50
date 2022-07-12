@@ -8,6 +8,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j; j = 0; j < width)
         {
+            
             rgav =
         }
     }

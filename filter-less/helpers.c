@@ -4,12 +4,14 @@
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
     int rgbav = 0;
+    RGBTRIPLE pixel;
     for (int i; i = 0; i < height)
     {
         for (int j; j = 0; j < width)
         {
-
-            rgbav = 
+            pixel = image[i][j]
+            rgbav = pixel.rgbtRed + pixel.rgbtGreen + pixel.rgbtBlue
+            
         }
     }
     return;

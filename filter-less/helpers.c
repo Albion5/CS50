@@ -92,18 +92,21 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             //col = j;
+            neighbours = 0;
             for (int y = -1; y <= 1; y++) {
                 int next_y = i + y;
                 for (int x = -1; x <= 1; x++) {
                     int next_x = j + x;
-                    cell = a[next_y][next_x];
-                    if (cell == 1) {
-                        count += 1;
+                    if (next_x < width && next_x >= 0 && next_y < height && next_y >= 0) {
+                        neighbours += 1;
+                        avRed += image_copy[next_y][next_x].rgbtRed;
+                        avRed += image_copy[next_y][next_x].rgbtGreen;
+                        avRed += image_copy[next_y][next_x].rgbtBlue;
                     }
+                }
             }
+            avRed = round();
 
-            }
-            neighbours = 0;
             image[i][j].rgbtRed = avRed;
             image[i][j].rgbtGreen = avGreen;
             image[i][j].rgbtBlue = avBlue;

@@ -77,7 +77,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtGreen = image[i][k].rgbtGreen;
             image[i][j].rgbtBlue = image[i][k].rgbtBlue;
             // Save the values of a current pixel from temporary variables to a pixel on the opposite side
-            image[i][k].rgbtRed = tempR;
+            image[i][k].rgbtRed = tempR;в
             image[i][k].rgbtGreen = tempG;
             image[i][k].rgbtBlue = tempB;
         }

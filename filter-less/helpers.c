@@ -86,14 +86,14 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     }
 
     int avRed, avGreen, avBlue, neighbours;
-    int row, col;
+    //int row, col;
     for (int i = 0; i < height; i++)
-    {   row = i;
+    {   //row = i;
         for (int j = 0; j < width; j++)
         {
-            col = j;
+            //col = j;
             for (int y = -1; y <= 1; y++) {
-                int next_y = ;
+                int next_y = i + y;
 
 
             }

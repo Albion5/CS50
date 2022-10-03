@@ -92,8 +92,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             col = j;
-            for () {
-                
+            for (int y = -1; y <= 1; y++) {
+                int next_y = ;
+
+
             }
             neighbours = 0;
             image[i][j].rgbtRed = avRed;

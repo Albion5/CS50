@@ -67,7 +67,8 @@ void get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE copy[h][w], RGB
                 green = copy[new_y][new_x].rgbGreen;
                 blue = copy[new_y][new_x].rgbBlue;
             }
-            
+            Gx_matrix[row][col] = ;
+            Gy_matrix[row][col] = ;
         }
     }
 }

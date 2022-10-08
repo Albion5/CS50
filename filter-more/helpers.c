@@ -94,5 +94,9 @@ int check_borders(int y, int x, int height, int width)
 
 int get_rgb_value(in Gx[3][3], int Gy[3][3])
 {
+    int gx = 0;
+    int gy = 0;
+
+    return sqrt(gx * gx + gy * gy);
 
 }

@@ -52,17 +52,18 @@ int get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE image[h][w]) {
     int new_rgb_val = image[cur_y][cur_x];
     int Gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
     int Gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
-    int row = 0, col = 0;
+    int Gx_matrix[3][3];
+    int Gy_matrix[3][3];
     int new_y, new_x;
-    for (int y = -1; y <= 1; y++)
+    for (int y = -1, row = 0; y <= 1; y++, row++)
     {
         new_y = cur_y + y;
-        for (int x = -1; x <= 1; x++)
+        for (int x = -1, col = 0; x <= 1; x++, col++)
         {
             new_x = cur_x + x;
             if (check_borders(new_y, new_x, h, w))
             {
-
+                
             }
             else
             {

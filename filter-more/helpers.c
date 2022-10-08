@@ -75,6 +75,10 @@ void get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE copy[h][w], RGB
             Gy_matrix_blue[row][col] = blue * Gy[row][col];
         }
     }
+    image[cur_y][cur_x].rgbRed = get_rgb_value();
+    image[cur_y][cur_x].rgbGreen = get_rgb_value();
+    image[cur_y][cur_x].rgbBlue = get_rgb_value();
+
 }
 
 
@@ -88,3 +92,7 @@ int check_borders(int y, int x, int height, int width)
     return border;
 }
 
+int get_rgb_value(in Gx)
+{
+
+}

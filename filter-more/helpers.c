@@ -46,8 +46,8 @@ void get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE copy[h][w], RGB
     int new_rgb_val = copy[cur_y][cur_x];
     int Gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
     int Gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
-    int Gx_matrix[3][3];
-    int Gy_matrix[3][3];
+    int Gx_matrix_red[3][3], Gx_matrix_green[3][3], Gx_matrix_blue[3][3];
+    int Gy_matrix_red[3][3], Gy_matrix_green[3][3], Gy_matrix_blue[3][3];
     int new_y, new_x, red, green, blue;
     for (int y = -1, row = 0; y <= 1; y++, row++)
     {
@@ -67,8 +67,12 @@ void get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE copy[h][w], RGB
                 green = copy[new_y][new_x].rgbGreen;
                 blue = copy[new_y][new_x].rgbBlue;
             }
-            Gx_matrix[row][col] = ;
-            Gy_matrix[row][col] = ;
+            Gx_matrix_red[row][col] = ;
+            Gy_matrix_red[row][col] = ;
+            Gx_matrix_green[row][col] = ;
+            Gy_matrix_green[row][col] = ;
+            Gx_matrix_blue[row][col] = ;
+            Gy_matrix_blue[row][col] = ;
         }
     }
 }

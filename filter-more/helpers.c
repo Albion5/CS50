@@ -1,5 +1,5 @@
 #include "helpers.h"
-
+#include "math.h"
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -38,8 +38,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             get_neighbours(x, y, copy, image);
         }
     }
-
-    return;
 }
 
 void get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE copy[h][w], RGBTRIPLE image[h][w]) {
@@ -104,6 +102,6 @@ int get_rgb_value(in Gx[3][3], int Gy[3][3])
             gy += Gy[y][x];
         }
     }
-    return sqrt(gx * gx + gy * gy);
+    return round(sqrt(gx * gx + gy * gy));
 
 }

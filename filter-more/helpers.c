@@ -63,11 +63,11 @@ int get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE image[h][w]) {
             new_x = cur_x + x;
             if (check_borders(new_y, new_x, h, w))
             {
-                
+
             }
             else
             {
-
+                
             }
         }
     }

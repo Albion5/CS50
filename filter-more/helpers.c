@@ -49,6 +49,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 }
 
 int get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE image[h][w]) {
+    int new_rgb_val = image[cur_y][cur_x];
     int Gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
     int Gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
     int row = 0, col = 0;
@@ -59,7 +60,7 @@ int get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE image[h][w]) {
         for (int x = -1; x <= 1; x++)
         {
             new_x = cur_x + x;
-            if (check_borders(new_y, new_x))
+            if (check_borders(new_y, new_x, h, w))
             {
 
             }
@@ -69,5 +70,17 @@ int get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE image[h][w]) {
             }
         }
     }
-
+    return new_rgb_val;
 }
+
+
+int check_borders(int y, int x, int height, int width)
+{
+    int border = 0;
+    if (y < 0 || y >= height || x < 0 || x >= width)
+    {
+        border = 1;
+    }
+    return border;
+}
+

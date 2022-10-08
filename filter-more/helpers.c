@@ -42,8 +42,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-int get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE image[h][w]) {
-    int new_rgb_val = image[cur_y][cur_x];
+void get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE copy[h][w], RGBTRIPLE image[h][w]) {
+    int new_rgb_val = copy[cur_y][cur_x];
     int Gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
     int Gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
     int Gx_matrix[3][3];
@@ -65,7 +65,6 @@ int get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE image[h][w]) {
             }
         }
     }
-    return new_rgb_val;
 }
 
 

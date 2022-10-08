@@ -92,7 +92,7 @@ int check_borders(int y, int x, int height, int width)
     return border;
 }
 
-int get_rgb_value(in Gx)
+int get_rgb_value(in Gx[3][3], int Gy[3][3])
 {
 
 }

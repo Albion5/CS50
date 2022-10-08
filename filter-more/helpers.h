@@ -12,3 +12,4 @@ void edges(int height, int width, RGBTRIPLE image[height][width]);
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width]);
 
+int get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE image[h][w]);

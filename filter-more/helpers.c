@@ -31,17 +31,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             copy[y][x].rgbBlue = imagr[y][x];
         }
     }
-    int new_red, new_green, new_blue;
     for (int y = 0; y < height; y++)
     {
         for (int x = 0; x < width; x++)
         {
-            new_red = get_neighbours(x, y, copy);
-            new_green = get_neighbours(x, y, copy);
-            new_blue = get_neighbours(x, y, copy);
-            image[y][x].rgbRed = new_red;
-            image[y][x].rgbGreen = new_green;
-            image[y][x].rgbBlue = new_blue;
+            get_neighbours(x, y, copy, image);
         }
     }
 
@@ -67,7 +61,7 @@ int get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE image[h][w]) {
             }
             else
             {
-                
+
             }
         }
     }

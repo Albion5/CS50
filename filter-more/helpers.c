@@ -75,9 +75,9 @@ void get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE copy[h][w], RGB
             Gy_matrix_blue[row][col] = blue * Gy[row][col];
         }
     }
-    image[cur_y][cur_x].rgbRed = get_rgb_value();
-    image[cur_y][cur_x].rgbGreen = get_rgb_value();
-    image[cur_y][cur_x].rgbBlue = get_rgb_value();
+    image[cur_y][cur_x].rgbRed = get_rgb_value(Gx_matrix_red, Gy_matrix_red);
+    image[cur_y][cur_x].rgbGreen = get_rgb_value(Gx_matrix_green, Gy_matrix_green);
+    image[cur_y][cur_x].rgbBlue = get_rgb_value(Gx_matrix_blue, Gy_matrix_blue);
 
 }
 
@@ -96,7 +96,14 @@ int get_rgb_value(in Gx[3][3], int Gy[3][3])
 {
     int gx = 0;
     int gy = 0;
-
+    for (int y = 0; y < 3; y++)
+    {
+        for (int x = 0; x < 3; x++)
+        {
+            gx += Gx[y][x];
+            gy += Gy[y][x];
+        }
+    }
     return sqrt(gx * gx + gy * gy);
 
 }

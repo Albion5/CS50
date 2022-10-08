@@ -41,7 +41,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 }
 
 void get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE copy[h][w], RGBTRIPLE image[h][w]) {
-    int new_rgb_val = copy[cur_y][cur_x];
     int Gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
     int Gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
     int Gx_matrix_red[3][3], Gx_matrix_green[3][3], Gx_matrix_blue[3][3];
@@ -61,9 +60,9 @@ void get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE copy[h][w], RGB
             }
             else
             {
-                red = copy[new_y][new_x].rgbRed;
-                green = copy[new_y][new_x].rgbGreen;
-                blue = copy[new_y][new_x].rgbBlue;
+                red = copy[new_y][new_x].rgbtRed;
+                green = copy[new_y][new_x].rgbtGreen;
+                blue = copy[new_y][new_x].rgbtBlue;
             }
             Gx_matrix_red[row][col] = red * Gx[row][col];
             Gy_matrix_red[row][col] = red * Gy[row][col];
@@ -73,9 +72,9 @@ void get_neighbors(int cur_y, int cur_x, int h, int w, RGBTRIPLE copy[h][w], RGB
             Gy_matrix_blue[row][col] = blue * Gy[row][col];
         }
     }
-    image[cur_y][cur_x].rgbRed = get_rgb_value(Gx_matrix_red, Gy_matrix_red);
-    image[cur_y][cur_x].rgbGreen = get_rgb_value(Gx_matrix_green, Gy_matrix_green);
-    image[cur_y][cur_x].rgbBlue = get_rgb_value(Gx_matrix_blue, Gy_matrix_blue);
+    image[cur_y][cur_x].rgbtRed = get_rgb_value(Gx_matrix_red, Gy_matrix_red);
+    image[cur_y][cur_x].rgbtGreen = get_rgb_value(Gx_matrix_green, Gy_matrix_green);
+    image[cur_y][cur_x].rgbtBlue = get_rgb_value(Gx_matrix_blue, Gy_matrix_blue);
 
 }
 

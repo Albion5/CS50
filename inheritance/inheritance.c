@@ -142,7 +142,7 @@ char random_allele()
     }
 }
 
-
+//
 void choose_alleles(person *child)
 {
     char first, second;

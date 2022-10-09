@@ -28,16 +28,14 @@ int main(int argc, char *argv[])
         //printf("%d ", n);
         if (check_JPEG(buffer))
         {
-            if (n == 0)
+            sprintf(file_name, "%03i.jpg", n);
+            FILE *jpeg = fopen(file_name, "w");
+            if (n > 0)
             {
-                sprintf(file_name, "%03i.jpg", n);
-                FILE *jpeg = fopen(file_name, "w");
-                printf("\nfirst jpeg\n");
+                fclose(jpeg);
             }
             else
             {
-                fclose(jpeg);
-                n++;
                 sprintf(file_name, "%03i.jpg", n);
                 // FILE *jpeg = freopen(file_name, "w", jpeg);
                 printf("");

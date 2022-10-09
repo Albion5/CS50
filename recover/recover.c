@@ -29,16 +29,15 @@ int main(int argc, char *argv[])
         if (check_JPEG(buffer))
         {
             sprintf(file_name, "%03i.jpg", n);
-            FILE *jpeg = fopen(file_name, "w");
+            FILE *jpeg1 = fopen(file_name, "w");
             if (n > 0)
             {
-                fclose(jpeg);
+                fclose(jpeg1);
+                FILE *jpeg1 = fopen(file_name, "w");
             }
             else
             {
                 sprintf(file_name, "%03i.jpg", n);
-                // FILE *jpeg = freopen(file_name, "w", jpeg);
-                printf("");
             }
             n++;
             //printf("%s ", file_name);

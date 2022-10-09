@@ -33,8 +33,8 @@ int main(int argc, char *argv[])
             if (n > 0)
             {
                 fclose(jpeg1);
-                FILE *jpeg1 = fopen(file_name, "w");
-                
+                FILE *jpeg2 = fopen(file_name, "w");
+
             }
             // else
             // {

@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     FILE *raw_file = fopen(argv[1], "r");
     if (raw_file == NULL)
     {
-        printf("Couldn't open the file");
+        printf("Error: couldn't open the file");
         return 1;
     }
 
@@ -53,10 +53,12 @@ int main(int argc, char *argv[])
         }
 
     }
+    // If there is open JPEG close it
     if (jpeg1 != NULL)
     {
         fclose(jpeg1);
     }
+    // Close raw file
     fclose(raw_file);
 }
 

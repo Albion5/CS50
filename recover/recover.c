@@ -46,7 +46,10 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("");
+            if (n > 0)
+            {
+                fwrite(buffer, BLOCK_SIZE, 1, jpeg1);
+            }
             //printf("\nif not jpeg\n");
         }
         // else {
@@ -55,6 +58,10 @@ int main(int argc, char *argv[])
         //n++;
 
 
+    }
+    if (jpeg1 != NULL)
+    {
+        fclose(jpeg1);
     }
     fclose(raw_file);
     printf("%d", n);

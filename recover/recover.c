@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
             // {
             //     sprintf(file_name, "%03i.jpg", n);
             // }
-            FILE *jpeg1 = fopen(file_name, "w");
+            jpeg1 = fopen(file_name, "w");
             fwrite(buffer, BLOCK_SIZE, 1, jpeg1);
             n++;
             //printf("%s ", file_name);

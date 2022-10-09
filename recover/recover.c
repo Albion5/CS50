@@ -33,13 +33,13 @@ int main(int argc, char *argv[])
             if (n > 0)
             {
                 fclose(jpeg1);
-                FILE *jpeg1 = fopen(file_name, "w");
 
             }
-            else
-            {
-                sprintf(file_name, "%03i.jpg", n);
-            }
+            // else
+            // {
+            //     sprintf(file_name, "%03i.jpg", n);
+            // }
+            FILE *jpeg1 = fopen(file_name, "w");
             fwrite(buffer, BLOCK_SIZE, 1, jpeg1);
             n++;
             //printf("%s ", file_name);

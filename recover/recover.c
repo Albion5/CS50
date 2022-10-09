@@ -26,7 +26,6 @@ int main(int argc, char *argv[])
     FILE *jpeg1 = NULL;
     while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
-        //printf("%d ", n);
         if (check_JPEG(buffer))
         {
             sprintf(file_name, "%03i.jpg", n);
@@ -35,14 +34,9 @@ int main(int argc, char *argv[])
                 fclose(jpeg1);
 
             }
-            // else
-            // {
-            //     sprintf(file_name, "%03i.jpg", n);
-            // }
             jpeg1 = fopen(file_name, "w");
             fwrite(buffer, BLOCK_SIZE, 1, jpeg1);
             n++;
-            //printf("%s ", file_name);
         }
         else
         {
@@ -50,13 +44,7 @@ int main(int argc, char *argv[])
             {
                 fwrite(buffer, BLOCK_SIZE, 1, jpeg1);
             }
-            //printf("\nif not jpeg\n");
         }
-        // else {
-        //     printf("\nnot start\n");
-        // }
-        //n++;
-
 
     }
     if (jpeg1 != NULL)
@@ -64,9 +52,9 @@ int main(int argc, char *argv[])
         fclose(jpeg1);
     }
     fclose(raw_file);
-    printf("%d", n);
 }
 
+// Check if the
 int check_JPEG(BYTE buffer[BLOCK_SIZE])
 {
     int result = 0;

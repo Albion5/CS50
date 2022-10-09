@@ -23,23 +23,24 @@ int main(int argc, char *argv[])
     BYTE buffer[BLOCK_SIZE];
     int n = 0;
     char file_name[8];
+    FILE *jpeg1 = NULL;
     while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
         //printf("%d ", n);
         if (check_JPEG(buffer))
         {
             sprintf(file_name, "%03i.jpg", n);
-            FILE *jpeg1 = fopen(file_name, "w");
             if (n > 0)
             {
                 fclose(jpeg1);
-                FILE *jpeg2 = fopen(file_name, "w");
+                FILE *jpeg1 = fopen(file_name, "w");
 
             }
-            // else
-            // {
-            //     sprintf(file_name, "%03i.jpg", n);
-            // }
+            else
+            {
+                sprintf(file_name, "%03i.jpg", n);
+            }
+            fwrite(buffer, BLOCK_SIZE, 1, jpeg1);
             n++;
             //printf("%s ", file_name);
         }

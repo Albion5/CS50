@@ -80,8 +80,8 @@ void free_family(person *p)
         return;
     }
     // TODO: Free parents recursively
-    free_family(child->parents[0]);
-    free_family(child->parents[1]);
+    free_family(p->parents[0]);
+    free_family(p->parents[1]);
     // TODO: Free child
     free(p);
 }
@@ -146,9 +146,9 @@ char random_allele()
 void choose_alleles(person *child)
 {
     char first, second;
-    int r = rand % 2;
+    int r = rand() % 2;
     first = child->parents[0]->alleles[r];
-    r = rand % 2;
+    r = rand() % 2;
     second = child->parents[1]->alleles[r];
     child->alleles[0] = first;
     child->alleles[1] = second;

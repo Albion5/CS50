@@ -34,11 +34,12 @@ int main(int argc, char *argv[])
             {
                 fclose(jpeg1);
                 FILE *jpeg1 = fopen(file_name, "w");
+                
             }
-            else
-            {
-                sprintf(file_name, "%03i.jpg", n);
-            }
+            // else
+            // {
+            //     sprintf(file_name, "%03i.jpg", n);
+            // }
             n++;
             //printf("%s ", file_name);
         }

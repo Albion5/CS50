@@ -31,7 +31,7 @@ int main(void)
     person *p = create_family(GENERATIONS);
 
     // Print family tree of blood types
-    //print_family(p, 0);
+    print_family(p, 0);
 
     // Free memory
     free_family(p);

@@ -142,7 +142,7 @@ char random_allele()
     }
 }
 
-//
+// Randomly assign person's alleles based on the alleles of parents
 void choose_alleles(person *child)
 {
     char first, second;

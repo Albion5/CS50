@@ -69,6 +69,7 @@ bool load(const char *dictionary)
             strcpy(new->word, string);
         }
     }
+    fclose(dict);
     return true;
 }
 

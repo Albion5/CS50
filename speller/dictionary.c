@@ -67,9 +67,10 @@ bool load(const char *dictionary)
             if (new == NULL)
             {
                 unload();
+                fclose(dict);
                 return false;
             }
-            strcpy(head->word, string);
+            strcpy(new->word, string);
 
             if (head == NULL)
             {

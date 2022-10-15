@@ -65,7 +65,7 @@ bool load(const char *dictionary)
                 return false;
             }
             new->next = head->next;
-            head->next = new;
+            head = new;
             strcpy(new->word, string);
         }
     }

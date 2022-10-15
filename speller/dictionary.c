@@ -23,6 +23,16 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    node *head = table[hash(word)];
+    node *trav = head->next;
+    while (trav != NULL)
+    {
+        if (strcasecmp(trav->word, word) == 0)
+        {
+            return true;
+        };
+        trav = trav->next;
+    }
     return false;
 }
 
@@ -62,12 +72,36 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    return 0;
+    int count = 0;
+    node *head, *trav;
+    for (int i = 0; i < N; i++)
+    {
+        head = table[i];
+        trav = head;
+        while (trav != NULL)
+        {
+            count++;
+            trav = trav->next;
+        }
+    }
+    return count;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
     // TODO
+    node *head, *trav;
+    for (int i = 0; i < N; i++)
+    {
+        head = table[i];
+        trav = head->next;
+        while (trav != NULL)
+        {
+            free(head);
+            
+        }
+    }
+    return count;
     return false;
 }

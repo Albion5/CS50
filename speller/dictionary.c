@@ -89,6 +89,10 @@ bool load(const char *dictionary)
         }
         fclose(dict);
     }
+    else
+    {
+        return false;
+    }
 
     return true;
 }

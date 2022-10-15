@@ -74,12 +74,12 @@ bool load(const char *dictionary)
 
             if (head == NULL)
             {
-                table[hash_index] = new;
+                head = new;
             }
             else
             {
-                new->next = table[hash_index];
-                table[hash_index] = new;
+                new->next = head;
+                head = new;
             }
 
             // new->next = head;

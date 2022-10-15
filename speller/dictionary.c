@@ -77,16 +77,15 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    int count = 0;
-    node *head, *trav;
+    unsigned int count = 0;
+    node *head;
     for (int i = 0; i < N; i++)
     {
         head = table[i];
-        trav = head;
-        while (trav != NULL)
+        while (head != NULL)
         {
             count++;
-            trav = trav->next;
+            head = head->next;
         }
     }
     return count;

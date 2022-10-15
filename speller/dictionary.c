@@ -107,10 +107,10 @@ bool unload(void)
             free(trav);
             count++;
         }
-    }
-    if (count == size())
-    {
-        return true;
+        if (head == NULL && i == N - 1)
+        {
+            return true;
+        }
     }
     return false;
 }

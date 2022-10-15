@@ -92,16 +92,21 @@ bool unload(void)
 {
     // TODO
     node *head, *trav;
+    int count = 0;
     for (int i = 0; i < N; i++)
     {
         head = table[i];
-        trav = head->next;
-        while (trav != NULL)
+        while (head != NULL)
         {
-            free(head);
-            
+            trav = head;
+            head = trav->next;
+            free(trav);
+            count++;
         }
     }
-    return count;
+    if (count == size())
+    {
+        return true;
+    }
     return false;
 }

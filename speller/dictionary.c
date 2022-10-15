@@ -30,13 +30,12 @@ bool check(const char *word)
 {
     // TODO
     node *head = table[hash(word)];
-    // node *trav = head->next;
     while (head != NULL)
     {
         if (strcasecmp(head->word, word) == 0)
         {
             return true;
-        };
+        }
         head = head->next;
     }
     return false;

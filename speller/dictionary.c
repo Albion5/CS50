@@ -127,7 +127,7 @@ bool unload(void)
         while (head != NULL)
         {
             trav = head;
-            head = head->next;
+            table[i] = head->next;
             free(trav);
         }
         if (head == NULL && i == N - 1)

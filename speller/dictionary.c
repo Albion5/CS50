@@ -58,17 +58,30 @@ bool load(const char *dictionary)
     dict = fopen(dictionary, "r");
     if (dict != NULL)
     {
+        unsigned int hash_index;
         while (fscanf(dict, "%s", string) != EOF)
         {
-            node *head = table[hash(string)];
+            hash_index = hash(string);
+            node *head = table[hash_index];
             node *new = malloc(sizeof(node));
             if (new == NULL)
             {
                 unload();
                 return false;
             }
-            new->next = head;
-            head = new;
+
+            if (head == NULL)
+            {
+                table[hash_index] = new;
+            }
+            else
+            {
+                new->next = table[hash_index];
+                table[hash_index] = new;
+            }
+
+            // new->next = head;
+            // head = new;
             strcpy(head->word, string);
             dict_size++;
         }

@@ -66,10 +66,11 @@ bool load(const char *dictionary)
             }
             new->next = head;
             head = new;
-            strcpy(new->word, string);
+            strcpy(head->word, string);
         }
+        fclose(dict);
     }
-    fclose(dict);
+
     return true;
 }
 

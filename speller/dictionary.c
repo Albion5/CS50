@@ -64,6 +64,7 @@ bool load(const char *dictionary)
             node *new = malloc(sizeof(node));
             if (new == NULL)
             {
+                unload();
                 return false;
             }
             new->next = head;

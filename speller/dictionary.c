@@ -103,7 +103,7 @@ bool unload(void)
         while (head != NULL)
         {
             trav = head;
-            head = trav->next;
+            head = head->next;
             free(trav);
             count++;
         }

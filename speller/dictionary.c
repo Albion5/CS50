@@ -42,13 +42,14 @@ bool load(const char *dictionary)
     dict = fopen(dictionary);
     if (dict != NULL)
     {
-        node *n = malloc(sizeof(node));
-        if (n != NULL)
+        while (fscanf(dict, "%s", string) != EOF)
         {
-        while (fscanf(dict, "%s", word) != EOF)
-        {
-            node *n = malloc(sizeof(node));
-            if (n != NULL)
+            node *n = table[hash(string)];
+            n = malloc(sizeof(node));
+            if (n == NULL)
+            {
+                return false;
+            }
             strcpy(n->word, dictionary);
         }
 

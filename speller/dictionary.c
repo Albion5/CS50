@@ -74,6 +74,7 @@ bool load(const char *dictionary)
 
             if (head == NULL)
             {
+                new->next = NULL;
                 table[hash_index] = new;
             }
             else

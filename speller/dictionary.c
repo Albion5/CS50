@@ -69,6 +69,7 @@ bool load(const char *dictionary)
             new->next = head;
             head = new;
             strcpy(head->word, string);
+            dict_size++;
         }
         fclose(dict);
     }

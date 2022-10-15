@@ -52,7 +52,7 @@ bool load(const char *dictionary)
     // TODO
     char string[LENGTH + 1];
     FILE *dict;
-    dict = fopen(dictionary);
+    dict = fopen(dictionary, "r");
     if (dict != NULL)
     {
         while (fscanf(dict, "%s", string) != EOF)

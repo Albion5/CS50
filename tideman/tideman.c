@@ -161,6 +161,11 @@ void sort_pairs(void)
     int dif_votes, dif_votes_1;
     swap = 3;
     int end = pair_count - 1;
+    printf("Before:\n");
+    for (int i = 0; i < pair_count; i++)
+    {
+        printf("winner=%d loser=%d\n", pairs[i].winner, pairs[i].loser);
+    }
     while (swap != 0)
     {
         swap = 0;
@@ -168,11 +173,9 @@ void sort_pairs(void)
         {
             win_index = pairs[cur].winner;
             los_index = pairs[cur].loser;
-            dif_votes = preferences[win_index][los_index] - preferences[los_index][win_index];
             next_win_index = pairs[next].winner;
             next_los_index = pairs[next].loser;
-            dif_votes_1 = preferences[next_win_index][next_los_index] - preferences[next_los_index][next_win_index];
-            if (dif_votes_1 > dif_votes)
+            if (preferences[next_win_index][next_los_index] > preferences[win_index][los_index])
             {
                 pair temp = pairs[cur];
                 pairs[cur] = pairs[next];
@@ -181,6 +184,11 @@ void sort_pairs(void)
             }
         }
         end--;
+    }
+    printf("After:\n");
+    for (int i = 0; i < pair_count; i++)
+    {
+        printf("winner=%d loser=%d\n", pairs[i].winner, pairs[i].loser);
     }
 
     return;

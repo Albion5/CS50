@@ -159,8 +159,9 @@ void sort_pairs(void)
     //
     int swap, win_index, los_index, next_win_index, next_los_index;
     int dif_votes, dif_votes_1;
-    
-    for (int cur = 0, next = cur + 1; i < pairs_count; i++)
+    swap = 3
+
+    for (int cur = 0, next = cur + 1; next < pair_count; cur++)
     {
         swap = 0;
         win_index = pairs[cur].winner;

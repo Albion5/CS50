@@ -161,7 +161,7 @@ void sort_pairs(void)
     int swap, win_index, los_index, next_win_index, next_los_index;
     int dif_votes, dif_votes_1;
     swap = 3;
-    int end = pair_count - 1;
+    int end = pair_count;
     printf("Before:\n");
     for (int i = 0; i < pair_count; i++)
     {
@@ -170,7 +170,7 @@ void sort_pairs(void)
     while (swap != 0)
     {
         swap = 0;
-        for (int cur = 0, next = cur + 1; cur < end; cur++)
+        for (int cur = 0, next = cur + 1; (cur < end) && (next != end); cur++)
         {
             win_index = pairs[cur].winner;
             los_index = pairs[cur].loser;

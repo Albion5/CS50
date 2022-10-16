@@ -157,13 +157,13 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     //
-    int swap, winner_votes, loser_votes, next_winner_votes, next_loser_votes;
+    int swap, winner_index, loser_index, next_winner_index, next_loser_index;
     for (int cur = 0, next = cur + 1; i < pairs_count; i++)
     {
-        winner_votes = pairs[cur].winner;
-        loser_votes = pairs[cur].loser;
-        next_winner_votes = pairs[next].winner;
-        next_loser_votes = pairs[next].loser;
+        winner_index = pairs[cur].winner;
+        loser_index = pairs[cur].loser;
+        next_winner_index = pairs[next].winner;
+        next_loser_index = pairs[next].loser;
 
     }
     return;

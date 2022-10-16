@@ -144,7 +144,7 @@ int main(int argc, string argv[])
         {
             if (candidates[i].eliminated)
             {
-                    printf("%s has been eliminated.\n", candidates[i].name);
+                printf("%s has been eliminated.\n", candidates[i].name);
             }
         }
 

@@ -100,23 +100,14 @@ int main(int argc, string argv[])
 bool vote(int rank, string name, int ranks[])
 {
     // TODO
-    int found = 0;
     for (int i = 0; i < candidate_count; i++)
     {
         if (strcmp(name, candidates[i]) == 0)
         {
-            found = 1;
+            ranks[rank] = i;
+            return true;
         }
     }
-    if (found == 0)
-    {
-        return false;
-    }
-    for (int i = 0; i < candidate_count; i++)
-    {
-        
-    }
-
     return true;
 }
 

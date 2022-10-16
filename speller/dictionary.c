@@ -49,7 +49,7 @@ unsigned int hash(const char *word)
     unsigned int key_len = strlen(word);
     for (int i = 0; i < key_len; i++)
     {
-        hash_value = hash_value + 37 * tolower(word[i]);
+        hash_value = hash_value + tolower(word[i]);
     }
     return hash_value % N;
     // return toupper(word[0]) - 'A';

@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 // Max number of candidates
 #define MAX 9
@@ -90,8 +91,8 @@ int main(int argc, string argv[])
     }
 
     add_pairs();
-    sort_pairs();
-    lock_pairs();
+    //sort_pairs();
+    //lock_pairs();
     print_winner();
     return 0;
 }
@@ -170,5 +171,13 @@ void lock_pairs(void)
 void print_winner(void)
 {
     // TODO
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
+        {
+            printf("%d ", preferences[i][j]);
+        }
+        printf("\n");
+    }
     return;
 }

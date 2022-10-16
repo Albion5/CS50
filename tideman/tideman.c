@@ -117,9 +117,11 @@ void record_preferences(int ranks[])
     // TODO
     for (int i = 0; i < candidate_count; i++)
     {
+        int strong_cand_index = ranks[i];
         for (int j = i + 1; j < candidate_count; j++)
         {
-            preferences[ranks[i]][ranks[j]]++;
+            int weak_cand_index = ranks[j];
+            preferences[strong_cand_index][weak_cand_index]++;
         }
     }
     return;

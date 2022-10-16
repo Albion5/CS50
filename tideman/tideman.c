@@ -157,13 +157,20 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     //
-    int swap, winner_index, loser_index, next_winner_index, next_loser_index;
+    int swap, win_index, los_index, next_win_index, next_los_index;
+    int dif_votes, dif_votes_1;
     for (int cur = 0, next = cur + 1; i < pairs_count; i++)
     {
-        winner_index = pairs[cur].winner;
-        loser_index = pairs[cur].loser;
-        next_winner_index = pairs[next].winner;
-        next_loser_index = pairs[next].loser;
+        win_index = pairs[cur].winner;
+        los_index = pairs[cur].loser;
+        dif_votes = preferences[win_index][los_index] - preferences[los_index][win_index];
+        next_win_index = pairs[next].winner;
+        next_los_index = pairs[next].loser;
+        dif_votes_1 = preferences[next_win_index][next_los_index] - preferences[next_los_index][next_win_index];
+        if (dif_votes_1 > dif_votes)
+        {
+            
+        }
 
     }
     return;

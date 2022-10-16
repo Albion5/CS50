@@ -45,14 +45,13 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    unsigned int value = 0;
+    unsigned int hash_value = 0;
     unsigned int key_len = strlen(word);
     for (int i = 0; i < key_len; i++)
     {
-        value = value + 37 * tolower(word[i]);
+        hash_value = hash_value + 37 * tolower(word[i]);
     }
-    value = value % N;
-    return value;
+    return hash_value % N;
     // return toupper(word[0]) - 'A';
 }
 

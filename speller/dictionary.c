@@ -150,21 +150,28 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // 
+    // Create head pointer and a temporary pointer
     node *head, *trav;
+    // For each hash value in the hash table
     for (int i = 0; i < N; i++)
     {
+        // Get the head of a linked list
         head = table[i];
         while (head != NULL)
         {
+            // Save old head to a temporary pointer
             trav = head;
+            // Set new head to the next elemet of the linked list
             head = head->next;
+            // Free old head
             free(trav);
         }
         if (head == NULL && i == N - 1)
         {
+            // If all of the elements in the hash table have been freed return true
             return true;
         }
     }
+    // If something went wrong return false
     return false;
 }

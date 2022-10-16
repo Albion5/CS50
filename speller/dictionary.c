@@ -40,7 +40,7 @@ bool check(const char *word)
             return true;
         }
         // Set cursor to the next element in the list
-        head = trav->next;
+        trav = trav->next;
     }
     // If not found return false
     return false;

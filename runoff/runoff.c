@@ -164,7 +164,7 @@ bool vote(int voter, int rank, string name)
     string cand_name;
     for (int i = 0; i < candidate_count; i++)
     {
-        // Vatiable i reflects the number of a candidate in the list of candidates
+        // Variable i reflects the number of a candidate in the list of candidates
         cand_name = candidates[i].name;
         if (strcmp(name, cand_name) == 0)
         {

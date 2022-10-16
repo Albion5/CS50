@@ -203,8 +203,8 @@ void tabulate(void)
 
         if (first < candidate_count)
         {
-        printf("Plus vote: %s.\n", candidates[first_pref].name);
-        candidates[first_pref].votes += 1;
+            printf("Plus vote: %s.\n", candidates[first_pref].name);
+            candidates[first_pref].votes += 1;
         }
 
         first = 0;

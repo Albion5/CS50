@@ -159,8 +159,10 @@ void sort_pairs(void)
     //
     int swap, win_index, los_index, next_win_index, next_los_index;
     int dif_votes, dif_votes_1;
+    
     for (int cur = 0, next = cur + 1; i < pairs_count; i++)
     {
+        swap = 0;
         win_index = pairs[cur].winner;
         los_index = pairs[cur].loser;
         dif_votes = preferences[win_index][los_index] - preferences[los_index][win_index];
@@ -169,7 +171,10 @@ void sort_pairs(void)
         dif_votes_1 = preferences[next_win_index][next_los_index] - preferences[next_los_index][next_win_index];
         if (dif_votes_1 > dif_votes)
         {
-            
+            pair temp = pairs[cur];
+            pairs[cur] = pairs[next];
+            pairs[next] = temp;
+            swap++;
         }
 
     }

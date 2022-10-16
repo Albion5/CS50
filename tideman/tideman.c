@@ -170,7 +170,7 @@ void sort_pairs(void)
     while (swap != 0)
     {
         swap = 0;
-        for (int cur = 0, next = cur + 1; (cur < end) && (next != end); cur++)
+        for (int cur = 0, next = cur + 1; cur != end - 1; cur++)
         {
             win_index = pairs[cur].winner;
             los_index = pairs[cur].loser;

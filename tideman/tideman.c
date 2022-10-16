@@ -184,7 +184,7 @@ void sort_pairs(void)
                 swap++;
             }
         }
-        end--;
+        // end--;
     }
     printf("After:\n");
     for (int i = 0; i < pair_count; i++)

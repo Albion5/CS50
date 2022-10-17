@@ -170,42 +170,42 @@ void sort_pairs(void)
     while (swap != 0)
     {
         swap = 0;
-        for (int cur = 0, next = cur + 1; cur != end - 1; cur++)
+        for (int cur = 0; cur < end - 1; cur++)
         {
             win_index = pairs[cur].winner;
             los_index = pairs[cur].loser;
-            next_win_index = pairs[next].winner;
-            next_los_index = pairs[next].loser;
+            next_win_index = pairs[cur + 1].winner;
+            next_los_index = pairs[cur + 1].loser;
             if (preferences[next_win_index][next_los_index] > preferences[win_index][los_index])
             {
                 pair temp = pairs[cur];
-                pairs[cur] = pairs[next];
-                pairs[next] = temp;
+                pairs[cur] = pairs[cur + 1];
+                pairs[cur + 1] = temp;
                 swap++;
             }
         }
-        // end--;
+        end--;
     }
     printf("After:\n");
     for (int i = 0; i < pair_count; i++)
     {
         printf("winner=%d loser=%d\n", pairs[i].winner, pairs[i].loser);
     }
-    int swap, n, temp;
-    swap = 3;
-    n = 10;
-    while (swap != 0) {
-        swap = 0;
-        for (int l = 0; l < end - 1; l++) {
-            if (*l > *(l + 1)) {
-                temp = *l;
-                *l = *(l + 1);
-                *(l + 1) = temp;
-                swap += 1;
-            }
-        }
-        n = n - 1;
-    }
+    // int swap, n, temp;
+    // swap = 3;
+    // n = 10;
+    // while (swap != 0) {
+    //     swap = 0;
+    //     for (int l = 0; l < end - 1; l++) {
+    //         if (*l > *(l + 1)) {
+    //             temp = *l;
+    //             *l = *(l + 1);
+    //             *(l + 1) = temp;
+    //             swap += 1;
+    //         }
+    //     }
+    //     n = n - 1;
+    // }
 
     return;
 }

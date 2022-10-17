@@ -176,7 +176,10 @@ void sort_pairs(void)
             los_index = pairs[cur].loser;
             next_win_index = pairs[cur + 1].winner;
             next_los_index = pairs[cur + 1].loser;
-            if (preferences[next_win_index][next_los_index] > preferences[win_index][los_index])
+            dif_votes = preferences[win_index][los_index] - preferences[los_index][win_index];
+            dif_votes_1 = preferences[next_win_index][next_los_index] - preferences[next_los_index][next_win_index];
+
+            if (dif_votes_1 > dif_votes)
             {
                 pair temp = pairs[cur];
                 pairs[cur] = pairs[cur + 1];

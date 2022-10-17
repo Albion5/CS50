@@ -196,7 +196,7 @@ void sort_pairs(void)
     n = 10;
     while (swap != 0) {
         swap = 0;
-        for (int *l = a; l < a + n - 1; l++) {
+        for (int l = 0; l < end - 1; l++) {
             if (*l > *(l + 1)) {
                 temp = *l;
                 *l = *(l + 1);

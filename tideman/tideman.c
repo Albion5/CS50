@@ -191,6 +191,21 @@ void sort_pairs(void)
     {
         printf("winner=%d loser=%d\n", pairs[i].winner, pairs[i].loser);
     }
+    int swap, n, temp;
+    swap = 3;
+    n = 10;
+    while (swap != 0) {
+        swap = 0;
+        for (int *l = a; l < a + n - 1; l++) {
+            if (*l > *(l + 1)) {
+                temp = *l;
+                *l = *(l + 1);
+                *(l + 1) = temp;
+                swap += 1;
+            }
+        }
+        n = n - 1;
+    }
 
     return;
 }

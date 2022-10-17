@@ -206,7 +206,7 @@ void lock_pairs(void)
     {
         if (!Cycle)
         {
-            locked[][]
+            locked[pairs[i].winner][pairs[i].loser] = true;
         }
         printf("winner=%d loser=%d\n", pairs[i].winner, pairs[i].loser);
     }

@@ -7,7 +7,7 @@ def check_height(number):
     return number >= 1 and number <= 8
 
 
-# Print a pyramid of a given height
+# Print a pyramid of a given height, a gap between two parts is 2 spaces
 def build(height):
     for i in range(1, height + 1):
         n_spaces = height - i

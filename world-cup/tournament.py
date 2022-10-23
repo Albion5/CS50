@@ -61,6 +61,8 @@ def simulate_tournament(teams):
     # TODO
     while len(teams != 1):
         teams = simulate_round(teams)
+        for team in teams:
+            counts[team] += 1
 
 
 if __name__ == "__main__":

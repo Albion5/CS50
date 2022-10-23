@@ -27,15 +27,16 @@ def main():
 
     counts = {}
     for team in teams:
-        name = team.items()[0]
-        counts.append({name: 0})
-
-    # TODO: Simulate N tournaments and keep track of win counts
-    for i in range(N):
-        simulate_tournament(teams)
-    # Print each team's chances of winning, according to simulation
-    for team in sorted(counts, key=lambda team: counts[team], reverse=True):
-        print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
+        for dict in team.items():
+            name = dict[0]
+            counts[name] = 0
+    print(counts)
+    # # TODO: Simulate N tournaments and keep track of win counts
+    # for i in range(N):
+    #     simulate_tournament(teams)
+    # # Print each team's chances of winning, according to simulation
+    # for team in sorted(counts, key=lambda team: counts[team], reverse=True):
+    #     print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
 
 
 def simulate_game(team1, team2):

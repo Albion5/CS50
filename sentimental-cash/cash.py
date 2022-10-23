@@ -17,19 +17,19 @@ def calculate_cents(dollars):
 
 # Calculates the number of quarters (25 cents)
 def calculate_quarters(cents):
-    quarters = cents / 25
+    quarters = cents // 25
     return quarters
 
 
 # Calculates the number of dimes (10 cents)
 def calculate_dimes(cents):
-    dimes = cents / 10
+    dimes = cents // 10
     return dimes
 
 
 # Calculates the number of nickels (5 cents)
 def calculate_nickels(cents):
-    nickels = cents / 5
+    nickels = cents // 5
     return nickels
 
 

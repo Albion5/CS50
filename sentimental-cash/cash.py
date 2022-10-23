@@ -63,5 +63,5 @@ cents = cents - pennies * 1
 coins = quarters + dimes + nickels + pennies
 
 # Print total number of coins to give the customer
-print(coins)
+print(int(coins))
 

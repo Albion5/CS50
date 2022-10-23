@@ -10,6 +10,11 @@ def get_dollars():
     return dollars
 
 
+# Calculates the number of cents (1 dollar = 100 cents)
+def calculate_cents(dollars):
+    return dollars * 100
+
+
 # Calculates the number of quarters (25 cents)
 def calculate_quarters(cents):
     quarters = cents / 25
@@ -36,6 +41,7 @@ def calculate_pennies(cents):
 
 # Ask how many cents the customer is owed
 dollars = get_dollars()
+cents = get_cents(dollars)
 
 # Calculate the number of quarters to give the customer
 quarters = calculate_quarters(cents)

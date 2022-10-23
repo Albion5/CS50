@@ -61,7 +61,6 @@ def simulate_game(team1, team2):
 def simulate_round(teams):
     """Simulate a round. Return a list of winning teams."""
     winners = []
-
     # Simulate games for all pairs of teams
     for i in range(0, len(teams), 2):
         if simulate_game(teams[i], teams[i + 1]):
@@ -75,7 +74,7 @@ def simulate_round(teams):
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
-    #Simulate rounds untill there's only one winner in teams list
+    # Simulate rounds untill there's only one winner in teams list
     while len(teams) != 1:
         teams = simulate_round(teams)
     winner = teams[0]["team"]

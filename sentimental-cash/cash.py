@@ -3,11 +3,11 @@ from cs50 import get_float
 
 
 # Promts the user for a number od cents
-def get_cents():
-    cents = -1
-    while not cents >= 0:
-        cents = get_float("Change owed: ")
-    return cents
+def get_dollars():
+    dollars = -1
+    while not dollars >= 0:
+        dollars = get_float("Change owed: ")
+    return dollars
 
 
 # Calculates the number of quarters (25 cents)
@@ -35,7 +35,7 @@ def calculate_pennies(cents):
 
 
 # Ask how many cents the customer is owed
-cents = get_cents()
+dollars = get_dollars()
 
 # Calculate the number of quarters to give the customer
 quarters = calculate_quarters(cents)

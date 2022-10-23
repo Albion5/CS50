@@ -67,7 +67,6 @@ def get_card(number, length):
 
     # Delete all of the digits except the first two
     start_digits = number // denominator
-    print(start_digits)
     # Check if it's MASTERCARD
     if (start_digits > 50 and start_digits <= 55):
         return "MASTERCARD"

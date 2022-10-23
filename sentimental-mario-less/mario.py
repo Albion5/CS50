@@ -5,10 +5,10 @@ def check_height(number):
     return number >= 1 and number <= 8
 
 def build(height):
-    n_spaces = height - 1
-    for i in range(height):
-        print((n_spaces * " ") + ("#" * (i + 1)))
-        n_spaces -= 1
+
+    for i in range(1, height + 1):
+        n_spaces = height - i
+        print((n_spaces * " ") + ("#" * i))
 
 height = 0
 while not check_height(height):

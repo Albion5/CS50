@@ -20,28 +20,27 @@ def main():
         reader = csv.DictReader(file)
         for row in reader:
             team = {}
-            key = row["team"]
-            value = int(row["rating"])
-            team[key] = value
+            team["team"] = row["team"]
+            team["rating"] = int(row["rating"])
             teams.append(team)
 
     counts = {}
-    for team in teams:
-        print(team)
-        for dict in team.items():
-            name = dict[0]
-            counts[name] = 0
+    for team_dict in teams:
+        # for dict in team.items():
+        #     name = dict[0]
+        #     counts[name] = 0
+        name = team_dict["team"]
+        counts[name] = 0
     # TODO: Simulate N tournaments and keep track of win counts
     for i in range(N):
         simulate_tournament(teams)
-        for team in teams:
-            for dict in team.items():
-                name = dict[0]
-                counts[name] += 1
+        for team_dict in teams:
+            name = team_dict["team"]
+            counts[name] += 1
 
-    # Print each team's chances of winning, according to simulation
-    for team in sorted(counts, key=lambda team: counts[team], reverse=True):
-        print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
+    # # Print each team's chances of winning, according to simulation
+    # for team in sorted(counts, key=lambda team: counts[team], reverse=True):
+    #     print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
 
 
 def simulate_game(team1, team2):

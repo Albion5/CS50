@@ -4,7 +4,6 @@ from cs50 import get_int
 # Calculates the number of digits in a card number
 def get_length(number):
     sum = 1
-    last_digit
     while (number > 10):
         last_digit = number % 10
         sum = sum + 1

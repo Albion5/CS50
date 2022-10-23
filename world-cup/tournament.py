@@ -26,9 +26,6 @@ def main():
 
     counts = {}
     for team_dict in teams:
-        # for dict in team.items():
-        #     name = dict[0]
-        #     counts[name] = 0
         name = team_dict["team"]
         counts[name] = 0
     # TODO: Simulate N tournaments and keep track of win counts

@@ -35,7 +35,10 @@ def main():
     for i in range(N):
         simulate_tournament(teams)
         for team in teams:
-            
+            for dict in team.items():
+                name = dict[0]
+                counts[name] += 1
+
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
         print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")

@@ -26,9 +26,8 @@ def main():
             teams.append(team)
 
     counts = {}
-    for team in teams:
-        name = team[0]
-        counts[name] = 0
+    for key, value in teams:
+        counts[key] = 0
     # TODO: Simulate N tournaments and keep track of win counts
     for i in range(N):
         simulate_tournament(teams)

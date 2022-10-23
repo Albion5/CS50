@@ -7,7 +7,7 @@ def check_height(number):
 def build(height):
     n_spaces = height - 1
     for i in range(height):
-        print((n_spaces * " ") + "#" )
+        print((n_spaces * " ") + ("#" * (i + 1)))
         n_spaces -= 1
 
 height = 0

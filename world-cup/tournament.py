@@ -27,10 +27,10 @@ def main():
 
     counts = {}
     for team in teams:
+        print(team)
         for dict in team.items():
             name = dict[0]
             counts[name] = 0
-    print(counts)
     # # TODO: Simulate N tournaments and keep track of win counts
     # for i in range(N):
     #     simulate_tournament(teams)

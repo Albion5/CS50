@@ -8,7 +8,7 @@ def get_length(number):
         last_digit = number % 10
         sum = sum + 1
         # Delete the last digit from the number
-        number = (number - last_digit) / 10
+        number = (number - last_digit) // 10
     # Return the number of digits in a card number
     return sum
 
@@ -29,7 +29,7 @@ def get_checksum(number, length):
             # Check if the product of multiplying is greater than 9
             if double_digit > 9:
                 # Add product's digits
-                double_digit = double_digit % 10 + double_digit / 10
+                double_digit = double_digit % 10 + double_digit // 10
 
             # Calculate the sum of digits at an even position
             sum1 = sum1 + double_digit
@@ -41,7 +41,7 @@ def get_checksum(number, length):
 
 
         # Delete the last digit from the number
-        number = (number - current_digit) / 10
+        number = (number - current_digit) // 10
 
     # Add two sums
     sum = sum1 + sum2

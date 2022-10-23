@@ -1,6 +1,7 @@
 # TODO
 from cs50 import get_int
 
+
 # Calculates the number of digits in a card number
 def get_length(number):
     sum = 1
@@ -38,7 +39,6 @@ def get_checksum(number, length):
         else:
             # Calculate the sum of digits at an odd position
             sum2 = sum2 + current_digit
-
 
         # Delete the last digit from the number
         number = (number - current_digit) // 10
@@ -103,6 +103,3 @@ if (digits == 13 or digits == 15 or digits == 16):
 
 # Print the card
 print(card)
-
-
-

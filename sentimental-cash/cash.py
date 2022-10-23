@@ -41,7 +41,7 @@ def calculate_pennies(cents):
 
 # Ask how many cents the customer is owed
 dollars = get_dollars()
-cents = get_cents(dollars)
+cents = calculate_cents(dollars)
 
 # Calculate the number of quarters to give the customer
 quarters = calculate_quarters(cents)

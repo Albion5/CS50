@@ -28,6 +28,12 @@ def main():
             # Add team dictionary to the teams list
             people.append(person)
     # TODO: Read DNA sequence file into a variable
+     with open(sys.argv[2]) as file:
+        reader = csv.DictReader(file)
+        # For each line in the csv file
+        for row in reader:
+            # Create a dictionary with keys "team" and "rating" and add to them values
+            person = row
     # for clovek in people:
         # print(clovek)
     # TODO: Find longest match of each STR in DNA sequence

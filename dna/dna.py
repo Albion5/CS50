@@ -28,12 +28,19 @@ def main():
     for key, _ in people[0].items():
         STRs.append(key)
     del STRs[0]
-
+    undefined = {}
     for STR in STRs:
-        a = longest_match(seq, STR)
-        print(a)
+        undefined[STR] = longest_match(seq, STR)
     # TODO: Check database for matching profiles
-
+    result = "No match"
+    for person in people:
+        person_dict = person
+        name = person_dict["name"]
+        person_dict.pop("name")
+        if person_dict == undefined:
+            result = name
+    print(result)
+    
     return 0
 
 

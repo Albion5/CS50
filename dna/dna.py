@@ -30,7 +30,7 @@ def main():
     del STRs[0]
     undefined = {}
     for STR in STRs:
-        undefined[STR] = longest_match(seq, STR)
+        undefined[STR] = str(longest_match(seq, STR))
     # TODO: Check database for matching profiles
     result = "No match"
     print(undefined, "undefined")

@@ -24,7 +24,7 @@ def main():
             person["TCTAG"] = int(row["TCTAG"])
             person["GATA"] = int(row["GATA"])
             person["TATC"] = int(row["TATC"])
-            #person["TCTG"] = int(row["TCTG"])
+            person["TCTG"] = int(row["TCTG"])
             # Add team dictionary to the teams list
             people.append(person)
     # TODO: Read DNA sequence file into a variable

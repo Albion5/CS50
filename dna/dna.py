@@ -16,30 +16,27 @@ def main():
         reader = csv.DictReader(file)
         # For each line in the csv file
         for row in reader:
-            # Create a dictionary with keys "team" and "rating" and add to them values
             person = row
-            # person["name"] = row["name"]
-            # person["AGATC"] = int(row["AGATC"])
-            # person["TTTTTTCT"] = int(row["TTTTTTCT"])
-            # person["AATG"] = int(row["AATG"])
-            # person["TCTAG"] = int(row["TCTAG"])
-            # person["GATA"] = int(row["GATA"])
-            # person["TATC"] = int(row["TATC"])
-            # person["TCTG"] = int(row["TCTG"])
-            # Add team dictionary to the teams list
             people.append(person)
+
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2]) as file:
         seq = file.readlines()[0]
-        print(seq)
 
     # TODO: Find longest match of each STR in DNA sequence
-    people[0].keys()
-    undefined = {}
-    for i in range():
+    STRs = []
+    for key, _ in people[0].items():
+        STRs.append(key)
+    del STRs[0]
 
-        sub =
-        longest_match(seq, sub)
+    
+    # STRs = people[0].keys()
+    # del STRs["name"]
+    print(STRs)
+    # for key in STRs:
+    #     print(key)
+    #     sub =
+    #     longest_match(seq, sub)
     # TODO: Check database for matching profiles
 
     return 0

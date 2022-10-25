@@ -29,14 +29,9 @@ def main():
         STRs.append(key)
     del STRs[0]
 
-    
-    # STRs = people[0].keys()
-    # del STRs["name"]
-    print(STRs)
-    # for key in STRs:
-    #     print(key)
-    #     sub =
-    #     longest_match(seq, sub)
+    for STR in STRs:
+        a = longest_match(seq, STR)
+        print(a)
     # TODO: Check database for matching profiles
 
     return 0

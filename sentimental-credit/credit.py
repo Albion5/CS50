@@ -60,13 +60,13 @@ def check_validity(checksum):
 def get_card(number, length):
 
     power = length - 2
-    denominator = 1
+    # denominator = 1
 
-    for i in range(power):
-        denominator *= 10
+    # for i in range(power):
+    #     denominator *= 10
 
     # Delete all of the digits except the first two
-    start_digits = number // denominator
+    start_digits = number // 10 ** power
     # Check if it's MASTERCARD
     if (start_digits > 50 and start_digits <= 55):
         return "MASTERCARD"

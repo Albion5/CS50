@@ -39,8 +39,10 @@ def main():
         person_dict.pop("name")
         if person_dict == undefined:
             result = name
+        print(undefined)
+        print(person_dict)
     print(result)
-    
+
     return 0
 
 

@@ -30,6 +30,7 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     # Create a dictionary for STRs
+    # STRs = Short Tandem Repeats
     STRs = []
     # For each key of the first dictionary in people list
     for key, _ in people[0].items():

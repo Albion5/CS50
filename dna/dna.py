@@ -33,11 +33,13 @@ def main():
         undefined[STR] = longest_match(seq, STR)
     # TODO: Check database for matching profiles
     result = "No match"
+    print(undefined, "undefined")
     for person in people:
         person_dict = person
         name = person_dict["name"]
         person_dict.pop("name")
-        print(person_dict == undefined)
+        # print(person_dict == undefined)
+        print(person_dict, name)
         # if person_dict == undefined:
         #     result = name
     print(result)

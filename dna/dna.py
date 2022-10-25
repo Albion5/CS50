@@ -34,15 +34,12 @@ def main():
     # TODO: Check database for matching profiles
     result = "No match"
     for person in people:
-
-        name = person["name"]
-        person.pop("name")
-        if person == undefined:
+        person_dict = person
+        name = person_dict["name"]
+        person_dict.pop("name")
+        if person_dict == undefined:
             result = name
-        print(undefined)
-        print(person)
     print(result)
-
     return 0
 
 

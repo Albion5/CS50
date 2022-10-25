@@ -34,6 +34,7 @@ def main():
         print(seq)
 
     # TODO: Find longest match of each STR in DNA sequence
+    people[0].keys()
     undefined = {}
     for i in range():
 

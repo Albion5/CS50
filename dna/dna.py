@@ -17,17 +17,24 @@ def main():
         for row in reader:
             # Create a dictionary with keys "team" and "rating" and add to them values
             person = {}
-            team["team"] = row["team"]
-            team["rating"] = int(row["rating"])
+            person["name"] = row["name"]
+            person["AGATC"] = int(row["AGATC"])
+            person["TTTTTTCT"] = int(row["TTTTTTCT"])
+            person["AATG"] = int(row["AATG"])
+            person["TCTAG"] = int(row["TCTAG"])
+            person["GATA"] = int(row["GATA"])
+            person["TATC"] = int(row["TATC"])
+            person["TCTG"] = int(row["TCTG"])
             # Add team dictionary to the teams list
-            teams.append(team)
+            people.append(person)
     # TODO: Read DNA sequence file into a variable
-
+    for clovek in people:
+        print(clovek)
     # TODO: Find longest match of each STR in DNA sequence
 
     # TODO: Check database for matching profiles
 
-    return
+    return 0
 
 
 def longest_match(sequence, subsequence):

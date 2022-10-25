@@ -16,8 +16,8 @@ def main():
         # For each line in the csv file
         for row in reader:
             # Create a dictionary with keys "team" and "rating" and add to them values
-            person = {}
-            print(row)
+            person = row
+            people.append(person)
             # person["name"] = row["name"]
             # person["AGATC"] = int(row["AGATC"])
             # person["TTTTTTCT"] = int(row["TTTTTTCT"])

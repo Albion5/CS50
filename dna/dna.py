@@ -10,35 +10,59 @@ def main():
         sys.exit("Usage: python dna.py data.csv sequence.txt")
 
     # TODO: Read database file into a variable
+    # Create a list for dictionaries of each person in database
     people = []
 
     with open(sys.argv[1]) as file:
+        # Create dict reader object
         reader = csv.DictReader(file)
-        # For each line in the csv file
-        for row in reader:
-            person = row
+
+        # For each new line dict in the csv file
+        for person in reader:
+
+            # Add it to people list
             people.append(person)
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2]) as file:
+        # Read the first line in a given file
         seq = file.readlines()[0]
 
     # TODO: Find longest match of each STR in DNA sequence
+    # Create a dictionary for STRs
     STRs = []
+    # For each key of the first dictionary in people list
     for key, _ in people[0].items():
+        # Add that key to STRs list
         STRs.append(key)
+    # Delete the key "name" so only STR keys are left
     del STRs[0]
+
+    # Create a dict for an undefined person
     undefined = {}
+
+    # For each STR in STRs list
     for STR in STRs:
+        # Add to the dict the longest run of consecutive repeats of the STR in the DNA with STR key
+        # Make sure to convert the computed number to str
         undefined[STR] = str(longest_match(seq, STR))
+
     # TODO: Check database for matching profiles
+    # Create a variable with default value in case the person is not in the database
     result = "No match"
+    # For each dictionary in people list
     for person in people:
         person_dict = person
+        # Save the name to a temporary variable
         name = person_dict["name"]
+        # Delete key "name" so the keys of this dict and an undefined dict are the same
         person_dict.pop("name")
+        # Compare two dictionaries
         if person_dict == undefined:
+            # Update the result if found a match in database
             result = name
+            break
+    # Print out the result
     print(result)
     return 0
 

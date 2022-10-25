@@ -1,6 +1,7 @@
 # TODO
 from cs50 import get_string
 
+
 # Counts the number of letters in a string
 def count_letters(text):
     sum = 0
@@ -11,16 +12,18 @@ def count_letters(text):
             sum = sum + 1
     return sum
 
+
 # Counts the number of words in a string
 def count_words(text):
     sum = 0
     n = len(text)
-    for i in range (n):
+    for i in range(n):
         current = text[i]
         if (current == ' '):
             sum = sum + 1
 
     return sum + 1
+
 
 # Counts the number of sentences in a string
 def count_sentences(text):
@@ -33,9 +36,11 @@ def count_sentences(text):
 
     return sum
 
+
 # Counts the average number of a per 100 b
 def count_average(a, b):
     return a / (b * 1.0) * 100
+
 
 # Counts the index of a text
 def test_text(text):
@@ -57,6 +62,7 @@ def test_text(text):
 
     return index
 
+
 def main():
     # Ask user to enter a text
     user_text = get_string("Text: ")
@@ -76,6 +82,7 @@ def main():
     # If the resul is ok
     else:
         print(f"Grade {grade_level}")
+
 
 if __name__ == "__main__":
     main()

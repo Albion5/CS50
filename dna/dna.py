@@ -30,12 +30,13 @@ def main():
             people.append(person)
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2]) as file:
-        reader = csv.reader(file)
+        seq = file.readlines()[0]
+        # reader = csv.reader(file)
 
-        # For each line in the csv file
-        for row in reader:
-            sequence = row[0]
-        print(sequence)
+        # # For each line in the csv file
+        # for row in reader:
+        #     sequence = row[0]
+        print(seq)
 
     # TODO: Find longest match of each STR in DNA sequence
     #re.findall()

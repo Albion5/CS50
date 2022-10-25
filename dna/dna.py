@@ -9,7 +9,18 @@ def main():
         sys.exit("Usage: python dna.py data.csv sequence.txt")
 
     # TODO: Read database file into a variable
+    people = []
 
+    with open(sys.argv[1]) as file:
+        reader = csv.DictReader(file)
+        # For each line in the csv file
+        for row in reader:
+            # Create a dictionary with keys "team" and "rating" and add to them values
+            person = {}
+            team["team"] = row["team"]
+            team["rating"] = int(row["rating"])
+            # Add team dictionary to the teams list
+            teams.append(team)
     # TODO: Read DNA sequence file into a variable
 
     # TODO: Find longest match of each STR in DNA sequence

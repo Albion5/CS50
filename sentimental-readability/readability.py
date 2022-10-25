@@ -75,7 +75,7 @@ def main():
 
     # If the resul is ok
     else:
-        printf(f"Grade {grade_level}")
+        print(f"Grade {grade_level}")
 
 if __name__ == "__main__":
     main()

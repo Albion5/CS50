@@ -40,8 +40,8 @@ def main():
         person_dict.pop("name")
         # print(person_dict == undefined)
         print(person_dict, name)
-        # if person_dict == undefined:
-        #     result = name
+        if person_dict == undefined:
+            result = name
     print(result)
     return 0
 

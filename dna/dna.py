@@ -17,7 +17,6 @@ def main():
         for row in reader:
             # Create a dictionary with keys "team" and "rating" and add to them values
             person = row
-            people.append(person)
             # person["name"] = row["name"]
             # person["AGATC"] = int(row["AGATC"])
             # person["TTTTTTCT"] = int(row["TTTTTTCT"])
@@ -27,7 +26,7 @@ def main():
             # person["TATC"] = int(row["TATC"])
             # person["TCTG"] = int(row["TCTG"])
             # Add team dictionary to the teams list
-            # people.append(person)
+            people.append(person)
     # TODO: Read DNA sequence file into a variable
     # for clovek in people:
         # print(clovek)

@@ -245,7 +245,7 @@ void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
     int count = 1;
     find_flags(argc, argv, flags, file_indexes, &count, error);
     // Find files
-    find_files(argv, flags, file_indexes, count);
+    find_files(argv, flags, file_indexes, count, error);
     if (error->error_code != 0) {
         printf("\n");
     }

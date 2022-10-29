@@ -179,3 +179,4 @@ int main(int argc, char *argv[]) {
 }
 
 
+dprintf(STDERR_FILENO, "%s: %s %s", name,  "--invalid option", );

@@ -137,7 +137,7 @@ void check_flag(char *string, Flags *flags) {
 
 }
 
-void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes[]) {
+void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes) {
     printf("Searching for flags\n");
     // Find all the flags
     int error = 0;

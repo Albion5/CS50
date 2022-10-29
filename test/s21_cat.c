@@ -120,8 +120,9 @@ int check_long_flag(char *string, Flags *flags) {
 
 }
 
-void check_flag(char *string, Flags *flags) {
+int check_flag(char *string, Flags *flags) {
     printf("Flag checking\n");
+    int res = 0;
     if (string[0] == '-') {
         if (string[1] == '-') {
             printf("double flag found\n");
@@ -134,6 +135,7 @@ void check_flag(char *string, Flags *flags) {
     } else {
         printf("Flag not found\n");
     }
+    return res;
 
 }
 
@@ -142,8 +144,13 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes) {
     // Find all the flags
     int error = 0;
     int i = 1;
+    int file_index = i;
     while (i < argc) {
-        check_flag(argv[i], flags);
+        if (check_flag(argv[i], flags)) {
+
+        } else if {
+
+        }
         i++;
     }
 

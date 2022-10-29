@@ -23,6 +23,39 @@ void s21_cat(int fd) {
     }
 }
 
+
+int check_char(char symbol, Flags *flags) {
+    int res = 1;
+    switch (symbol) {
+            case 'b': /* Number non empty lines */
+              flags->number_non_empty = 1;
+              break;
+            case 'e': /* equivalent to -vE */
+              flags->show_end = 1;
+              flags->show_unprintable = 1;
+              break;
+            case 'E': /* Display $ at end of each line */
+              flags->show_end = 1;
+              break;
+            case 'n': /* Number all output lines */
+                flags->number_all = 1;
+              break;
+            case 's': /* Suppress repeated empty output lines */
+              flags->squeeze = 1;
+              break;
+            case 't': /* equivalent to -vT */
+              flags->t = 1;
+              break;
+            case 'T': /* Display TAB characters as ^I */
+              flags->T = 1;
+              break;
+            default: /* Not valid char */
+                res = 0;
+    }
+    printf("Char is a flag: %d\n", res);
+    return res;
+}
+
 void check_flag(char *string, Flags *flags) {
     printf("Flag checking\n");
     if (string[0] == '-') {

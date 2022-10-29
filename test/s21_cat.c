@@ -57,7 +57,7 @@ void print_with_flags(char *buffer, Flags *flags) {
     printf("Modified line\n");
     int len = strlen(buffer);
     char cur_char, fut_char;
-    cur char = buffer[0];
+    cur_char = buffer[0];
     for (int i = 0; i < len; i++) {
         printf("%c", buffer[i]);
     }
@@ -67,13 +67,17 @@ void print_with_flags(char *buffer, Flags *flags) {
 void s21_cat(int fd, int mode, Flags *flags) {
     char buffer[buf_size];
     int bytes_read = read(fd, buffer, buf_size);
-    while (bytes_read > 0) {
-        if (mode == 0) {
-            printf("%.*s", bytes_read, buffer);
-        } else {
-            print_with_flags(buffer, flags);
+    if (bytes_read == 0) {
+        printf("empty file\n");
+    } else {
+        while (bytes_read > 0) {
+            if (mode == 0) {
+                printf("%.*s", bytes_read, buffer);
+            } else {
+                print_with_flags(buffer, flags);
+            }
+            bytes_read = read(fd, buffer, buf_size);
         }
-        bytes_read = read(fd, buffer, buf_size);
     }
 }
 

@@ -72,7 +72,7 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
             ;
         } else {
             // Handle n flag
-
+            
             if (buffer[i-1] == '\n' || i == 1) {
                 start_line = 1;
             } else {

@@ -38,11 +38,11 @@ int is_flag_start(char first, char second) {
 
 }
 
-
 void set_b(Flags *flags) {
     flags->number_non_empty = 1;
     flags->number_all = 0;
 }
+
 void set_e(Flags *flags) {
     flags->show_end = 1;
     flags->show_unprintable = 1;
@@ -147,12 +147,14 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes) {
     int error = 0;
     int i = 1;
     int file_index = i;
-    while (i < argc) {
+    while ((i < argc) && (error == 0)) {
         int flag = check_flag(argv[i], flags);
         if (flag == 2) {
             *(file_indexes + file_index) = i;
         } else if (flag == 1) {
             ;
+        } else {
+            error = 1;
         }
         i++;
     }

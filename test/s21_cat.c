@@ -15,7 +15,8 @@ typedef struct Flags {
 } Flags;
 
 typedef struct Errors {
-    char flag_error;
+    char s_flag_error;
+    char *l_flag_error;
     char *file_error;
 } Errors;
 

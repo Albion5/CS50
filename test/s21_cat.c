@@ -53,7 +53,7 @@ void print_error(Errors *error) {
     }
 }
 
-void print_with_flags(char *buffer, flags) {
+void print_with_flags(char *buffer, Flags *flags) {
     printf("Modified line\n");
 }
 
@@ -305,7 +305,7 @@ int main(int argc, char *argv[]) {
 
         // Mode without args
         fd = STDIN_FILENO;
-        s21_cat(fd);
+        s21_cat(fd, 0, );
     }
     return 0;
 }

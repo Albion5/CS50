@@ -6,21 +6,26 @@
 void s21_cat(int fd) {
     char buffer[buf_size];
     int bytes_read = read(fd, buffer, buf_size);
-    while 
+    while (bytes_read != -1) {
+        printf("%s", buffer);
+        bytes_read = read(fd, buffer, buf_size);
+    }
 
 }
 
 
 int main(int argc, char *argv[]) {
-    // Mode without args
 
-
+    if (argc > 1) {
     // Mode with args
-
+    ;
         // Stdin mode
 
         // File mode
-
+    } else {
+         // Mode without args
+         s21_cat(STDIN_FILENO);
+    }
     return 0;
 }
 

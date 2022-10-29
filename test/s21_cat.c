@@ -15,9 +15,10 @@ typedef struct Flags {
 } Flags;
 
 typedef struct Errors {
-    char s_flag_error;
-    char *l_flag_error;
-    char *file_error;
+    int error_code;
+    char single_option;
+    char *long_option;
+    char *file_name;
 } Errors;
 
 void print_long_flag_error(char *option) {

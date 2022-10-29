@@ -14,23 +14,33 @@ void s21_cat(int fd) {
 
 }
 
+void parse_args() {
+    // Find all the flags
+    fd = open(argv[1], O_RDONLY);
+    // Find files
+
+
+
+}
+
 
 int main(int argc, char *argv[]) {
-    
+
     int fd;
     if (argc > 1) {
-        fd = open(argv[1], O_RDONLY);
-        printf("%d", fd)
+        parse_args(argc, argv);
+
     // Mode with args
     ;
         // Stdin mode
 
         // File mode
-        s21_cat(fd);
+
+
     } else {
+
+        // Mode without args
         fd = STDIN_FILENO;
-        printf("%d", fd);
-         // Mode without args
         s21_cat(fd);
     }
     return 0;

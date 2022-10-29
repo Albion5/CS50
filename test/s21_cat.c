@@ -58,11 +58,13 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
     // int len = strlen(buffer);
     char cur_char, fut_char;
     cur_char = buffer[0];
-    for (int i = 1; i < len - 1; i++) {
+    for (int i = 1; i < len; i++) {
         fut_char = buffer[i];
+        if (flags->squeeze) {
+            squeeze();
+        }
         printf("%c", cur_char);
         cur_char = fut_char;
-        fut_char = buffer[i];
     }
 
 }

@@ -286,12 +286,14 @@ void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
 int main(int argc, char *argv[]) {
 
     int fd;
+    Flags flags = {0, 0, 0, 0, 0, 0, 0};
+    Errors error;
     if (argc > 1) {
         // int flags_indexes[argc];
 
 
-        Flags flags = {0, 0, 0, 0, 0, 0, 0};
-        Errors error;
+
+
         parse_args(argc, argv, &flags, &error);
 
     // Mode with args
@@ -305,7 +307,7 @@ int main(int argc, char *argv[]) {
 
         // Mode without args
         fd = STDIN_FILENO;
-        s21_cat(fd, 0, );
+        s21_cat(fd, 0, flags);
     }
     return 0;
 }

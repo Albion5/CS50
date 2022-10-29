@@ -215,17 +215,24 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *co
     }
 }
 
-void work_with_file(char *filename, Errors *error, int arg_index) {
+int work_with_file(char *filename, Errors *error, int arg_index) {
+    int res = 1;
     int fd = open(filename, O_RDONLY);
     if (fd == -1) {
         // print_file_error(filename);
-        set_file_error(error, filename, arg_index);
+        if (error_error_code == 0) {
+            set_file_error(error, filename, arg_index);
+        } else {
+            if error->code
+        }
+        res = 0;
     } else if (error->error_code == 0){
         // printf("opened %s\n", filename);
         s21_cat(fd);
         close(fd);
         // printf("closed\n");
     }
+    return res;
 }
 
 void find_files(char *argv[], Flags *flags, int *file_indexes, int count, Errors *error) {
@@ -238,7 +245,7 @@ void find_files(char *argv[], Flags *flags, int *file_indexes, int count, Errors
         int index = *(file_indexes + i);
         //printf("%d\n", index);
         //printf("%s\n", argv[index]);
-        work_with_file(argv[index], error, index);
+        stop = work_with_file(argv[index], error, index);
         i++;
     }
 }

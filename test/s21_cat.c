@@ -39,7 +39,7 @@ void print_file_error(char *filename) {
 
 
 void print_error(Errors *error) {
-    switch (error->code) {
+    switch (error->error_code) {
         case 1:
           print_single_flag_error(error->symbol);
           break;
@@ -217,7 +217,7 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *co
 void work_with_wile(char *filename) {
     int fd = open(filename, O_RDONLY);
     if (fd == -1) {
-        print_file_error(filename);
+        // print_file_error(filename);
     }
 }
 

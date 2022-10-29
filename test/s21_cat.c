@@ -1,10 +1,15 @@
 #include <stdio.h>
+#include <unistd.h>
 #include <string.h>
+
+void s21_cat() {
+
+}
 
 
 int main(int argc, char *argv[]) {
     // Mode without args
-    
+
 
     // Mode with args
 
@@ -14,3 +19,5 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
+

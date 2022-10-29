@@ -70,7 +70,7 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
             ;
         } else {
             // Handle n flag
-            if ((i == 1) && (flags->number_all)) {
+            if (((i == 1) || (cur_char == '\n')) && (flags->number_all)) {
                 printf("%6d\t", ++(flags->count));
             }
             // Handle b flag

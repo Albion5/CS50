@@ -78,11 +78,10 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
             } else {
                 start_line = 0;
             }
-            printf("start=%d\n", start_line);
-            printf("flag=%d", flags->number_all);
+            // printf("start=%d\n", start_line);
+            // printf("flag=%d", flags->number_all);
             if (start_line && flags->number_all) {
-                printf("табы\n");
-                //printf("%6d\t", ++(flags->count));
+                printf("%6d\t", ++(flags->count));
             }
             // if ((i == 1) && (flags->number_all)) {
             //     printf("%6d\t", ++(flags->count));

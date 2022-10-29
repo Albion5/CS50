@@ -57,7 +57,7 @@ void print_with_flags(char *buffer, Flags *flags) {
     printf("Modified line\n");
     int len = strlen(buffer);
     for (int i = 0; i < len; i++) {
-        
+        printf("%c", buffer[i]);
     }
 
 }

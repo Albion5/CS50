@@ -24,9 +24,9 @@ void print_single_flag_error(char option) {
     dprintf(STDERR_FILENO, "%s: %s '%c'", "cat",  "--invalid option", option);
 }
 
-void print_file_error(char *option) {
-// flag error
-    dprintf(STDERR_FILENO, "%s: %s: %s", "cat",  option, "No such file or directory");
+void print_file_error(char *filename) {
+// file error
+    dprintf(STDERR_FILENO, "%s: %s: %s", "cat",  filename, "No such file or directory");
 }
 
 void s21_cat(int fd) {

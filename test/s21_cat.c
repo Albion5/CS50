@@ -266,10 +266,7 @@ void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
     } else {
         printf("no errors\n");
     }
-
     // fd = open(argv[1], O_RDONLY);
-
-
 
 }
 

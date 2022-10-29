@@ -131,7 +131,7 @@ int check_single_flag(char symbol, Flags *flags, Errors *error, int arg_index) {
             default: /* Not valid char */
               res = 0;
             //   print_single_flag_error(symbol);
-            set_sflag_error(error, flags, arg_index);
+            set_sflag_error(error, symbol, arg_index);
     }
     printf("Char is a flag: %d\n", res);
     return res;
@@ -229,9 +229,6 @@ void parse_args(int argc, char *argv[], Flags *flags) {
     find_flags(argc, argv, flags, file_indexes, &count, &error);
     // Find files
     find_files(argv, flags, file_indexes, count);
-
-
-
 
     // fd = open(argv[1], O_RDONLY);
 

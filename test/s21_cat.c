@@ -24,61 +24,88 @@ void s21_cat(int fd) {
 }
 
 int is_flag_start(char first, char second) {
-    return first == '-' &&
+    return first == '-';
 
 }
+
+
+void set_b(Flags *flags) {
+    flags->number_non_empty = 1;
+    flags->number_all = 0;
+}
+void set_e(Flags *flags) {
+    flags->show_end = 1;
+    flags->show_unprintable = 1;
+}
+void set_E(Flags *flags) {
+    flags->show_end = 1;
+}
+
+void set_n(Flags *flags) {
+    if (!(flags->number_non_empty)) {
+        flags->number_all = 1;
+    }
+}
+
+void set_s(Flags *flags) {
+    flags->squeeze = 1;
+}
+
+void set_t(Flags *flags) {
+    flags->show_tab = 1;
+    flags->show_unprintable = 1;
+}
+
+void set_T(Flags *flags) {
+    flags->show_tab = 1;
+}
+
+int check_single_flag(char symbol, Flags *flags) {
+    int res = 1;
+    switch (symbol) {
+            case 'b': /* Number non empty lines */
+              set_b(flags);
+              break;
+            case 'e': /* equivalent to -vE */
+              set_e(flags);
+              break;
+            case 'E': /* Display $ at end of each line */
+              set_E(flags);
+              break;
+            case 'n': /* Number all output lines */
+              set_n(flags);
+              break;
+            case 's': /* Suppress repeated empty output lines */
+              set_s(flags);
+              break;
+            case 't': /* equivalent to -vT */
+              set_t(flags);
+              break;
+            case 'T': /* Display TAB characters as ^I */
+              set_T(flags);
+              break;
+            default: /* Not valid char */
+              res = 0;
+    }
+    printf("Char is a flag: %d\n", res);
+    return res;
+}
+
 
 int check_long_flag(char *string, Flags *flags) {
     int res = 1;
     if (strcmp(string, "--number-nonblank") == 0) {
-        check_single_flag()
+        set_b(flags);
     } else if (!strcmp(string, "--squeeze-blank")) {
-        flags->s = 1;
+        set_s(flags);
     } else if (!strcmp(string, "--number")) {
-        flags->n = 1;
+        set_n(flags);
     }  else if (strlen(string) != 2) {
         res = 0;
     }
     printf("Double flag: %d\n", res);
     return res;
 
-}
-
-
-int check_single_flag(char symbol, Flags *flags) {
-    int res = 1;
-    switch (symbol) {
-            case 'b': /* Number non empty lines */
-              flags->number_non_empty = 1;
-              flags->number_all = 0;
-              break;
-            case 'e': /* equivalent to -vE */
-              flags->show_end = 1;
-              flags->show_unprintable = 1;
-              break;
-            case 'E': /* Display $ at end of each line */
-              flags->show_end = 1;
-              break;
-            case 'n': /* Number all output lines */
-              if (!(flags->number_non_empty)) {
-                flags->number_all = 1;
-              }
-              break;
-            case 's': /* Suppress repeated empty output lines */
-              flags->squeeze = 1;
-              break;
-            case 't': /* equivalent to -vT */
-              flags->show_tab = 1;
-              flags->show_unprintable = 1;
-              break;
-            case 'T': /* Display TAB characters as ^I */
-              flags->show_tab = 1;
-              break;
-            default: /* Not valid char */
-                res = 0;
-    }
-    printf("Char is a flag: %d\n", res);
-    return res;
 }
 
 void check_flag(char *string, Flags *flags) {

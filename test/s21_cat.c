@@ -137,7 +137,7 @@ void check_flag(char *string, Flags *flags) {
 
 }
 
-void find_flags(int argc, char *argv[], Flags *flags) {
+void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes[]) {
     printf("Searching for flags\n");
     // Find all the flags
     int error = 0;
@@ -153,7 +153,7 @@ void parse_args(int argc, char *argv[], Flags *flags) {
     printf("Parsing\n");
     // Find all the flags
     int file_indexes[argc];
-    find_flags(argc, argv, flags);
+    find_flags(argc, argv, flags, file_indexes);
 
 
 

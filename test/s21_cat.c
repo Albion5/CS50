@@ -169,7 +169,7 @@ void find_files(char *argv[], Flags *flags, int *file_indexes, int count) {
     // Find all the flags
     int error = 0;
     int i = 1;
-    int file_index = i;
+    int file_index = 0;
     while ((i < count) && (error == 0)) {
         // int flag = check_flag(argv[i], flags);
         // if (flag == 2) {
@@ -189,7 +189,7 @@ void parse_args(int argc, char *argv[], Flags *flags) {
     printf("Parsing\n");
     // Find all the flags
     int file_indexes[argc];
-    int count = 0;
+    int count = 1;
     find_flags(argc, argv, flags, file_indexes, &count);
     find_files(argv, flags, file_indexes, count);
 

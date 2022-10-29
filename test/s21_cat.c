@@ -179,6 +179,7 @@ void find_files(char *argv[], Flags *flags, int *file_indexes, int count) {
         int index = *(file_indexes + i);
         printf("%d\n", index);
         printf("%s\n", argv[index]);
+        work_with_wile(argv[index], );
         i++;
     }
 }

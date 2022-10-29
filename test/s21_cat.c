@@ -220,7 +220,7 @@ void work_with_file(char *filename, Errors *error, int arg_index) {
     if (fd == -1) {
         // print_file_error(filename);
         set_file_error(error, filename, arg_index);
-    } else {
+    } else if (error->error_code == 0){
         // printf("opened %s\n", filename);
         s21_cat(fd);
         close(fd);

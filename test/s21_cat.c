@@ -63,7 +63,7 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
     // int len = strlen(buffer);
     char cur_char, fut_char;
     cur_char = buffer[0];
-    int start_line = 1;
+    int start_line;
     for (int i = 1; i < len; i++) {
         fut_char = buffer[i];
         // Handle s flag
@@ -73,7 +73,7 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
         } else {
             // Handle n flag
 
-            if (buffer[i-1] == '\n') {
+            if (buffer[i-1] == '\n' || i == 1) {
                 start_line = 1;
             } else {
                 start_line = 0;

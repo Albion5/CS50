@@ -18,7 +18,7 @@ typedef struct Errors {
     int error_code;
     int error_index;
     char symbol;
-    char *string;
+    char string[200];
 } Errors;
 
 
@@ -40,17 +40,17 @@ void print_file_error(char *filename) {
 
 void print_error(Errors *error) {
     printf("error\n");
-    // switch (error->error_code) {
-    //     case 1:
-    //       print_single_flag_error(error->symbol);
-    //       break;
-    //     case 2:
-    //       print_long_flag_error(error->string);
-    //       break;
-    //     case 3:
-    //       print_file_error(error->string);
-    //       break;
-    // }
+    switch (error->error_code) {
+        case 1:
+          print_single_flag_error(error->symbol);
+          break;
+        case 2:
+          print_long_flag_error(error->string);
+          break;
+        case 3:
+          print_file_error(error->string);
+          break;
+    }
 }
 
 void s21_cat(int fd) {
@@ -84,7 +84,7 @@ void set_lflag_error(Errors *error, char *option, int index) {
 void set_file_error(Errors *error, char *filename, int index) {
     error->error_code = 3;
     error->error_index = index;
-    // strcpy(error->string, filename);
+    strcpy(error->string, filename);
 }
 
 

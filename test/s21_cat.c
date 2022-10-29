@@ -23,6 +23,11 @@ void s21_cat(int fd) {
     }
 }
 
+int is_flag_start(char first, char second) {
+    return first == '-' && 
+
+}
+
 
 int check_char(char symbol, Flags *flags) {
     int res = 1;

@@ -163,7 +163,7 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *co
 
 }
 
-void find_files(int count, char *argv[], Flags *flags, int *file_indexes, int count) {
+void find_files(char *argv[], Flags *flags, int *file_indexes, int count) {
     printf("Searching for files\n");
     // Find all the flags
     int error = 0;

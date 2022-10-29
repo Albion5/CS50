@@ -41,13 +41,14 @@ void print_file_error(char *filename) {
 void print_error(Errors *error) {
     switch (error->code) {
         case 1:
-          print_single_flag_error();
+          print_single_flag_error(error->symbol);
           break;
         case 2:
-          print_long_flag_error();
+          print_long_flag_error(error->string);
           break;
         case 3:
-          print_file
+          print_file_error(error->string);
+          break;
     }
 }
 
@@ -237,13 +238,16 @@ void find_files(char *argv[], Flags *flags, int *file_indexes, int count) {
 
 void parse_args(int argc, char *argv[], Flags *flags) {
     printf("Parsing\n");
-    Errors error;
+
     // Find all the flags
     int file_indexes[argc];
     int count = 1;
     find_flags(argc, argv, flags, file_indexes, &count, &error);
     // Find files
     find_files(argv, flags, file_indexes, count);
+    if (error->code != 0) {
+        printf();
+    }
 
     // fd = open(argv[1], O_RDONLY);
 

@@ -24,11 +24,19 @@ void s21_cat(int fd) {
 
 }
 
+void check_flag(char *argv[], Flags *flags) {
+    printf("Flag checking\n");
+}
+
 void find_flags(int argc, char *argv[], Flags *flags) {
     printf("Searching for flags\n");
     // Find all the flags
     int error = 0;
-    while 
+    int i = 1;
+    while (i < argc) {
+        check_flag(argv + i, flags);
+        i++;
+    }
 
 }
 

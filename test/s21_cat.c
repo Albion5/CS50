@@ -24,12 +24,28 @@ void s21_cat(int fd) {
 }
 
 int is_flag_start(char first, char second) {
-    return first == '-' && 
+    return first == '-' &&
+
+}
+
+int check_long_flag(char *string, Flags *flags) {
+    int res = 1;
+    if (strcmp(string, "--number-nonblank") == 0) {
+        check_single_flag()
+    } else if (!strcmp(string, "--squeeze-blank")) {
+        flags->s = 1;
+    } else if (!strcmp(string, "--number")) {
+        flags->n = 1;
+    }  else if (strlen(string) != 2) {
+        res = 0;
+    }
+    printf("Double flag: %d\n", res);
+    return res;
 
 }
 
 
-int check_char(char symbol, Flags *flags) {
+int check_single_flag(char symbol, Flags *flags) {
     int res = 1;
     switch (symbol) {
             case 'b': /* Number non empty lines */
@@ -72,7 +88,7 @@ void check_flag(char *string, Flags *flags) {
             printf("double flag found\n");
         } else {
             printf("single flag found\n");
-            printf("res=%d\n", check_char(string[1], flags));
+            printf("res=%d\n", check_single_flag(string[1], flags));
         }
     } else {
         printf("Flag not found\n");

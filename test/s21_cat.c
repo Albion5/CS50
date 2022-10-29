@@ -26,9 +26,14 @@ void s21_cat(int fd) {
 
 void parse_args(int argc, char *argv[], Flags *flags) {
     // Find all the flags
-    // fd = open(argv[1], O_RDONLY);
+
+
+
+
     // Find files
+    // fd = open(argv[1], O_RDONLY);
     printf("Parsing\n");
+    find_flags();
 
 
 }

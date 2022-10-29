@@ -10,8 +10,8 @@ typedef struct Flags {
     int show_tab;
     int show_end;
     int show_unprintable;
-    
-
+    int squeeze;
+    int count;
 } Flags;
 
 void s21_cat(int fd) {
@@ -24,11 +24,11 @@ void s21_cat(int fd) {
 
 }
 
-void parse_args() {
+void parse_args(int argc, char *argv[], Flags *flags) {
     // Find all the flags
-    fd = open(argv[1], O_RDONLY);
+    // fd = open(argv[1], O_RDONLY);
     // Find files
-
+    printf("Parsing\n");
 
 
 }
@@ -38,7 +38,8 @@ int main(int argc, char *argv[]) {
 
     int fd;
     if (argc > 1) {
-        parse_args(argc, argv);
+        Flags flags = {0, 0, 0, 0, 0, 0, 0};
+        parse_args(argc, argv, &flags);
 
     // Mode with args
     ;

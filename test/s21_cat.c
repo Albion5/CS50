@@ -45,8 +45,26 @@ void s21_cat(int fd) {
     }
 }
 
-int is_flag_start(char first, char second) {
-    return first == '-';
+// int is_flag_start(char first, char second) {
+//     return first == '-';
+// }
+
+
+void set_s_flag_error(Errors *error, char symbol) {
+    error->error_code = ;
+    error->error_index;
+    error->symbol;
+    strcpy(string, ;
+}
+
+void set_l_flag_error() {
+
+}
+void set_file_error() {
+
+}
+
+void set_no_error() {
 
 }
 

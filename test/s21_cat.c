@@ -169,7 +169,7 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *co
             ;
         } else {
             stop = 1;
-            error->flag_error = argv[i];
+            error = {argv[i]};
         }
         i++;
     }

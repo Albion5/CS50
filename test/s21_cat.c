@@ -225,10 +225,10 @@ void work_with_file(char *filename, Errors *error, int arg_index) {
 void find_files(char *argv[], Flags *flags, int *file_indexes, int count, Errors *error) {
     printf("Searching for files\n");
     // Find all the flags
-    int error = 0;
+    int stop = 0;
     int i = 1;
     int file_index = 0;
-    while ((i < count) && (error == 0)) {
+    while ((i < count) && (stop == 0)) {
         int index = *(file_indexes + i);
         //printf("%d\n", index);
         //printf("%s\n", argv[index]);

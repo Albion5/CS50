@@ -63,14 +63,25 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
     // int len = strlen(buffer);
     char cur_char, fut_char;
     cur_char = buffer[0];
+    int start_line = 1;
     for (int i = 1; i < len; i++) {
         fut_char = buffer[i];
         // Handle s flag
         if ((flags->squeeze) && is_repeated_line(cur_char, fut_char)) {
+            start_line = 1;
             ;
         } else {
             // Handle n flag
-            printf("%6d\t", ++(flags->count));
+
+            if (buffer[i] != '\n') {
+                start_line = 0;
+            } else {
+                start_line = 0;
+            }
+
+            if (start_line && flags->number_all) {
+                printf("%6d\t", ++(flags->count));
+            }
             // if ((i == 1) && (flags->number_all)) {
             //     printf("%6d\t", ++(flags->count));
 
@@ -78,7 +89,7 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
             //     printf("%6d\t", ++(flags->count));
             // }
             // // Handle b flag
-            // printf("%c", cur_char);
+            printf("%c", cur_char);
 
         }
         cur_char = fut_char;

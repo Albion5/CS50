@@ -21,7 +21,6 @@ void s21_cat(int fd) {
         printf("%.*s", bytes_read, buffer);
         bytes_read = read(fd, buffer, buf_size);
     }
-
 }
 
 void check_flag(char *string, Flags *flags) {

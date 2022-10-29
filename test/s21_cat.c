@@ -70,6 +70,10 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
             ;
         } else {
             // Handle n flag
+            if (i == 1) && (flags->number_all) {
+
+            }
+
             // Handle b flag
             printf("%c", cur_char);
 

@@ -173,6 +173,9 @@ int main(int argc, char *argv[]) {
 
     int fd;
     if (argc > 1) {
+        // int flags_indexes[argc];
+        int file_indexes[argc];
+
         Flags flags = {0, 0, 0, 0, 0, 0, 0};
         parse_args(argc, argv, &flags);
 

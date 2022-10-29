@@ -236,13 +236,13 @@ void find_files(char *argv[], Flags *flags, int *file_indexes, int count) {
     }
 }
 
-void parse_args(int argc, char *argv[], Flags *flags) {
+void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
     printf("Parsing\n");
 
     // Find all the flags
     int file_indexes[argc];
     int count = 1;
-    find_flags(argc, argv, flags, file_indexes, &count, &error);
+    find_flags(argc, argv, flags, file_indexes, &count, error);
     // Find files
     find_files(argv, flags, file_indexes, count);
     if (error->code != 0) {
@@ -268,7 +268,8 @@ int main(int argc, char *argv[]) {
 
 
         Flags flags = {0, 0, 0, 0, 0, 0, 0};
-        parse_args(argc, argv, &flags);
+        Errors error;
+        parse_args(argc, argv, &flags, &error);
 
     // Mode with args
     ;

@@ -67,6 +67,7 @@ void check_flag(char *string, Flags *flags) {
             printf("double flag found\n");
         } else {
             printf("single flag found\n");
+            printf("res=%d\n", check_char(string[1], flags));
         }
     } else {
         printf("Flag not found\n");

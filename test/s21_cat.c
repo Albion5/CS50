@@ -53,9 +53,9 @@ void print_error(Errors *error) {
     }
 }
 
-void print_with_flags(char *buffer, Flags *flags) {
+void print_with_flags(char *buffer, int len, Flags *flags) {
     printf("Modified line\n");
-    int len = strlen(buffer);
+    // int len = strlen(buffer);
     char cur_char, fut_char;
     cur_char = buffer[0];
     for (int i = 0; i < len; i++) {
@@ -74,7 +74,7 @@ void s21_cat(int fd, int mode, Flags *flags) {
             if (mode == 0) {
                 printf("%.*s", bytes_read, buffer);
             } else {
-                print_with_flags(buffer, flags);
+                print_with_flags(buffer, bytes_read, flags);
             }
             bytes_read = read(fd, buffer, buf_size);
         }

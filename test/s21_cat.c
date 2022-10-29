@@ -189,8 +189,8 @@ void parse_args(int argc, char *argv[], Flags *flags) {
     // Find all the flags
     int file_indexes[argc];
     int count = 0;
-    find_flags(argc, argv, flags, file_indexes., &count);
-    find_files(argc, argv, flags, file_indexes, count);
+    find_flags(argc, argv, flags, file_indexes, &count);
+    find_files(argv, flags, file_indexes, count);
 
 
 

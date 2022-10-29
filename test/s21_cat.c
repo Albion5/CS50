@@ -14,6 +14,11 @@ typedef struct Flags {
     int count;
 } Flags;
 
+void print_flag_error(char *option) {
+// flag error
+    dprintf(STDERR_FILENO, "%s: %s '%s'", "cat",  "--invalid option", option);
+}
+
 void s21_cat(int fd) {
     char buffer[buf_size];
     int bytes_read = read(fd, buffer, buf_size);
@@ -155,6 +160,8 @@ void parse_args(int argc, char *argv[], Flags *flags) {
 
 
 
+
+
 int main(int argc, char *argv[]) {
 
     int fd;
@@ -178,5 +185,3 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-
-dprintf(STDERR_FILENO, "%s: %s %s", name,  "--invalid option", );

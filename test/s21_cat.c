@@ -7,7 +7,7 @@ void s21_cat(int fd) {
     char buffer[buf_size];
     int bytes_read = read(fd, buffer, buf_size);
     while (bytes_read > 0) {
-        printf("%s", buffer);
+        printf("%.*s", bytes_read, buffer);
         bytes_read = read(fd, buffer, buf_size);
     }
 

@@ -94,6 +94,9 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
 
         }
         cur_char = fut_char;
+        if (i == len -1) {
+            printf("%c", fut_char);
+        }
     }
 
 }

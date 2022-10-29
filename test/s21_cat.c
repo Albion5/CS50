@@ -25,15 +25,30 @@ void s21_cat(int fd) {
 }
 
 void parse_args(int argc, char *argv[], Flags *flags) {
+    printf("Parsing\n");
     // Find all the flags
 
+    find_flags(argc, argv, flags);
 
 
 
     // Find files
     // fd = open(argv[1], O_RDONLY);
-    printf("Parsing\n");
-    find_flags();
+
+
+
+}
+void find_flags(int argc, char *argv[], Flags *flags) {
+    printf("Searching for flags\n");
+    // Find all the flags
+
+    find_flags(argc, argv, flags);
+
+
+
+    // Find files
+    // fd = open(argv[1], O_RDONLY);
+
 
 
 }

@@ -56,6 +56,8 @@ void print_error(Errors *error) {
 void print_with_flags(char *buffer, Flags *flags) {
     printf("Modified line\n");
     int len = strlen(buffer);
+    char cur_char, fut_char;
+    cur char = buffer[0];
     for (int i = 0; i < len; i++) {
         printf("%c", buffer[i]);
     }

@@ -141,7 +141,7 @@ int check_flag(char *string, Flags *flags) {
 
 }
 
-void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes) {
+void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *count) {
     printf("Searching for flags\n");
     // Find all the flags
     int error = 0;
@@ -151,6 +151,8 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes) {
         int flag = check_flag(argv[i], flags);
         if (flag == 2) {
             *(file_indexes + file_index) = i;
+            *count += 1;
+
         } else if (flag == 1) {
             ;
         } else {
@@ -161,7 +163,7 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes) {
 
 }
 
-void find_files(int argc, char *argv[], Flags *flags, int *file_indexes) {
+void find_files(int count, char *argv[], Flags *flags, int *file_indexes) {
     printf("Searching for files\n");
     // Find all the flags
     int error = 0;
@@ -186,7 +188,8 @@ void parse_args(int argc, char *argv[], Flags *flags) {
     printf("Parsing\n");
     // Find all the flags
     int file_indexes[argc];
-    find_flags(argc, argv, flags, file_indexes);
+    int count = 0;
+    find_flags(argc, argv, flags, file_indexes., &count);
     find_files(argc, argv, flags, file_indexes);
 
 

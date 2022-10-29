@@ -90,6 +90,7 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
             //     printf("%6d\t", ++(flags->count));
             // }
             // // Handle b flag
+
             printf("%c", cur_char);
 
         }

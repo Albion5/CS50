@@ -161,11 +161,31 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes) {
 
 }
 
+void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes) {
+    printf("Searching for flags\n");
+    // Find all the flags
+    int error = 0;
+    int i = 1;
+    int file_index = i;
+    while ((i < argc) && (error == 0)) {
+        int flag = check_flag(argv[i], flags);
+        if (flag == 2) {
+            *(file_indexes + file_index) = i;
+        } else if (flag == 1) {
+            ;
+        } else {
+            error = 1;
+        }
+        i++;
+    }
+}
+
 void parse_args(int argc, char *argv[], Flags *flags) {
     printf("Parsing\n");
     // Find all the flags
     int file_indexes[argc];
     find_flags(argc, argv, flags, file_indexes);
+    find_files(argc, argv, flags, file_indexes);
 
 
 

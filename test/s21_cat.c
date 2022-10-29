@@ -306,7 +306,7 @@ int main(int argc, char *argv[]) {
 
         // Mode without args
         fd = STDIN_FILENO;
-        s21_cat(fd, 0, flags);
+        s21_cat(fd, 0, &flags);
     }
     return 0;
 }

@@ -14,9 +14,14 @@ typedef struct Flags {
     int count;
 } Flags;
 
-void print_flag_error(char *option) {
+void print_double_flag_error(char *option) {
 // flag error
     dprintf(STDERR_FILENO, "%s: %s '%s'", "cat",  "--invalid option", option);
+}
+
+void print_single_flag_error(char option) {
+// flag error
+    dprintf(STDERR_FILENO, "%s: %s '%c'", "cat",  "--invalid option", option);
 }
 
 void s21_cat(int fd) {
@@ -91,7 +96,7 @@ int check_single_flag(char symbol, Flags *flags) {
               break;
             default: /* Not valid char */
               res = 0;
-              print_flag_error(symbol);
+              print_single_flag_error(symbol);
     }
     printf("Char is a flag: %d\n", res);
     return res;

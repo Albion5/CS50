@@ -152,6 +152,7 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *co
         if (flag == 2) {
             *(file_indexes + file_index) = i;
             *count += 1;
+            file_index += 1;
 
         } else if (flag == 1) {
             ;

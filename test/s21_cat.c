@@ -54,7 +54,7 @@ void print_error(Errors *error) {
 }
 
 void print_with_flags(char *buffer, flags) {
-    
+    printf("Modified line\n");
 }
 
 void s21_cat(int fd, int mode, Flags *flags) {

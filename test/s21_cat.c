@@ -24,9 +24,18 @@ void s21_cat(int fd) {
 
 }
 
-void check_flag(char *argv[], Flags *flags) {
+void check_flag(char *string, Flags *flags) {
     printf("Flag checking\n");
-    
+    if (string[0] == '-') {
+        if (string[1] == '-') {
+            printf("double flag found\n");
+        } else {
+            printf("single flag found\n");
+        }
+    } else {
+        printf("Flag not found\n");
+    }
+
 }
 
 void find_flags(int argc, char *argv[], Flags *flags) {
@@ -35,7 +44,7 @@ void find_flags(int argc, char *argv[], Flags *flags) {
     int error = 0;
     int i = 1;
     while (i < argc) {
-        check_flag(argv + i, flags);
+        check_flag(argv[i], flags);
         i++;
     }
 

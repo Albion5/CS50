@@ -63,7 +63,7 @@ void s21_cat(int fd, int mode, Flags *flags) {
     while (bytes_read > 0) {
         if (mode == 0) {
             printf("%.*s", bytes_read, buffer);
-        ) else {
+        } else {
             print_with_flags(buffer, flags);
         }
         bytes_read = read(fd, buffer, buf_size);
@@ -222,7 +222,7 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *co
     }
 }
 
-int work_with_file(char *filename, Errors *error, int arg_index) {
+int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags) {
     int res = 0;
     int fd = open(filename, O_RDONLY);
     if (fd == -1) {
@@ -237,7 +237,7 @@ int work_with_file(char *filename, Errors *error, int arg_index) {
     } else if (error->error_code == 0) {
         // printf("opened %s\n", filename);
         res = 1;
-        s21_cat(fd);
+        s21_cat(fd, 1, flags);
         close(fd);
         // printf("closed\n");
     }
@@ -254,7 +254,7 @@ void find_files(char *argv[], Flags *flags, int *file_indexes, int count, Errors
         int index = *(file_indexes + i);
         //printf("%d\n", index);
         //printf("%s\n", argv[index]);
-        stop = work_with_file(argv[index], error, index);
+        stop = work_with_file(argv[index], error, index, flags);
         i++;
     }
 }

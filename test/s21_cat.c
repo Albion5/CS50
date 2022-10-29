@@ -79,7 +79,7 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
                 start_line = 0;
             }
             printf("start=%d\n", start_line);
-            printf("flag=%d\n", flags->number_all);
+            printf("flag=%d", flags->number_all);
             if (start_line && flags->number_all) {
                 printf("табы\n");
                 //printf("%6d\t", ++(flags->count));
@@ -188,6 +188,7 @@ int check_single_flag(char symbol, Flags *flags, Errors *error, int arg_index) {
               break;
             case 'n': /* Number all output lines */
               set_n(flags);
+              printf("n flag\n");
               break;
             case 's': /* Suppress repeated empty output lines */
               set_s(flags);

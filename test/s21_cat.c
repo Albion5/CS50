@@ -176,7 +176,8 @@ void find_files(int argc, char *argv[], Flags *flags, int *file_indexes) {
         // } else {
         //     error = 1;
         // }
-        int index = file
+        int index = *(file_indexes + i);
+        printf("%d\n", index);
         i++;
     }
 }

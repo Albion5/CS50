@@ -21,6 +21,7 @@ typedef struct Errors {
     char *string;
 } Errors;
 
+
 void print_long_flag_error(char *option) {
 // flag error
     dprintf(STDERR_FILENO, "%s: %s '%s'", "cat",  "unrecognized option", option);
@@ -34,6 +35,11 @@ void print_single_flag_error(char option) {
 void print_file_error(char *filename) {
 // file error
     dprintf(STDERR_FILENO, "%s: %s: %s", "cat",  filename, "No such file or directory");
+}
+
+
+void print_error(Errors *error) {
+    switch (error->code)
 }
 
 void s21_cat(int fd) {

@@ -78,6 +78,7 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
             } else {
                 start_line = 0;
             }
+            printf("start=%d\n", start_line);
 
             if (start_line && flags->number_all) {
                 printf("%6d\t", ++(flags->count));

@@ -79,9 +79,10 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
                 start_line = 0;
             }
             printf("start=%d\n", start_line);
-
+            printf("flag=%d\n", flags->number_all);
             if (start_line && flags->number_all) {
-                printf("%6d\t", ++(flags->count));
+                printf("табы\n");
+                //printf("%6d\t", ++(flags->count));
             }
             // if ((i == 1) && (flags->number_all)) {
             //     printf("%6d\t", ++(flags->count));
@@ -155,7 +156,7 @@ void set_E(Flags *flags) {
 }
 
 void set_n(Flags *flags) {
-    if (!(flags->number_non_empty)) {
+    if ((!flags->number_non_empty)) {
         flags->number_all = 1;
     }
 }

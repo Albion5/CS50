@@ -219,16 +219,15 @@ int work_with_file(char *filename, Errors *error, int arg_index) {
     int res = 0;
     int fd = open(filename, O_RDONLY);
     if (fd == -1) {
-        // print_file_error(filename);
-        if (error_error_code == 0) {
-            set_file_error(error, filename, arg_index);
-        } else {
-            if (arg_index < error->error_index) {
-                set_file_error(error, filename, arg_index);
-            }
-        }
         res = 0;
-    } else if (error->error_code == 0){
+        // print_file_error(filename);
+        if (error->error_code == 0) {
+            set_file_error(error, filename, arg_index);
+        } else if (arg_index < error->error_index) {
+                set_file_error(error, filename, arg_index);
+        }
+
+    } else if (error->error_code == 0) {
         // printf("opened %s\n", filename);
         res = 1;
         s21_cat(fd);

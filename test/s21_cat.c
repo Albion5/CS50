@@ -169,6 +169,13 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *co
 
 }
 
+void work_with_wile(char *filename) {
+    int fd = open(filename, O_RDONLY);
+    if (fd == -1) {
+        print_file_error(filename);
+    }
+}
+
 void find_files(char *argv[], Flags *flags, int *file_indexes, int count) {
     printf("Searching for files\n");
     // Find all the flags
@@ -177,9 +184,9 @@ void find_files(char *argv[], Flags *flags, int *file_indexes, int count) {
     int file_index = 0;
     while ((i < count) && (error == 0)) {
         int index = *(file_indexes + i);
-        printf("%d\n", index);
-        printf("%s\n", argv[index]);
-        work_with_wile(argv[index], );
+        //printf("%d\n", index);
+        //printf("%s\n", argv[index]);
+        work_with_wile(argv[index]);
         i++;
     }
 }

@@ -221,9 +221,10 @@ void work_with_file(char *filename, Errors *error, int arg_index) {
         // print_file_error(filename);
         set_file_error(error, filename, arg_index);
     } else {
-        printf("opened %s\n", filename);
+        // printf("opened %s\n", filename);
+        s21_cat(fd);
         close(fd);
-        printf("closed\n");
+        // printf("closed\n");
     }
 }
 

@@ -14,6 +14,11 @@ typedef struct Flags {
     int count;
 } Flags;
 
+typedef struct Errors {
+    char flag_error;
+    char *file_error;
+} Errors;
+
 void print_long_flag_error(char *option) {
 // flag error
     dprintf(STDERR_FILENO, "%s: %s '%s'", "cat",  "unrecognized option", option);
@@ -193,10 +198,11 @@ void find_files(char *argv[], Flags *flags, int *file_indexes, int count) {
 
 void parse_args(int argc, char *argv[], Flags *flags) {
     printf("Parsing\n");
+    Errors error;
     // Find all the flags
     int file_indexes[argc];
     int count = 1;
-    find_flags(argc, argv, flags, file_indexes, &count);
+    find_flags(argc, argv, flags, file_indexes, &count, &error);
     // Find files
     find_files(argv, flags, file_indexes, count);
 

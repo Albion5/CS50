@@ -223,7 +223,7 @@ int work_with_file(char *filename, Errors *error, int arg_index) {
         if (error_error_code == 0) {
             set_file_error(error, filename, arg_index);
         } else {
-            if error->code
+            if error->error_index < 
         }
         res = 0;
     } else if (error->error_code == 0){

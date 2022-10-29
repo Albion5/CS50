@@ -59,13 +59,15 @@ void set_s_flag_error(Errors *error, char option, int index) {
 void set_l_flag_error(Errors *error, char *option, int index) {
     error->error_code = 2;
     error->error_index = index;
-    strcpy(error->string, option)
+    strcpy(error->string, option);
 }
-void set_file_error() {
+void set_file_error(Errors *error, char *filename, int index) {
     error->error_code = 3;
+    error->error_index = index;
+    strcpy(error->string, option);
 }
 
-void set_no_error() {
+void set_no_error(Errors *error) {
     error->error_code = 0;
 }
 

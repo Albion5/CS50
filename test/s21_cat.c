@@ -154,25 +154,23 @@ int check_flag(char *string, Flags *flags) {
 void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *count, Errors *error) {
     printf("Searching for flags\n");
     // Find all the flags
-    int error = 0;
+    int stop = 0;
     int i = 1;
     int file_index = i;
-    while ((i < argc) && (error == 0)) {
+    while ((i < argc) && (stop == 0)) {
         int flag = check_flag(argv[i], flags);
         if (flag == 2) {
             *(file_indexes + file_index) = i;
             *count += 1;
             file_index += 1;
-
         } else if (flag == 1) {
             ;
         } else {
-            error = 1;
-            
+            stop = 1;
+            error->flag_error = argv[i];
         }
         i++;
     }
-
 }
 
 void work_with_wile(char *filename) {

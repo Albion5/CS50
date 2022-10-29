@@ -16,6 +16,7 @@ void s21_cat(int fd) {
 
 
 int main(int argc, char *argv[]) {
+    
     int fd;
     if (argc > 1) {
         fd = open(argv[1], O_RDONLY);

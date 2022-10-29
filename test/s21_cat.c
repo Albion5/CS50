@@ -16,7 +16,7 @@ typedef struct Flags {
 
 void print_long_flag_error(char *option) {
 // flag error
-    dprintf(STDERR_FILENO, "%s: %s '%s'", "cat",  "--invalid option", option);
+    dprintf(STDERR_FILENO, "%s: %s '%s'", "cat",  "unrecognized option", option);
 }
 
 void print_single_flag_error(char option) {

@@ -16,9 +16,8 @@ typedef struct Flags {
 
 typedef struct Errors {
     int error_code;
-    char single_option;
-    char *long_option;
-    char *file_name;
+    char symbol;
+    char *string;
 } Errors;
 
 void print_long_flag_error(char *option) {

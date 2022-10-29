@@ -24,6 +24,11 @@ void print_single_flag_error(char option) {
     dprintf(STDERR_FILENO, "%s: %s '%c'", "cat",  "--invalid option", option);
 }
 
+void print_file_error(char *option) {
+// flag error
+    dprintf(STDERR_FILENO, "%s: %s: %s", "cat",  option, "No such file or directory");
+}
+
 void s21_cat(int fd) {
     char buffer[buf_size];
     int bytes_read = read(fd, buffer, buf_size);
@@ -171,16 +176,9 @@ void find_files(char *argv[], Flags *flags, int *file_indexes, int count) {
     int i = 1;
     int file_index = 0;
     while ((i < count) && (error == 0)) {
-        // int flag = check_flag(argv[i], flags);
-        // if (flag == 2) {
-        //     *(file_indexes + file_index) = i;
-        // } else if (flag == 1) {
-        //     ;
-        // } else {
-        //     error = 1;
-        // }
         int index = *(file_indexes + i);
         printf("%d\n", index);
+        printf("%s\n", argv[index]);
         i++;
     }
 }

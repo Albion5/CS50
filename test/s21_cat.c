@@ -232,7 +232,7 @@ void find_files(char *argv[], Flags *flags, int *file_indexes, int count, Errors
         int index = *(file_indexes + i);
         //printf("%d\n", index);
         //printf("%s\n", argv[index]);
-        work_with_wile(argv[index]);
+        work_with_wile(argv[index], error);
         i++;
     }
 }
@@ -246,8 +246,8 @@ void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
     find_flags(argc, argv, flags, file_indexes, &count, error);
     // Find files
     find_files(argv, flags, file_indexes, count);
-    if (error->code != 0) {
-        printf();
+    if (error->error_code != 0) {
+        printf("\n");
     }
 
     // fd = open(argv[1], O_RDONLY);

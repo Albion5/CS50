@@ -131,14 +131,14 @@ int check_single_flag(char symbol, Flags *flags, Errors *error) {
             default: /* Not valid char */
               res = 0;
             //   print_single_flag_error(symbol);
-            set_sflag_error(error, );
+            set_sflag_error(error, flags, );
     }
     printf("Char is a flag: %d\n", res);
     return res;
 }
 
 
-int check_long_flag(char *string, Flags *flags, Errors *error) {
+int check_long_flag(char *string, Flags *flags, Errors *error, int arg_index) {
     int res = 1;
     if (strcmp(string, "--number-nonblank") == 0) {
         set_b(flags);
@@ -148,7 +148,8 @@ int check_long_flag(char *string, Flags *flags, Errors *error) {
         set_n(flags);
     }  else if (strlen(string) != 2) {
         res = 0;
-        print_long_flag_error(string);
+        // print_long_flag_error(string);
+        set_lflag_error(error, string, arg_index);
     }
     printf("Double flag: %d\n", res);
     return res;
@@ -183,7 +184,7 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *co
     int i = 1;
     int file_index = i;
     while ((i < argc) && (stop == 0)) {
-        int flag = check_flag(argv[i], flags, error);
+        int flag = check_flag(argv[i], flags, error, i);
         if (flag == 2) {
             *(file_indexes + file_index) = i;
             *count += 1;

@@ -216,7 +216,7 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *co
 }
 
 int work_with_file(char *filename, Errors *error, int arg_index) {
-    int res = 1;
+    int res = 0;
     int fd = open(filename, O_RDONLY);
     if (fd == -1) {
         // print_file_error(filename);
@@ -230,6 +230,7 @@ int work_with_file(char *filename, Errors *error, int arg_index) {
         res = 0;
     } else if (error->error_code == 0){
         // printf("opened %s\n", filename);
+        res = 1;
         s21_cat(fd);
         close(fd);
         // printf("closed\n");

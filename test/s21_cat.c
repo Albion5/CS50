@@ -15,17 +15,19 @@ void s21_cat(int fd) {
 
 
 int main(int argc, char *argv[]) {
-
+    int fd;
     if (argc > 1) {
+        fd = open(argv[1], O_RDONLY);
     // Mode with args
     ;
         // Stdin mode
 
         // File mode
-        s21_cat(STDIN_FILENO);
+        s21_cat(fd);
     } else {
+        fd = STDIN_FILENO;
          // Mode without args
-         s21_cat(STDIN_FILENO);
+         s21_cat(fd);
     }
     return 0;
 }

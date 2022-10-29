@@ -69,9 +69,11 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
         if ((flags->squeeze) && is_repeated_line(cur_char, fut_char)) {
             ;
         } else {
+            // Handle n flag
+            // Handle b flag
             printf("%c", cur_char);
-        }
 
+        }
         cur_char = fut_char;
     }
 

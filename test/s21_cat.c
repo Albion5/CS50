@@ -220,6 +220,10 @@ void work_with_file(char *filename, Errors *error, int arg_index) {
     if (fd == -1) {
         // print_file_error(filename);
         set_file_error(error, filename, arg_index);
+    } else {
+        printf("opened %s\n", filename);
+        close(fd);
+        printf("closed\n");
     }
 }
 
@@ -249,6 +253,8 @@ void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
     find_files(argv, flags, file_indexes, count, error);
     if (error->error_code != 0) {
         print_error(error);
+    } else {
+        printf("no errors\n");
     }
 
     // fd = open(argv[1], O_RDONLY);

@@ -24,6 +24,14 @@ void s21_cat(int fd) {
 
 }
 
+void find_flags(int argc, char *argv[], Flags *flags) {
+    printf("Searching for flags\n");
+    // Find all the flags
+    int error = 0;
+    while 
+
+}
+
 void parse_args(int argc, char *argv[], Flags *flags) {
     printf("Parsing\n");
     // Find all the flags
@@ -38,20 +46,8 @@ void parse_args(int argc, char *argv[], Flags *flags) {
 
 
 }
-void find_flags(int argc, char *argv[], Flags *flags) {
-    printf("Searching for flags\n");
-    // Find all the flags
-
-    find_flags(argc, argv, flags);
 
 
-
-    // Find files
-    // fd = open(argv[1], O_RDONLY);
-
-
-
-}
 
 
 int main(int argc, char *argv[]) {

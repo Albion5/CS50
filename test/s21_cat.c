@@ -22,6 +22,7 @@ int main(int argc, char *argv[]) {
         // Stdin mode
 
         // File mode
+        s21_cat(STDIN_FILENO);
     } else {
          // Mode without args
          s21_cat(STDIN_FILENO);

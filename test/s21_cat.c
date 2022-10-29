@@ -29,6 +29,7 @@ int check_char(char symbol, Flags *flags) {
     switch (symbol) {
             case 'b': /* Number non empty lines */
               flags->number_non_empty = 1;
+              flags->number_all = 0;
               break;
             case 'e': /* equivalent to -vE */
               flags->show_end = 1;
@@ -38,13 +39,14 @@ int check_char(char symbol, Flags *flags) {
               flags->show_end = 1;
               break;
             case 'n': /* Number all output lines */
-                flags->number_all = 1;
+              flags->number_all = 1;
               break;
             case 's': /* Suppress repeated empty output lines */
               flags->squeeze = 1;
               break;
             case 't': /* equivalent to -vT */
               flags->t = 1;
+              flags->show_unprintable = 1;
               break;
             case 'T': /* Display TAB characters as ^I */
               flags->T = 1;

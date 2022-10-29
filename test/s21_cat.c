@@ -53,12 +53,19 @@ void print_error(Errors *error) {
     }
 }
 
-void s21_cat(int fd, int mode) {
+void print_with_flags(char *buffer, flags) {
+    
+}
+
+void s21_cat(int fd, int mode, Flags *flags) {
     char buffer[buf_size];
     int bytes_read = read(fd, buffer, buf_size);
     while (bytes_read > 0) {
-        printf("%.*s", bytes_read, buffer);
-        print();
+        if (mode == 0) {
+            printf("%.*s", bytes_read, buffer);
+        ) else {
+            print_with_flags(buffer, flags);
+        }
         bytes_read = read(fd, buffer, buf_size);
     }
 }

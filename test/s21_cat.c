@@ -73,8 +73,8 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
         } else {
             // Handle n flag
 
-            if (buffer[i] != '\n') {
-                start_line = 0;
+            if (buffer[i - 1] == '\n') {
+                start_line = 1;
             } else {
                 start_line = 0;
             }

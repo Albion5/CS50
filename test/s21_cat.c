@@ -65,6 +65,7 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
     cur_char = buffer[0];
     for (int i = 1; i < len; i++) {
         fut_char = buffer[i];
+        // Handle s flag
         if ((flags->squeeze) && is_repeated_line(cur_char, fut_char)) {
             ;
         } else {

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <fcntl.h>
 #define buf_size 4096
 
 void s21_cat(int fd) {
@@ -18,6 +19,7 @@ int main(int argc, char *argv[]) {
     int fd;
     if (argc > 1) {
         fd = open(argv[1], O_RDONLY);
+        printf("%d", fd)
     // Mode with args
     ;
         // Stdin mode
@@ -26,8 +28,9 @@ int main(int argc, char *argv[]) {
         s21_cat(fd);
     } else {
         fd = STDIN_FILENO;
+        printf("%d", fd);
          // Mode without args
-         s21_cat(fd);
+        s21_cat(fd);
     }
     return 0;
 }

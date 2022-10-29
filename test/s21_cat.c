@@ -53,11 +53,12 @@ void print_error(Errors *error) {
     }
 }
 
-void s21_cat(int fd) {
+void s21_cat(int fd, int mode) {
     char buffer[buf_size];
     int bytes_read = read(fd, buffer, buf_size);
     while (bytes_read > 0) {
         printf("%.*s", bytes_read, buffer);
+        print();
         bytes_read = read(fd, buffer, buf_size);
     }
 }

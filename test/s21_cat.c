@@ -104,7 +104,7 @@ void set_T(Flags *flags) {
     flags->show_tab = 1;
 }
 
-int check_single_flag(char symbol, Flags *flags, Errors *error) {
+int check_single_flag(char symbol, Flags *flags, Errors *error, int arg_index) {
     int res = 1;
     switch (symbol) {
             case 'b': /* Number non empty lines */
@@ -131,7 +131,7 @@ int check_single_flag(char symbol, Flags *flags, Errors *error) {
             default: /* Not valid char */
               res = 0;
             //   print_single_flag_error(symbol);
-            set_sflag_error(error, flags, );
+            set_sflag_error(error, flags, arg_index);
     }
     printf("Char is a flag: %d\n", res);
     return res;
@@ -156,7 +156,7 @@ int check_long_flag(char *string, Flags *flags, Errors *error, int arg_index) {
 
 }
 
-int check_flag(char *string, Flags *flags, Errors *error) {
+int check_flag(char *string, Flags *flags, Errors *error, int arg) {
     printf("Flag checking\n");
     int res = 0;
     if (string[0] == '-') {

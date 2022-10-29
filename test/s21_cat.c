@@ -126,13 +126,13 @@ int check_flag(char *string, Flags *flags) {
     if (string[0] == '-') {
         if (string[1] == '-') {
             printf("double flag found\n");
-            printf("res=%d\n", check_long_flag(string, flags));
+            res = check_long_flag(string, flags);
 
         } else {
             printf("single flag found\n");
-            printf("res=%d\n", check_single_flag(string[1], flags));
+            res = check_single_flag(string[1], flags);
         }
-        res = 1;
+
     } else {
         printf("Flag not found\n");
         res = 2;

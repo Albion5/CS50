@@ -39,17 +39,19 @@ int check_char(char symbol, Flags *flags) {
               flags->show_end = 1;
               break;
             case 'n': /* Number all output lines */
-              flags->number_all = 1;
+              if (!(flags->number_non_empty)) {
+                flags->number_all = 1;
+              }
               break;
             case 's': /* Suppress repeated empty output lines */
               flags->squeeze = 1;
               break;
             case 't': /* equivalent to -vT */
-              flags->t = 1;
+              flags->show_tab = 1;
               flags->show_unprintable = 1;
               break;
             case 'T': /* Display TAB characters as ^I */
-              flags->T = 1;
+              flags->show_tab = 1;
               break;
             default: /* Not valid char */
                 res = 0;

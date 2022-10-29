@@ -96,7 +96,6 @@ void set_file_error(Errors *error, char *filename, int index) {
 }
 
 
-
 void set_b(Flags *flags) {
     flags->number_non_empty = 1;
     flags->number_all = 0;

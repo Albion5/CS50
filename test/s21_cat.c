@@ -113,7 +113,7 @@ int check_long_flag(char *string, Flags *flags) {
         set_n(flags);
     }  else if (strlen(string) != 2) {
         res = 0;
-        print_long_flag_error();
+        print_long_flag_error(string);
     }
     printf("Double flag: %d\n", res);
     return res;

@@ -50,22 +50,23 @@ void s21_cat(int fd) {
 // }
 
 
-void set_s_flag_error(Errors *error, char symbol) {
-    error->error_code = ;
-    error->error_index;
-    error->symbol;
-    strcpy(string, ;
+void set_s_flag_error(Errors *error, char option, int index) {
+    error->error_code = 1;
+    error->error_index = index;
+    error->symbol = option;
 }
 
-void set_l_flag_error() {
-
+void set_l_flag_error(Errors *error, char *option, int index) {
+    error->error_code = 2;
+    error->error_index = index;
+    strcpy(error->string, option)
 }
 void set_file_error() {
-
+    error->error_code = 3;
 }
 
 void set_no_error() {
-
+    error->error_code = 0;
 }
 
 void set_b(Flags *flags) {

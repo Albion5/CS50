@@ -39,7 +39,16 @@ void print_file_error(char *filename) {
 
 
 void print_error(Errors *error) {
-    switch (error->code)
+    switch (error->code) {
+        case 1:
+          print_single_flag_error();
+          break;
+        case 2:
+          print_long_flag_error();
+          break;
+        case 3:
+          print_file
+    }
 }
 
 void s21_cat(int fd) {

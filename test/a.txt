@@ -1,0 +1,6 @@
+Parsing
+Searching for flags
+Flag checking
+double flag found
+Double flag: 0
+res=0

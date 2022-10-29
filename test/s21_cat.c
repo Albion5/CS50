@@ -132,8 +132,10 @@ int check_flag(char *string, Flags *flags) {
             printf("single flag found\n");
             printf("res=%d\n", check_single_flag(string[1], flags));
         }
+        res = 1;
     } else {
         printf("Flag not found\n");
+        res = 2
     }
     return res;
 
@@ -146,9 +148,10 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes) {
     int i = 1;
     int file_index = i;
     while (i < argc) {
-        if (check_flag(argv[i], flags)) {
-
-        } else if {
+        int flag = check_flag(argv[i], flags);
+        if (flag == 2) {
+            
+        } else if (flag == 1) {
 
         }
         i++;

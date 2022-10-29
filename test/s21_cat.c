@@ -14,7 +14,7 @@ typedef struct Flags {
     int count;
 } Flags;
 
-void print_double_flag_error(char *option) {
+void print_long_flag_error(char *option) {
 // flag error
     dprintf(STDERR_FILENO, "%s: %s '%s'", "cat",  "--invalid option", option);
 }
@@ -113,8 +113,7 @@ int check_long_flag(char *string, Flags *flags) {
         set_n(flags);
     }  else if (strlen(string) != 2) {
         res = 0;
-    } else {
-        
+        print_long_flag_error();
     }
     printf("Double flag: %d\n", res);
     return res;

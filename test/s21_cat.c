@@ -104,7 +104,7 @@ void set_T(Flags *flags) {
     flags->show_tab = 1;
 }
 
-int check_single_flag(char symbol, Flags *flags) {
+int check_single_flag(char symbol, Flags *flags, Errors *error) {
     int res = 1;
     switch (symbol) {
             case 'b': /* Number non empty lines */
@@ -130,14 +130,15 @@ int check_single_flag(char symbol, Flags *flags) {
               break;
             default: /* Not valid char */
               res = 0;
-              print_single_flag_error(symbol);
+            //   print_single_flag_error(symbol);
+            set_sflag_error(error, );
     }
     printf("Char is a flag: %d\n", res);
     return res;
 }
 
 
-int check_long_flag(char *string, Flags *flags) {
+int check_long_flag(char *string, Flags *flags, Errors *error) {
     int res = 1;
     if (strcmp(string, "--number-nonblank") == 0) {
         set_b(flags);
@@ -154,17 +155,17 @@ int check_long_flag(char *string, Flags *flags) {
 
 }
 
-int check_flag(char *string, Flags *flags) {
+int check_flag(char *string, Flags *flags, Errors *error) {
     printf("Flag checking\n");
     int res = 0;
     if (string[0] == '-') {
         if (string[1] == '-') {
             printf("double flag found\n");
-            res = check_long_flag(string, flags);
+            res = check_long_flag(string, flags, error);
 
         } else {
             printf("single flag found\n");
-            res = check_single_flag(string[1], flags);
+            res = check_single_flag(string[1], flags, error);
         }
 
     } else {
@@ -182,7 +183,7 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *co
     int i = 1;
     int file_index = i;
     while ((i < argc) && (stop == 0)) {
-        int flag = check_flag(argv[i], flags);
+        int flag = check_flag(argv[i], flags, error);
         if (flag == 2) {
             *(file_indexes + file_index) = i;
             *count += 1;
@@ -191,7 +192,6 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *co
             ;
         } else {
             stop = 1;
-            error = {argv[i]};
         }
         i++;
     }

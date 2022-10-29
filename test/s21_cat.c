@@ -91,6 +91,7 @@ int check_single_flag(char symbol, Flags *flags) {
               break;
             default: /* Not valid char */
               res = 0;
+              print_flag_error(symbol);
     }
     printf("Char is a flag: %d\n", res);
     return res;

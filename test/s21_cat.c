@@ -156,17 +156,17 @@ int check_long_flag(char *string, Flags *flags, Errors *error, int arg_index) {
 
 }
 
-int check_flag(char *string, Flags *flags, Errors *error, int arg) {
+int check_flag(char *string, Flags *flags, Errors *error, int arg_index) {
     printf("Flag checking\n");
     int res = 0;
     if (string[0] == '-') {
         if (string[1] == '-') {
             printf("double flag found\n");
-            res = check_long_flag(string, flags, error);
+            res = check_long_flag(string, flags, error, arg_index);
 
         } else {
             printf("single flag found\n");
-            res = check_single_flag(string[1], flags, error);
+            res = check_single_flag(string[1], flags, error, arg_index);
         }
 
     } else {

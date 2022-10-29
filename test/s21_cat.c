@@ -26,6 +26,7 @@ void s21_cat(int fd) {
 
 void check_flag(char *argv[], Flags *flags) {
     printf("Flag checking\n");
+    
 }
 
 void find_flags(int argc, char *argv[], Flags *flags) {

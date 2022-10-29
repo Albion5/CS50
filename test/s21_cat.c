@@ -49,6 +49,9 @@ void s21_cat(int fd) {
 //     return first == '-';
 // }
 
+void set_no_error(Errors *error) {
+    error->error_code = 0;
+}
 
 void set_s_flag_error(Errors *error, char option, int index) {
     error->error_code = 1;
@@ -67,9 +70,7 @@ void set_file_error(Errors *error, char *filename, int index) {
     strcpy(error->string, option);
 }
 
-void set_no_error(Errors *error) {
-    error->error_code = 0;
-}
+
 
 void set_b(Flags *flags) {
     flags->number_non_empty = 1;

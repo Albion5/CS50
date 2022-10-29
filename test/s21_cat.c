@@ -214,14 +214,15 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *co
     }
 }
 
-void work_with_wile(char *filename) {
+void work_with_wile(char *filename, Errors *error) {
     int fd = open(filename, O_RDONLY);
     if (fd == -1) {
         // print_file_error(filename);
+        set_file_error(error, filename);
     }
 }
 
-void find_files(char *argv[], Flags *flags, int *file_indexes, int count) {
+void find_files(char *argv[], Flags *flags, int *file_indexes, int count, Errors *error) {
     printf("Searching for files\n");
     // Find all the flags
     int error = 0;

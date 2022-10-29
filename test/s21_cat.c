@@ -214,11 +214,11 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *co
     }
 }
 
-void work_with_wile(char *filename, Errors *error) {
+void work_with_file(char *filename, Errors *error, int arg_index) {
     int fd = open(filename, O_RDONLY);
     if (fd == -1) {
         // print_file_error(filename);
-        set_file_error(error, filename);
+        set_file_error(error, filename, arg_index);
     }
 }
 
@@ -232,7 +232,7 @@ void find_files(char *argv[], Flags *flags, int *file_indexes, int count, Errors
         int index = *(file_indexes + i);
         //printf("%d\n", index);
         //printf("%s\n", argv[index]);
-        work_with_wile(argv[index], error);
+        work_with_file(argv[index], error, index);
         i++;
     }
 }

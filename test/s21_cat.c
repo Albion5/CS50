@@ -59,7 +59,10 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
     char cur_char, fut_char;
     cur_char = buffer[0];
     for (int i = 0; i < len; i++) {
+
         printf("%c", buffer[i]);
+        cur_char = fut_char;
+        
     }
 
 }

@@ -314,7 +314,7 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *co
 int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags, int flags_found) {
     int stop = 0;
     // debug
-    // printf("file=%s\n", filename);
+    printf("file=%s\n", filename);
     FILE *file = fopen(filename, "r");
 
     // If arg is not a file
@@ -323,13 +323,16 @@ int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags, i
         if (error->error_code == 0 || error->error_code == 3) {
             // Update an error struct
             set_file_error(error, filename, arg_index);
+            print_error(error);
         // If a flag error occured, compare arg's indexes to see which arg occures earlier in argv
         } else if ((arg_index < error->error_index)) {
             // Update an error struct
             set_file_error(error, filename, arg_index);
+            print_error(error);
             stop = 1;
         } else {
             stop = 1;
+            print_error(error);
         }
     // If arg is opened and there was no error earlier with flags
     } else {
@@ -353,7 +356,7 @@ int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags, i
 void find_files(char *argv[], Flags *flags, int *file_indexes, int count, Errors *error) {
     printf("Searching for files\n");
     // Find all the flags
-    int error->error_code = -1;
+    error->error_code = -1;
     int stop = 0;
     int i = 0;
     int file_index = 0;
@@ -391,12 +394,11 @@ void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
     // printf("error=%d\n",error->error_code);
 
     // In case of an error during parsing
-    if (error->error_code != 0) {
-        // Print relevant error to stderr
-        print_error(error);
+    // Print relevant error to stderr
+
 
     // In case there were no files found and no error occured
-    } else if (count == 0) {
+    if ((count == 0) && (error->error_code == 0)) {
         // Print info from stdin with flags
         printf("Work with stdin with flags\n");
         s21_cat(stdin, 1, flags);

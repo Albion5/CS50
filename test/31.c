@@ -77,6 +77,9 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
         // Handle middle
         if (cur_char != '\n') {
             if (*empty_repeat != 0) {
+                if (flags->show_end) {
+                    printf("$");
+                }
                 printf("\n");
             }
             *empty_repeat = 0;
@@ -91,6 +94,9 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
                 printf("%c", cur_char);
             }
         } else {
+            if (flags->show_end) {
+                printf("$");
+            }
             printf("\n");
         }
     }

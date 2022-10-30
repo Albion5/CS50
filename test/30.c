@@ -246,17 +246,23 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *co
     printf("Searching for flags\n");
     // Find all the flags
     int stop = 0;
+    // Arg's index in argv
     int i = 1;
+    // Index in file_indexes
     int file_index = 0;
+    // While there are args in argv and stop flag is off
     while ((i < argc) && (stop == 0)) {
+        // Check if it's a flag
         int flag = check_flag(argv[i], flags, error, i);
+        // If it's not a flag, add arg's index to file_indexes
         if (flag == 2) {
             *(file_indexes + file_index) = i;
+            // Increase number of elements in files_indexes
             *count += 1;
             file_index += 1;
-        } else if (flag == 1) {
-            ;
-        } else {
+        // If it's not a valid flag
+        } else if (!flag) {
+            // Stop parsing args
             stop = 1;
         }
         i++;
@@ -271,7 +277,7 @@ int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags) {
     // debug
     // printf("file=%s\n", filename);
     FILE *file = fopen(filename, "r");
-    
+
     // If arg is not a file
     if (file == NULL) {
         res = 0;
@@ -308,7 +314,7 @@ void find_files(char *argv[], Flags *flags, int *file_indexes, int count, Errors
     int stop = 0;
     int i = 0;
     int file_index = 0;
-    
+
     while ((i < count) && (stop == 0)) {
         printf("file %d\n", file_index);
         int index = *(file_indexes + i);
@@ -331,18 +337,18 @@ void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
     int count = 0;
     // Find all the flags
     find_flags(argc, argv, flags, file_indexes, &count, error);
-    
+
     // Find files
     find_files(argv, flags, file_indexes, count, error);
-    
+
     // debug
     // printf("error=%d\n",error->error_code);
-    
+
     // In case of an error during parsing
     if (error->error_code != 0) {
         // Print relevant error to stderr
         print_error(error);
-        
+
     // In case there were no files found and no error occured
     } else if (count == 0) {
         // Print info from stdin with flags
@@ -365,7 +371,7 @@ int main(int argc, char *argv[]) {
         // Mode with args
         ;
             // Stdin mode
-            
+
             // File mode
 
 

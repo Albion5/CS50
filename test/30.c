@@ -63,35 +63,47 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
     // printf("Modified line\n");
     // int len = strlen(buffer);
     char cur_char;
+    // Check if the first char is a new line char
     cur_char = buffer[0];
-//    int start_line = 1;
-    int sq = 0;
-    for (int i = 1; i < len; i++) {
+    // Update the number of repeated empty lines
+    if (cur_char == '\n') {
+        *empty_repeat += 0;
+    }
+    if (flags->squeeze) {
+        ;
+    } else {
+        for (int i = 1; i < len; i++) {
 //        printf("sq=%d\n", );
-        fut_char = buffer[i];
-        // Handle s flag
-        if ((flags->squeeze) && is_repeated_line(cur_char, fut_char)) {
-            sq = 1;
-//            start_line = 1;
-            ;
-        } else {
-            if (sq == 1) {
-                printf("\n");
-                sq = 0;
-            }
+            printf("%s", buffer + i);
+//         // Handle s flag
+//         if ((flags->squeeze) && is_repeated_line(cur_char, fut_char)) {
+//             sq = 1;
+// //            start_line = 1;
+//             ;
+//         } else {
+//             if (sq == 1) {
+//                 printf("\n");
+//                 sq = 0;
+//             }
 
-            if (flags->number_all && (cur_char == '\n' || i == 1)) {
-                printf("%6d\t", ++(flags->count));
-            }
+//             if (flags->number_all && (cur_char == '\n' || i == 1)) {
+//                 printf("%6d\t", ++(flags->count));
+//             }
 
-            printf("%c", cur_char);
+//             printf("%c", cur_char);
 
-        }
-        cur_char = fut_char;
-        if (i == len -1) {
-            printf("%c", cur_char);
+//         }
+//         cur_char = fut_char;
+//         if (i == len -1) {
+//             printf("%c", cur_char);
+//         }
         }
     }
+
+
+
+
+
 
 }
 

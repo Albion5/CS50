@@ -320,11 +320,11 @@ int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags, i
     // If arg is not a file
     if (file == NULL) {
         // Check if there was no error with flags during parsing
-        if (error->error_code == 0) {
+        if (error->error_code == 0 ||) {
             // Update an error struct
             set_file_error(error, filename, arg_index);
         // If a flag error occured, compare arg's indexes to see which arg occures earlier in argv
-        } else if (arg_index < error->error_index) {
+        } else if ((error->error_code != 3) && (arg_index < error->error_index)) {
             // Update an error struct
             set_file_error(error, filename, arg_index);
         } else {
@@ -333,7 +333,7 @@ int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags, i
     // If arg is opened and there was no error earlier with flags
     } else {
         // If file is opened and no error occured with flags
-        if (error->error_code == 0) {
+        if (error->error_code == 0 || error->error_code == 3) {
         // debug
         // printf("opened %s\n", filename);
             //

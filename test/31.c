@@ -95,8 +95,7 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
                     printf("^l");
                 } else if (!iascii(cur_char) && !is_print(cur_char)) {
                     printf("M-");
-                }
-                } else {
+                }  else {
                     printf("%c", cur_char);
                 }
 

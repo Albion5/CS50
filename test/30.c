@@ -397,13 +397,17 @@ void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
 
 
     // In case there were no files found and no error occured
-    if ((count == 0) && (error->error_code == 0)) {
-        // Print info from stdin with flags
-        printf("Work with stdin with flags\n");
-        s21_cat(stdin, 1, flags);
+    if ((count == 0)) {
+        if (error->error_code == 0) {
+            // Print info from stdin with flags
+            printf("Work with stdin with flags\n");
+            s21_cat(stdin, 1, flags);
+        } else {
+            print_error(error);
+        }
     }
-
 }
+
 
 
 int main(int argc, char *argv[]) {

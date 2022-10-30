@@ -90,8 +90,11 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
                 cur_char = buffer[i];
                 if (flags->show_end && (cur_char == '\n')) {
                     printf("$");
+                } else if (flags->show_tab && (cur_char == '\t')) {
+                    printf("^l");
+                } else {
+                    printf("%c", cur_char);
                 }
-                printf("%c", cur_char);
             }
         } else {
             if (flags->show_end) {

@@ -95,6 +95,12 @@ void print_with_flags(char *buffer, int len, Flags *flags) {
 
 }
 
+int get_number_of_flags(Flags *flags) {
+    int flags_found = flags->number_all + flags->number_non_empty + flags->squeeze;
+    flags_found += flags->show_tab + flags->show_end + flags->show_unprintable;
+    return flags_found;
+}
+
 void s21_cat(FILE *source, int mode, Flags *flags) {
     char buffer[buf_size];
     while (fgets(buffer, buf_size, source)) {
@@ -337,11 +343,7 @@ void find_files(char *argv[], Flags *flags, int *file_indexes, int count, Errors
 
 }
 
-int get_number_of_flags(Flags *flags) {
-    int flags_found = flags->number_all + flags->number_non_empty + flags->squeeze;
-    flags_found += flags->show_tab + flags->show_end + flags->show_unprintable;
-    return flags_found;
-}
+
 
 void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
     printf("Parsing\n");
@@ -351,7 +353,7 @@ void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
     // Find all the flags
     find_flags(argc, argv, flags, file_indexes, &count, error);
 
-    printf("flags found=%d\n", flags_found);
+    // printf("flags found=%d\n", flags_found);
 
     // Find files
     find_files(argv, flags, file_indexes, count, error);

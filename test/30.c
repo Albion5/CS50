@@ -335,14 +335,15 @@ int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags, i
             stop = 1;
             print_error(error);
         }
-    // If arg is opened and there was no error earlier with flags
+    // If arg is opened
     } else {
-        // If file is opened and no error occured with flags
+        // If no error occured with flags
         if (error->error_code == 0 || error->error_code == 3) {
         // debug
         // printf("opened %s\n", filename);
             s21_cat(file, flags_found, flags);
         } else {
+            //
             stop = 1;
         }
         // Close file

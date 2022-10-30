@@ -96,11 +96,12 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
                     printf("^l");
                 } else if (!isascii(cur_char) && !isprint(cur_char)) {
                     printf("M-%c", toascii(cur_char));
-                }  else {
+                }  else if isctrl(cur_char) {
+                    printf("^%c", cur_char+64);
+                } else {
                     printf("%c", cur_char);
                 }
 
-            }
         } else {
             if (flags->show_end) {
                 printf("$");

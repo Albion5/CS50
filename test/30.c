@@ -314,7 +314,7 @@ int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags) {
     return res;
 }
 
-void find_files(char *argv[], Flags *flags, int *file_indexes, int count, Errors *error) {
+void find_files(char *argv[], int flags_found, Flags *flags, int *file_indexes, int count, Errors *error) {
     printf("Searching for files\n");
     // Find all the flags
     int stop = 0;
@@ -349,7 +349,7 @@ void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
     printf("flags found=%d\n", flags_found);
 
     // Find files
-    find_files(argv, flags, file_indexes, count, error);
+    find_files(argv, flags, flags_found, file_indexes, count, error);
 
     // debug
     // printf("error=%d\n",error->error_code);

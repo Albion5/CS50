@@ -216,6 +216,8 @@ int check_long_flag(char *string, Flags *flags, Errors *error, int arg_index) {
 
 }
 
+// Check if a string consists valid flags
+// Return 0 if flag error, 1 if only valid flag(s) found, 2 if not a flag
 int check_flag(char *string, Flags *flags, Errors *error, int arg_index) {
     printf("Flag checking\n");
     int res = 1;
@@ -242,6 +244,7 @@ int check_flag(char *string, Flags *flags, Errors *error, int arg_index) {
 
 }
 
+// Find valid flags in command line args and save indexes of args with potential file names
 void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *count, Errors *error) {
     printf("Searching for flags\n");
     // Find all the flags
@@ -262,16 +265,19 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *co
             file_index += 1;
         // If it's not a valid flag
         } else if (!flag) {
-            // Stop parsing args
+            // Stop checking flags
             stop = 1;
         }
+        // Increase arg's index
         i++;
     }
+    // If no error occured, update error struct
     if (stop == 0) {
         set_no_error(error);
     }
 }
 
+// Try opening a file, then print out it's original or updated content
 int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags) {
     int res = 0;
     // debug

@@ -76,7 +76,7 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
     } else {
         // Handle middle
         if (cur_char != '\n') {
-            if (*empty_repeat != 0) {
+            if ((*empty_repeat != 0) && (flags->squeeze)) {
                 if (flags->show_end) {
                     printf("$");
                 }

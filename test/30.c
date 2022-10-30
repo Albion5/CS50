@@ -66,9 +66,9 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
     // Check if the first char is a new line char
     cur_char = buffer[0];
     // Update the number of repeated empty lines
-    if (flags->number_all && !flags->squeeze) {
-        printf("%6d\t", ++(flags->count));
-    }
+    // if (flags->number_all && !flags->squeeze) {
+    //     printf("%6d\t", ++(flags->count));
+    // }
 
     if (cur_char != '\n') {
         if (*empty_repeat != 0) {

@@ -324,10 +324,12 @@ int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags, i
         if (error->error_code == 0) {
             // Update an error struct
             set_file_error(error, filename, arg_index);
+            res = 2;
         // If a flag error occured, compare arg's indexes to see which arg occures earlier in argv
         } else if (arg_index < error->error_index) {
             // Update an error struct
             set_file_error(error, filename, arg_index);
+            res = 2;
         }
     // If arg is opened and there was no error earlier with flags
     } else {

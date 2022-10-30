@@ -106,13 +106,12 @@ void s21_cat(FILE *source, int mode, Flags *flags) {
     while (fgets(buffer, buf_size, source)) {
         // Remove trailing newline
         buffer[strcspn(buffer, "\n")] = 0;
-        if (mode == 1) {
-            print_with_flags(buffer, strlen(buffer), flags);
-        } else {
+        if (mode == 0) {
             printf("%s\n", buffer);
+        } else {
+            print_with_flags(buffer, strlen(buffer), flags);
         }
     }
-    fclose(source);
 }
 
 

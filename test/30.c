@@ -325,11 +325,12 @@ int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags, i
             set_file_error(error, filename, arg_index);
             print_error(error);
         // If a flag error occured, compare arg's indexes to see which arg occures earlier in argv
+        // Print file error and stop parsing
         } else if ((arg_index < error->error_index)) {
-            // Update an error struct
             set_file_error(error, filename, arg_index);
             print_error(error);
             stop = 1;
+        // Print flag error and stop parsing
         } else {
             stop = 1;
             print_error(error);

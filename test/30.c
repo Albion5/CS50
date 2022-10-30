@@ -71,6 +71,9 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
             printf("\n");
         }
         *empty_repeat = 0;
+        if (flags->number_non_empty) {
+            printf("%6d\t", ++(flags->count));
+        };
         for (int i = 0; i < len; i++) {
             printf("%c", buffer[i]);
         }

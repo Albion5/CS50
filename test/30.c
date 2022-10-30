@@ -15,7 +15,7 @@ typedef struct Flags {
 } Flags;
 
 typedef struct Errors {
-    int error_code = -1;
+    int error_code;
     int error_index;
     char symbol;
     char string[200];
@@ -353,6 +353,7 @@ int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags, i
 void find_files(char *argv[], Flags *flags, int *file_indexes, int count, Errors *error) {
     printf("Searching for files\n");
     // Find all the flags
+    int error->error_code = -1;
     int stop = 0;
     int i = 0;
     int file_index = 0;
@@ -378,7 +379,6 @@ void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
     printf("Parsing\n");
     int file_indexes[argc];
     int count = 0;
-
     // Find all the flags
     find_flags(argc, argv, flags, file_indexes, &count, error);
 

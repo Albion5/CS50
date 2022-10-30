@@ -174,6 +174,7 @@ int check_char(char symbol, Flags *flags) {
 }
 
 
+
 void initialize_flags(Flags* flags) {
     flags->b = 0;
     flags->e = 0;
@@ -294,7 +295,7 @@ void printout_content(char *buffer, Flags *flags, int len) {
 //        }
     }
 
-    
+
 // unprintable
     // if (c >= 0 && c <= 32) {
     //     printf("^%c", c + 64);

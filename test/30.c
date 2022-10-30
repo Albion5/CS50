@@ -342,8 +342,10 @@ int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags, i
         // debug
         // printf("opened %s\n", filename);
             s21_cat(file, flags_found, flags);
+        // If there was an error with flags
         } else {
             //
+            print_error(error);
             stop = 1;
         }
         // Close file

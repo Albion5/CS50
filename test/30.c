@@ -341,8 +341,12 @@ void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
     printf("Parsing\n");
     int file_indexes[argc];
     int count = 0;
+
     // Find all the flags
     find_flags(argc, argv, flags, file_indexes, &count, error);
+    int flags_found = flags->number_all + flags->number_non_empty + flags->squeeze;
+    flags_found += flags->show_tab + flags->show_end + flags->show_unprintable;
+    printf("flags found=%d\n", flags_found);
 
     // Find files
     find_files(argv, flags, file_indexes, count, error);

@@ -60,7 +60,7 @@ int is_repeated_line(char cur, char fut) {
 
 void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
     // debug
-    printf("Modified line\n");
+    // printf("Modified line\n");
     // int len = strlen(buffer);
     char cur_char;
     // Check if the first char is a new line char
@@ -69,10 +69,11 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
     if (cur_char == '\n') {
         *empty_repeat += 0;
     }
-    if (flags->squeeze) {
+    if ((flags->squeeze) && (*empty_repeat != 0)){
         ;
     } else {
-        for (int i = 1; i < len; i++) {
+        *empty_repeat = 0;
+        for (int i = 0; i < len; i++) {
 //        printf("sq=%d\n", );
             printf("%c", buffer[i]);
 //         // Handle s flag

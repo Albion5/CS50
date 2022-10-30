@@ -58,11 +58,11 @@ int is_repeated_line(char cur, char fut) {
 }
 
 
-void print_with_flags(char *buffer, int len, Flags *flags) {
+void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
     // debug
     // printf("Modified line\n");
     // int len = strlen(buffer);
-    char cur_char, fut_char;
+    char cur_char;
     cur_char = buffer[0];
 //    int start_line = 1;
     int sq = 0;
@@ -103,13 +103,14 @@ int get_number_of_flags(Flags *flags) {
 
 void s21_cat(FILE *source, int mode, Flags *flags) {
     char buffer[buf_size];
+    int empty_repeat = 0;
     while (fgets(buffer, buf_size, source)) {
         // Remove trailing newline
         // buffer[strcspn(buffer, "\n")] = 0;
         if (mode == 0) {
             printf("%s", buffer);
         } else {
-            print_with_flags(buffer, strlen(buffer), flags);
+            print_with_flags(buffer, strlen(buffer), flags, &empty_repeat);
         }
     }
 }

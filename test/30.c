@@ -327,6 +327,7 @@ int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags, i
         } else if ((arg_index < error->error_index)) {
             // Update an error struct
             set_file_error(error, filename, arg_index);
+            stop = 1;
         } else {
             stop = 1;
         }

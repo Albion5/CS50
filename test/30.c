@@ -69,24 +69,26 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
     // if (flags->number_all && !flags->squeeze) {
     //     printf("%6d\t", ++(flags->count));
     // }
-
-    if (cur_char != '\n') {
-        if (*empty_repeat != 0) {
-            printf("\n");
-        }
-        *empty_repeat = 0;
-        if (flags->number_non_empty) {
-            printf("%6d\t", ++(flags->count));
-        };
-        for (int i = 0; i < len; i++) {
-            printf("%c", buffer[i]);
-        }
+    // Handle squeeze
+    if ((flags->squeeze) && (cur_char == '\n')) {
+            *empty_repeat += 1;
     } else {
-        if (!flags->squeeze) {
-            printf("\n");
+        if (cur_char != '\n') {
+            if (*empty_repeat != 0) {
+                printf("\n");
+            }
+            *empty_repeat = 0;
+            if (flags->number_non_empty) {
+                printf("%6d\t", ++(flags->count));
+            };
+            for (int i = 0; i < len; i++) {
+                printf("%c", buffer[i]);
+            }
+        } else {
+                printf("\n");
         }
-        *empty_repeat += 1;
     }
+}
 
 //     if ((flags->squeeze) && (*empty_repeat != 0)){
 //         ;
@@ -119,11 +121,6 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
     // }
 
 
-
-
-
-
-}
 
 int get_number_of_flags(Flags *flags) {
     int flags_found = flags->number_all + flags->number_non_empty + flags->squeeze;

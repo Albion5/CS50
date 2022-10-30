@@ -356,14 +356,14 @@ void find_files(char *argv[], Flags *flags, int *file_indexes, int count, Errors
     int i = 0;
     int file_index = 0;
     int flags_found = get_number_of_flags(flags);
-
+    printf("count=%d\n", count);
     while ((i < count) && (stop == 0)) {
         printf("file %d\n", file_index);
         int index = *(file_indexes + i);
         printf("index=%d\n", index);
         // debug
-        //printf("%d\n", index);
-        //printf("%s\n", argv[index]);
+        printf("%d\n", index);
+        printf("%s\n", argv[index]);
         stop = work_with_file(argv[index], error, index, flags, flags_found);
         i++;
     }

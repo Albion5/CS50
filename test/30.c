@@ -67,7 +67,7 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
     cur_char = buffer[0];
     // Update the number of repeated empty lines
     if (cur_char != '\n') {
-        if (*empty_repeat != 0) {
+        if (*empty_repeat != 0 && flags->squeeze) {
             printf("\n");
         }
         *empty_repeat = 0;

@@ -98,7 +98,10 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
                     printf("^%c", cur_char + 64);
                 }   else if (cur_char == 127) {
                         printf("^?");
-                } else {
+                } else if (cur_char >= 160 &&) {
+
+                }
+                else {
                     printf("%c", cur_char);
                 }
             }

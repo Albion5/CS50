@@ -82,14 +82,15 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
             *empty_repeat = 0;
             if (flags->number_non_empty) {
                 printf("%6d\t", ++(flags->count));
-            };
+            }
             for (int i = 0; i < len; i++) {
-                printf("%c", buffer[i]);
+                cur_char = buffer[i];
+                if (flags->show_end && (cur_char == '\n')) {
+                    printf("$");
+                }
+                printf("%c", cur_char);
             }
         } else {
-            if (flags->show_end) {
-                printf("$");
-            }
             printf("\n");
         }
     }

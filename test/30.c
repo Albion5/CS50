@@ -312,24 +312,23 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *co
 
 // Try opening a file, then print out it's original or updated content
 int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags, int flags_found) {
-    int res = 0;
+    int stop = 0;
     // debug
     // printf("file=%s\n", filename);
     FILE *file = fopen(filename, "r");
 
     // If arg is not a file
     if (file == NULL) {
-        res = 0;
         // Check if there was no error with flags during parsing
         if (error->error_code == 0) {
             // Update an error struct
             set_file_error(error, filename, arg_index);
-            res = 2;
         // If a flag error occured, compare arg's indexes to see which arg occures earlier in argv
         } else if (arg_index < error->error_index) {
             // Update an error struct
             set_file_error(error, filename, arg_index);
-            res = 2;
+        } else {
+            stop = 1;
         }
     // If arg is opened and there was no error earlier with flags
     } else {
@@ -337,16 +336,17 @@ int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags, i
         if (error->error_code == 0) {
         // debug
         // printf("opened %s\n", filename);
-            res = 1;
             //
             s21_cat(file, flags_found, flags);
+        } else {
+            stop = 1;
         }
         // Close file
         fclose(file);
         // debug
         // printf("closed\n");
     }
-    return res;
+    return stop;
 }
 
 void find_files(char *argv[], Flags *flags, int *file_indexes, int count, Errors *error) {
@@ -358,12 +358,11 @@ void find_files(char *argv[], Flags *flags, int *file_indexes, int count, Errors
     int flags_found = get_number_of_flags(flags);
     printf("count=%d\n", count);
     while ((i < count) && (stop == 0)) {
-        printf("file %d\n", file_index);
+        // printf("file %d\n", file_index);
         int index = *(file_indexes + i);
-        printf("index=%d\n", index);
         // debug
-        printf("%d\n", index);
-        printf("%s\n", argv[index]);
+        // printf("%d\n", index);
+        // printf("%s\n", argv[index]);
         stop = work_with_file(argv[index], error, index, flags, flags_found);
         i++;
     }

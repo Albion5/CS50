@@ -99,12 +99,15 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
                 }   else if (cur_char == 127) {
                         printf("^?");
                 } else if (cur_char >= 160) {
+
                     if (cur_char < 255) {
+                        printf("M-");
                         printf("%c", cur_char - 128);
                     } else {
                         printf("^?");
                     }
                 } else if (cur_char <= 255) {
+                    printf("M-");
                     printf("%c", cur_char - 64);
                 } else {
                     printf("%c", cur_char);

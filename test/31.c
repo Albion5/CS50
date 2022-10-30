@@ -69,10 +69,12 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
     // if (flags->number_all && !flags->squeeze) {
     //     printf("%6d\t", ++(flags->count));
     // }
+
     // Handle squeeze
     if ((flags->squeeze) && (cur_char == '\n')) {
             *empty_repeat += 1;
     } else {
+        // Handle middle
         if (cur_char != '\n') {
             if (*empty_repeat != 0) {
                 printf("\n");
@@ -85,7 +87,10 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
                 printf("%c", buffer[i]);
             }
         } else {
-                printf("\n");
+            if (flags->show_end) {
+                printf("$");
+            }
+            printf("\n");
         }
     }
 }

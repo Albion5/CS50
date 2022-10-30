@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <fcntl.h>
+#include <ctype.h>
 #define buf_size 4096
 
 typedef struct Flags {

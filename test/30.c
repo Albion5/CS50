@@ -15,7 +15,7 @@ typedef struct Flags {
 } Flags;
 
 typedef struct Errors {
-    int error_code;
+    int error_code = -1;
     int error_index;
     char symbol;
     char string[200];

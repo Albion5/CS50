@@ -76,7 +76,7 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
     } else {
         // Handle middle
         if (cur_char != '\n') {
-            if ((*empty_repeat != 0) && (flags->squeeze)) {
+            if (*empty_repeat != 0) {
                 if (flags->show_end) {
                     printf("$");
                 }
@@ -90,12 +90,14 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
                 cur_char = buffer[i];
                 if (flags->show_end && (cur_char == '\n')) {
                     printf("$");
+                    printf("%c", cur_char);
                 } else if (flags->show_tab && cur_char == '\t') {
                     printf("^l");
                     // printf("-!-");
                 } else {
                     printf("%c", cur_char);
                 }
+
             }
         } else {
             if (flags->show_end) {

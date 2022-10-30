@@ -94,7 +94,7 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
                 } else if (flags->show_tab && cur_char == '\t') {
                     printf("^l");
                 } else if (!iascii(cur_char) && !is_print(cur_char)) {
-                    printf("M-");
+                    printf("M-%c", toascii(cur_char));
                 }  else {
                     printf("%c", cur_char);
                 }

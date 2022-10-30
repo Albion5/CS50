@@ -278,7 +278,7 @@ void find_flags(int argc, char *argv[], Flags *flags, int *file_indexes, int *co
 }
 
 // Try opening a file, then print out it's original or updated content
-int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags) {
+int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags, int flags_found) {
     int res = 0;
     // debug
     // printf("file=%s\n", filename);
@@ -304,7 +304,7 @@ int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags) {
         // printf("opened %s\n", filename);
             res = 1;
             //
-            s21_cat(file, 1, flags);
+            s21_cat(file, flags_found, flags);
         }
         // Close file
         fclose(file);
@@ -314,12 +314,13 @@ int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags) {
     return res;
 }
 
-void find_files(char *argv[], int flags_found, Flags *flags, int *file_indexes, int count, Errors *error) {
+void find_files(char *argv[], Flags *flags, int *file_indexes, int count, Errors *error) {
     printf("Searching for files\n");
     // Find all the flags
     int stop = 0;
     int i = 0;
     int file_index = 0;
+    int flags_found = get_number_of_flags(flags);
 
     while ((i < count) && (stop == 0)) {
         printf("file %d\n", file_index);
@@ -328,13 +329,18 @@ void find_files(char *argv[], int flags_found, Flags *flags, int *file_indexes, 
         // debug
         //printf("%d\n", index);
         //printf("%s\n", argv[index]);
-        stop = work_with_file(argv[index], error, index, flags);
-
+        stop = work_with_file(argv[index], error, index, flags, flags_found);
         i++;
     }
     // debug
     // printf("count=%d\n", count);
 
+}
+
+int get_number_of_flags(Flags *flags) {
+    int flags_found = flags->number_all + flags->number_non_empty + flags->squeeze;
+    flags_found += flags->show_tab + flags->show_end + flags->show_unprintable;
+    return flags_found;
 }
 
 void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
@@ -344,12 +350,11 @@ void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
 
     // Find all the flags
     find_flags(argc, argv, flags, file_indexes, &count, error);
-    int flags_found = flags->number_all + flags->number_non_empty + flags->squeeze;
-    flags_found += flags->show_tab + flags->show_end + flags->show_unprintable;
+
     printf("flags found=%d\n", flags_found);
 
     // Find files
-    find_files(argv, flags, flags_found, file_indexes, count, error);
+    find_files(argv, flags, file_indexes, count, error);
 
     // debug
     // printf("error=%d\n",error->error_code);

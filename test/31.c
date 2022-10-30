@@ -100,7 +100,7 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
                     } else {
                         printf("^%c", cur_char+64);
                     }
-                } else {
+                } else if {
                     printf("%c", cur_char);
                 }
             }

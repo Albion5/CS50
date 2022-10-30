@@ -340,7 +340,6 @@ int work_with_file(char *filename, Errors *error, int arg_index, Flags *flags, i
         if (error->error_code == 0 || error->error_code == 3) {
         // debug
         // printf("opened %s\n", filename);
-            //
             s21_cat(file, flags_found, flags);
         } else {
             stop = 1;
@@ -383,7 +382,7 @@ void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
     int count = 0;
     // Find all the flags
     find_flags(argc, argv, flags, file_indexes, &count, error);
-
+    // debug
     // printf("flags found=%d\n", flags_found);
 
     // Find files
@@ -391,9 +390,6 @@ void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
 
     // debug
     // printf("error=%d\n",error->error_code);
-
-    // In case of an error during parsing
-    // Print relevant error to stderr
 
 
     // In case there were no files found and no error occured

@@ -95,12 +95,10 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
                 } else if (flags->show_tab && cur_char == '\t') {
                     printf("^l");
                 }  else if (cur_char >= 0 && cur_char <= 32) {
-                    if (cur_char == 32) {
+                    printf("^%c", cur_char + 64);
+                }   else if (cur_char == 127) {
                         printf("^?");
-                    } else {
-                        printf("^%c", cur_char+64);
-                    }
-                } else if {
+                } else {
                     printf("%c", cur_char);
                 }
             }

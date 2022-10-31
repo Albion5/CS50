@@ -87,9 +87,8 @@ void print_with_flags(unsigned char *buffer, int len, Flags *flags, int *empty_r
             if (flags->number_non_empty) {
                 printf("%6d\t", ++(flags->count));
             }
-            int i = 0;
-            cur_char = buffer[i];
-            while (cur_char != '\0') {
+            int i = -1;
+            while ((cur_char = buffer[++i]) != '\0') {
                 if (flags->show_end && (cur_char == '\n')) {
                     printf("$");
                     printf("%c", cur_char);

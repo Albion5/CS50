@@ -184,6 +184,7 @@ int get_number_of_flags(Flags *flags) {
 }
 
 int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
+    fseek(source , *position , SEEK_SET )
     int read = 1;
     *len = 0;
     int i = -1;
@@ -212,7 +213,7 @@ void s21_cat(FILE *source, int mode, Flags *flags) {
     int empty_repeat = 0;
     int len = 0;
     int position = 0;
-    while (read_line(buffer, source + position, &len, &position)) {
+    while (read_line(buffer, source, &len, &position)) {
         // if (mode == 0) {
         //     printf("%s", buffer);
         // } else {

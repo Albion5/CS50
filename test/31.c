@@ -94,13 +94,24 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
                     printf("%c", cur_char);
                 } else if (flags->show_tab && cur_char == '\t') {
                     printf("^l");
-                }  else if (cur_char >= 0 && cur_char <= 32) {
-                    printf("^%c", cur_char + 64);
+                }  else if (flags->show_unprintable) {
+                    if (cur_char >= 0 && cur_char <= 32) {
+                        printf("^%c", cur_char + 64);
+                    } else if (cur_char < 127) {
+
+                    } else if (cur_char == 127) {
+                        printf("^?");
+                    } else if (cur_char < 128 + 64) {
+                        printf("M-^%c", cur_char - 64);
+                    }
+                } else {
+                    printf("%c", cur_char);
+                }
+
                 // } else if (cur_char < 127) {
                 //     printf("%c", cur_char);
-                } else if (cur_char == 127) {
-                        printf("^?");
-                // } else if (cur_char >= 160) {
+
+                // } else if (cur_char <) {
 
                 //     if (cur_char < 255) {
                 //         printf("M-");
@@ -111,9 +122,7 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
                 // } else if (cur_char <= 255) {
                 //     printf("M-");
                 //     printf("%c", cur_char - 64);
-                } else {
-                    printf("%c", cur_char);
-                }
+
             }
 
         } else {

@@ -187,7 +187,7 @@ void s21_cat(FILE *source, int mode, Flags *flags) {
     c = fgetc(source);
     printf("%u", c);
     int i = -1;
-    int len = 1;
+    int len = 0;
     while ( c != EOF && c != '\n') {
         // Remove trailing newline
         // buffer[strcspn(buffer, "\n")] = 0;

@@ -191,6 +191,7 @@ int read_line(unsigned char *buffer, FILE *source, int *len) {
     // fseek(source, *position, SEEK_SET);
     char c = fgetc(source);
 
+
     i++;
     while (c != EOF && c != '\n') {
         // Remove trailing newline
@@ -208,6 +209,7 @@ int read_line(unsigned char *buffer, FILE *source, int *len) {
 
         read = -1;
     } else {
+            printf("%c", c);
             *len = *len + 1;
         // buffer[i] = c;
         // *len = *len + 1;

@@ -96,7 +96,7 @@ void print_with_flags(unsigned char *buffer, int len, Flags *flags, int *empty_r
                     printf("^l");
                 }  else if (flags->show_unprintable) {
                     if (cur_char >= 0 && cur_char <= 32) {
-                        printf("^%u", cur_char + 64);
+                        printf("^%c", cur_char + 64);
                     } else if (cur_char < 127) {
                         printf("%c", cur_char);
                     } else if (cur_char == 127) {
@@ -187,16 +187,22 @@ void s21_cat(FILE *source, int mode, Flags *flags) {
     c = fgetc(source);
     printf("%u", c);
     int i = -1;
+    int len = 1;
     while ( c != EOF && c != '\n') {
         // Remove trailing newline
         // buffer[strcspn(buffer, "\n")] = 0;
         buffer[++i] = c;
         c = fgetc(source);
+        // printf("%c", c + 64);
+        len++;
+    }
+    if (c == '\n') {
+        len++;
     }
     if (mode == 0) {
             printf("%s", buffer);
     } else {
-            print_with_flags(buffer, strlen(buffer), flags, &empty_repeat);
+            print_with_flags(buffer, len, flags, &empty_repeat);
     }
 }
 

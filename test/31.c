@@ -199,10 +199,11 @@ int read_line(unsigned char *buffer, FILE *source, int *len) {
         // buffer[i] = c;
         // i++;
         *len = *len + 1;
+        printf("%c", c);
         c = fgetc(source);
         // i++;
         // *position += 1;
-        printf("%c", c);
+
     }
 
     if (c == EOF) {

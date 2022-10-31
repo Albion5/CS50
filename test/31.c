@@ -186,7 +186,7 @@ int get_number_of_flags(Flags *flags) {
 int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
     fseek(source , *position , SEEK_SET );
     int read = 1;
-    *len = 1;
+    *len = 0;
     int i = 0;
     unsigned char c = fgetc(source);
 
@@ -194,7 +194,8 @@ int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
 
         // Remove trailing newline
         // buffer[strcspn(buffer, "\n")] = 0;
-        buffer[i++] = c;
+        buffer[i] = c;
+        i++;
         (*len)++;
         c = fgetc(source);
         // *position += 1;

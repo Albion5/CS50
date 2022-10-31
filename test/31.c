@@ -184,7 +184,6 @@ int get_number_of_flags(Flags *flags) {
 }
 
 int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
-
     int read = 1;
     *len = 0;
     int i = 0;
@@ -206,7 +205,7 @@ int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
     // // // (*len)++;
     *position += strlen(buffer);
     if (c == EOF) {
-        read = 0;
+        read = -1;
     }
     // *position = *position + *len - 1;
     printf("read=%d\n", read);
@@ -218,7 +217,7 @@ void s21_cat(FILE *source, int mode, Flags *flags) {
     int empty_repeat = 0;
     int len = 0;
     int position = 0;
-    while (read_line(buffer, source, &len, &position)) {
+    while (read_line(buffer, source, &len, &position) != -1) {
         // if (mode == 0) {
         //     printf("%s", buffer);
         // } else {

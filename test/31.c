@@ -187,13 +187,13 @@ int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
     int read = 1;
     *len = 0;
     int i = -1;
-    unsigned char c = fgetc(source + *position);
+    unsigned char c = fgetc(source);
     while (c != EOF && c != '\n') {
         // Remove trailing newline
         // buffer[strcspn(buffer, "\n")] = 0;
         buffer[++i] = c;
         (*len)++;
-        c = fgetc(source + *position);
+        c = fgetc(source);
 
         // printf("%c", c + 64);
     }

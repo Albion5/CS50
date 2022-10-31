@@ -478,6 +478,9 @@ void find_files(char *argv[], Flags *flags, int *file_indexes, int count, Errors
         // printf("%d\n", index);
         // printf("%s\n", argv[index]);
         stop = work_with_file(argv[index], error, index, flags, flags_found);
+        if (error->error_code < 3) {
+            print_error(error);
+        }
         i++;
     }
     // debug
@@ -512,7 +515,7 @@ void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
         } else {
             print_error(error);
         }
-    } 
+    }
 }
 
 

@@ -238,7 +238,7 @@ void s21_cat(FILE *source, int mode, Flags *flags) {
     while (read_line(buffer, source, &len) != -1) {
        //fseek(source, len, SEEK_CUR);
         // if (mode == 0) {
-            
+        printf("%.*s", len, buffer);
         // } else {
         //     print_with_flags(buffer, len - 1, flags, &empty_repeat);
         // }

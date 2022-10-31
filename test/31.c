@@ -191,7 +191,6 @@ int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
     unsigned char c = fgetc(source);
 
     while (c != EOF && c != '\n') {
-
         // Remove trailing newline
         // buffer[strcspn(buffer, "\n")] = 0;
         buffer[i] = c;

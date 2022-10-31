@@ -184,11 +184,11 @@ int get_number_of_flags(Flags *flags) {
 }
 
 int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
-    fseek(source , *position , SEEK_SET )
+    fseek(source , *position , SEEK_SET );
     int read = 1;
-    *len = 0;
-    int i = -1;
-    unsigned char c = fgetc(source);
+    // *len = 0;
+    // int i = -1;
+    // unsigned char c = fgetc(source);
     while (c != EOF && c != '\n') {
         // Remove trailing newline
         // buffer[strcspn(buffer, "\n")] = 0;
@@ -197,14 +197,14 @@ int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
         c = fgetc(source);
         // printf("%c", c + 64);
     }
-    buffer[++i] = c;
-    (*len)++;
-    // buffer[++i] = '\0';
+    // buffer[++i] = c;
     // (*len)++;
+    // // buffer[++i] = '\0';
+    // // (*len)++;
     if (c == EOF) {
         read = 0;
     }
-    *position += *len - 1;
+    // *position += *len;
     return read;
 }
 

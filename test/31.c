@@ -183,14 +183,20 @@ int get_number_of_flags(Flags *flags) {
 void s21_cat(FILE *source, int mode, Flags *flags) {
     unsigned char buffer[buf_size];
     int empty_repeat = 0;
-    while (fgets(buffer, buf_size, source)) {
+    unsigned char c;
+    c = fgetc(source);
+    printf("%u", c);
+    int i = -1;
+    while ( c != EOF && c != '\n') {
         // Remove trailing newline
         // buffer[strcspn(buffer, "\n")] = 0;
-        if (mode == 0) {
+        buffer[++i] = c;
+        c = fgetc(source);
+    }
+    if (mode == 0) {
             printf("%s", buffer);
-        } else {
+    } else {
             print_with_flags(buffer, strlen(buffer), flags, &empty_repeat);
-        }
     }
 }
 

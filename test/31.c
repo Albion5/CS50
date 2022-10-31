@@ -62,7 +62,7 @@ int is_repeated_line(char cur, char fut) {
 void print_with_flags(unsigned char *buffer, int len, Flags *flags, int *empty_repeat) {
     // debug
     // printf("Modified line\n");
-    printf("len=%d\n",len);
+    // printf("len=%d\n",len);
     unsigned char cur_char;
     // Check if the first char is a new line char
     cur_char = buffer[0];
@@ -240,9 +240,9 @@ void s21_cat(FILE *source, int mode, Flags *flags) {
        //fseek(source, len, SEEK_CUR);
         // if (mode == 0) {
         // printf("%.*s", len, buffer);
-        printf("%s", buffer);
+        // printf("%s", buffer);
         // } else {
-        //     print_with_flags(buffer, len - 1, flags, &empty_repeat);
+            print_with_flags(buffer, len, flags, &empty_repeat);
         // }
         //printf("len=%d", len);
         ;

@@ -479,7 +479,8 @@ void find_files(char *argv[], Flags *flags, int *file_indexes, int count, Errors
         // printf("%s\n", argv[index]);
         stop = work_with_file(argv[index], error, index, flags, flags_found);
         printf("error=%d\n", error->error_code);
-        if ((!stop) && (error->error_code < 3 && error->error_code > 0) &&  (i = count -1)) {
+        printf("stop=%d", stop);
+        if ((!stop) && (error->error_code < 3 && error->error_code > 0) &&  (i = count - 1)) {
             print_error(error);
         }
         i++;

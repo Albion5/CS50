@@ -187,6 +187,7 @@ int read_line(unsigned char *buffer, FILE *source, int *len) {
     int read = 1;
     *len = 0;
     int i = -1;
+    buffer[0] = '\0';
     // printf("position=%d", *position);
     // fseek(source, *position, SEEK_SET);
     char c = fgetc(source);
@@ -223,7 +224,7 @@ int read_line(unsigned char *buffer, FILE *source, int *len) {
     // *position += i;
 
     // (*len)++;
-    // buffer[i++] = '\0';
+    buffer[++i] = '\0';
     // // // (*len)++;
     // *position = *position + *len - 1;
     // printf("read=%d\n", read);
@@ -238,7 +239,8 @@ void s21_cat(FILE *source, int mode, Flags *flags) {
     while (read_line(buffer, source, &len) != -1) {
        //fseek(source, len, SEEK_CUR);
         // if (mode == 0) {
-        printf("%.*s", len, buffer);
+        // printf("%.*s", len, buffer);
+        printf("%s", buffer);
         // } else {
         //     print_with_flags(buffer, len - 1, flags, &empty_repeat);
         // }

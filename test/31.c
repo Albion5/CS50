@@ -187,6 +187,7 @@ int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
     int read = 1;
     *len = 0;
     int i = 0;
+    printf("position=%d", *position);
     unsigned char c = fgetc(source);
 
     while (c != EOF && c != '\n') {

@@ -135,9 +135,8 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
             }
             if (flags->show_unprintable) {
                 printf("%c", cur_char + 64);
-            } else {
-                printf("\n");
             }
+            printf("\n");
 
         }
     }

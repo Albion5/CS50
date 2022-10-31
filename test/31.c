@@ -96,13 +96,13 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
                     printf("^l");
                 }  else if (flags->show_unprintable) {
                     if (cur_char >= 0 && cur_char <= 32) {
-                        printf("^%c", cur_char + 64);
+                        printf("^%d", cur_char + 64);
                     } else if (cur_char < 127) {
 
                     } else if (cur_char == 127) {
                         printf("^?");
                     } else if (cur_char < 128 + 64) {
-                        printf("M-^%c", cur_char - 64);
+                        printf("M-^%d", cur_char - 64);
                     }
                 } else {
                     printf("%c", cur_char);

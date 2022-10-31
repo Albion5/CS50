@@ -81,11 +81,7 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
                 if (flags->show_end) {
                     printf("$");
                 }
-                if (flags->show_unprintable) {
-                    printf("^%c", cur_char + 64);
-                } else {
-                    printf("\n");
-                }
+                printf("\n");
             }
             *empty_repeat = 0;
             if (flags->number_non_empty) {
@@ -133,11 +129,7 @@ void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
             if (flags->show_end) {
                 printf("$");
             }
-            if (flags->show_unprintable) {
-                printf("%c", cur_char + 64);
-            }
             printf("\n");
-
         }
     }
 

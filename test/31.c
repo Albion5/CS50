@@ -234,12 +234,13 @@ void s21_cat(FILE *source, int mode, Flags *flags) {
     int len = 0;
     int position = 0;
     while (read_line(buffer, source, &len) != -1) {
-        fseek(source, len, SEEK_CUR);
+       //fseek(source, len, SEEK_CUR);
         // if (mode == 0) {
             // printf("%s", buffer);
         // } else {
         //     print_with_flags(buffer, len - 1, flags, &empty_repeat);
         // }
+        
         ;
     }
 }

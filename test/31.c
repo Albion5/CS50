@@ -183,27 +183,29 @@ int get_number_of_flags(Flags *flags) {
     return flags_found;
 }
 
-int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
+int read_line(unsigned char *buffer, FILE *source, int *len) {
     int read = 1;
     *len = 0;
     int i = 0;
-    printf("position=%d", *position);
-    fseek(source, *position, SEEK_SET);
+    // printf("position=%d", *position);
+    // fseek(source, *position, SEEK_SET);
     unsigned char c = fgetc(source);
+
     i++;
     while (c != EOF && c != '\n') {
         // Remove trailing newline
         // buffer[strcspn(buffer, "\n")] = 0;
         // buffer[i] = c;
         // i++;
-        // *len = *len + 1;
+        *len = *len + 1;
         c = fgetc(source);
-        i++;
+        // i++;
         // *position += 1;
         // printf("%c", c + 64);
     }
+    *len = *len + 1;
     if (c == EOF) {
-        // fseek(source, 0, SEEK_SET);
+
         read = -1;
     } else {
         // buffer[i] = c;
@@ -212,7 +214,7 @@ int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
         ;
 
     }
-    *position += i;
+    // *position += i;
 
     // (*len)++;
     // buffer[i++] = '\0';
@@ -227,7 +229,8 @@ void s21_cat(FILE *source, int mode, Flags *flags) {
     int empty_repeat = 0;
     int len = 0;
     int position = 0;
-    while (read_line(buffer, source, &len, &position) != -1) {
+    while (read_line(buffer, source, &len) != -1) {
+        fseek(source, len, SEEK_CUR);
         // if (mode == 0) {
             // printf("%s", buffer);
         // } else {

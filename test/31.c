@@ -190,7 +190,7 @@ int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
     while (c != EOF && c != '\n') {
         // Remove trailing newline
         // buffer[strcspn(buffer, "\n")] = 0;
-        buffer[(*position)++] = c;
+        buffer[++] = c;
         (*len)++;
         c = fgetc(source);
 
@@ -212,7 +212,7 @@ void s21_cat(FILE *source, int mode, Flags *flags) {
     int empty_repeat = 0;
     int len = 0;
     int position = 0;
-    while (read_line(buffer, source, &len, &position)) {
+    while (read_line(buffer + position, source, &len, &position)) {
         if (mode == 0) {
             printf("%s", buffer);
         } else {

@@ -87,8 +87,9 @@ void print_with_flags(unsigned char *buffer, int len, Flags *flags, int *empty_r
             if (flags->number_non_empty) {
                 printf("%6d\t", ++(flags->count));
             }
-            for (int i = 0; i < len; i++) {
-                cur_char = buffer[i];
+            int i = 0;
+            cur_char = buffer[i];
+            while (cur_char != '\0') {
                 if (flags->show_end && (cur_char == '\n')) {
                     printf("$");
                     printf("%c", cur_char);
@@ -108,6 +109,8 @@ void print_with_flags(unsigned char *buffer, int len, Flags *flags, int *empty_r
                     printf("%c", cur_char);
                 }
 
+            }
+
                 // } else if (cur_char < 127) {
                 //     printf("%c", cur_char);
 
@@ -123,7 +126,7 @@ void print_with_flags(unsigned char *buffer, int len, Flags *flags, int *empty_r
                 //     printf("M-");
                 //     printf("%c", cur_char - 64);
 
-            }
+
 
         } else {
             if (flags->show_end) {

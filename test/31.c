@@ -194,16 +194,17 @@ int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
         // buffer[strcspn(buffer, "\n")] = 0;
         buffer[i] = c;
         i++;
-        (*len)++;
+        *len = *len + 1;
         c = fgetc(source);
         // *position += 1;
         // printf("%c", c + 64);
     }
-    // buffer[i++] = c;
+    buffer[i] = c;
+    *len = *len + 1;
     // (*len)++;
     // buffer[i++] = '\0';
     // // // (*len)++;
-    *position += strlen(buffer);
+    *position += *len;
     if (c == EOF) {
         read = -1;
     }

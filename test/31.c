@@ -192,8 +192,9 @@ int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
     while (c != EOF && c != '\n') {
         // Remove trailing newline
         // buffer[strcspn(buffer, "\n")] = 0;
-        buffer[i] = c;
+        buffer[i++] = c;
         (*len)++;
+
         c = fgetc(source);
         // printf("%c", c + 64);
     }
@@ -204,7 +205,7 @@ int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
     if (c == EOF) {
         read = 0;
     }
-    *position += *len;
+    *position = *position + *len - 1;
     return read;
 }
 

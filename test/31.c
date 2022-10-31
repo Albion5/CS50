@@ -184,7 +184,7 @@ int get_number_of_flags(Flags *flags) {
 }
 
 int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
-    fseek(source , *position , SEEK_SET );
+
     int read = 1;
     *len = 0;
     int i = 0;

@@ -62,7 +62,7 @@ int is_repeated_line(char cur, char fut) {
 void print_with_flags(char *buffer, int len, Flags *flags, int *empty_repeat) {
     // debug
     // printf("Modified line\n");
-    // int len = strlen(buffer);
+    printf("len=%d\n",len);
     char cur_char;
     // Check if the first char is a new line char
     cur_char = buffer[0];

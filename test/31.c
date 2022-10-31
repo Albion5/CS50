@@ -63,7 +63,7 @@ void print_with_flags(unsigned char *buffer, int len, Flags *flags, int *empty_r
     // debug
     // printf("Modified line\n");
     printf("len=%d\n",len);
-    char cur_char;
+    unsigned char cur_char;
     // Check if the first char is a new line char
     cur_char = buffer[0];
     // Update the number of repeated empty lines
@@ -87,8 +87,9 @@ void print_with_flags(unsigned char *buffer, int len, Flags *flags, int *empty_r
             if (flags->number_non_empty) {
                 printf("%6d\t", ++(flags->count));
             }
-            int i = -1;
-            while ((cur_char = buffer[++i]) != '\0') {
+            for (int i = 0; i < len; i++) {
+                cur_char = buffer[i];
+                // printf("in a loop\n");
                 if (flags->show_end && (cur_char == '\n')) {
                     printf("$");
                     printf("%c", cur_char);
@@ -205,7 +206,7 @@ void s21_cat(FILE *source, int mode, Flags *flags) {
     if (mode == 0) {
             printf("%s", buffer);
     } else {
-            print_with_flags(buffer, len, flags, &empty_repeat);
+            print_with_flags(buffer, len - 1, flags, &empty_repeat);
     }
 }
 

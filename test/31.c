@@ -512,6 +512,10 @@ void parse_args(int argc, char *argv[], Flags *flags, Errors *error) {
         } else {
             print_error(error);
         }
+    } else {
+        if (error->error_code < 3) {
+            print_error(error);
+        }
     }
 }
 

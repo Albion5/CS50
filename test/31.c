@@ -189,7 +189,7 @@ int read_line(unsigned char *buffer, FILE *source, int *len) {
     int i = 0;
     // printf("position=%d", *position);
     // fseek(source, *position, SEEK_SET);
-    unsigned char c = fgetc(source);
+    char c = fgetc(source);
 
     i++;
     while (c != EOF && c != '\n') {
@@ -201,13 +201,14 @@ int read_line(unsigned char *buffer, FILE *source, int *len) {
         c = fgetc(source);
         // i++;
         // *position += 1;
-        // printf("%c", c + 64);
+        printf("%c", c);
     }
-    *len = *len + 1;
+
     if (c == EOF) {
 
         read = -1;
     } else {
+            *len = *len + 1;
         // buffer[i] = c;
         // *len = *len + 1;
         // printf("%s", buffer);

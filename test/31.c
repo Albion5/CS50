@@ -187,7 +187,7 @@ int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
     int read = 1;
     *len = 0;
     int i = 0;
-    printf("position=%d", *position);
+    // printf("position=%d", *position);
     unsigned char c = fgetc(source);
 
     while (c != EOF && c != '\n') {
@@ -200,17 +200,23 @@ int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
         // *position += 1;
         // printf("%c", c + 64);
     }
-    buffer[i] = c;
-    *len = *len + 1;
+    if (c == EOF) {
+        read = -1;
+    } else {
+        buffer[i] = c;
+        *len = *len + 1;
+        printf("%s", buffer);
+
+    }
+    *position += *len;
+
     // (*len)++;
     // buffer[i++] = '\0';
     // // // (*len)++;
-    *position += *len;
-    if (c == EOF) {
-        read = -1;
-    }
+
+
     // *position = *position + *len - 1;
-    printf("read=%d\n", read);
+    // printf("read=%d\n", read);
     return read;
 }
 
@@ -221,7 +227,7 @@ void s21_cat(FILE *source, int mode, Flags *flags) {
     int position = 0;
     while (read_line(buffer, source, &len, &position) != -1) {
         // if (mode == 0) {
-        //     printf("%s", buffer);
+            // printf("%s", buffer);
         // } else {
         //     print_with_flags(buffer, len - 1, flags, &empty_repeat);
         // }

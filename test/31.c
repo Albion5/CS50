@@ -193,8 +193,8 @@ int read_line(unsigned char *buffer, FILE *source, int *len) {
         buffer[++i] = c;
         (*len)++;
         c = fgetc(source);
-        // printf("%c", c + 64);
 
+        // printf("%c", c + 64);
     }
     buffer[++i] = c;
     (*len)++;

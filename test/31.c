@@ -233,13 +233,8 @@ void s21_cat(FILE *source, int mode, Flags *flags) {
         // } else {
         //     print_with_flags(buffer, len - 1, flags, &empty_repeat);
         // }
-        len = 0;
+        ;
     }
-
-
-
-
-
 }
 
 

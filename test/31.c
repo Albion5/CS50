@@ -198,6 +198,8 @@ void s21_cat(FILE *source, int mode, Flags *flags) {
     }
     buffer[++i] = c;
     len++;
+    buffer[++i] = '\0';
+    len++;
     if (mode == 0) {
             printf("%s", buffer);
     } else {

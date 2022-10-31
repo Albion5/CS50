@@ -96,7 +96,7 @@ void print_with_flags(unsigned char *buffer, int len, Flags *flags, int *empty_r
                     printf("^l");
                 }  else if (flags->show_unprintable) {
                     if (cur_char >= 0 && cur_char <= 32) {
-                        printf("^%c", cur_char + 64);
+                        printf("^%u", cur_char + 64);
                     } else if (cur_char < 127) {
                         printf("%c", cur_char);
                     } else if (cur_char == 127) {

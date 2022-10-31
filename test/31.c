@@ -186,19 +186,20 @@ int get_number_of_flags(Flags *flags) {
 int read_line(unsigned char *buffer, FILE *source, int *len, int *position) {
     int read = 1;
     *len = 0;
+    int i = -1;
     unsigned char c = fgetc(source);
     while (c != EOF && c != '\n') {
         // Remove trailing newline
         // buffer[strcspn(buffer, "\n")] = 0;
-        buffer[++] = c;
+        buffer[++i] = c;
         (*len)++;
         c = fgetc(source);
 
         // printf("%c", c + 64);
     }
-    buffer[(*position)++] = c;
+    buffer[++i] = c;
     (*len)++;
-    buffer[(*position)++] = '\0';
+    buffer[++i] = '\0';
     (*len)++;
     if (c == EOF) {
         read = 0;
